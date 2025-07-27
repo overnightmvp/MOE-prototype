@@ -10,7 +10,7 @@
     <meta property="og:title" content="7-Day MVP Validation System | AI-Powered Startup Validation">
     <meta property="og:description" content="Transform your idea into a validated MVP in just 7 days using AI assistance.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://7daymvp.com">
+    <meta property="og:url" content="https://overnightmvp.netlify.app">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L99CMW68TS"></script>
@@ -477,7 +477,7 @@
             <h1>Stop Building Wrong Things.<br>Start Validating Smart. 🚀</h1>
             <p class="subtitle">Get your complete AI-powered MVP validation system. Transform your idea into a proven concept in 7 days, not 7 months.</p>
             
-            <a href="#pricing" class="btn btn-primary">Get 7-Day Validation System - $497</a>
+            <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary">Get 7-Day Validation System - $497</a>
             <a href="#learn-more" class="btn btn-secondary">See How It Works</a>
             
             <p class="social-proof">✨ Used by 50+ founders • ⭐ 4.9/5 rated • 🎯 80% validation success rate</p>
@@ -612,7 +612,7 @@
                     <li>Money-back guarantee if not satisfied</li>
                 </ul>
                 
-                <a href="https://buy.stripe.com/placeholder" class="btn btn-primary" onclick="gtag('event', 'purchase_intent', {'event_category': 'Conversion'});">
+                <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary" onclick="gtag('event', 'purchase_intent', {'event_category': 'Conversion'});">
                     Start Validating Today! 🎯
                 </a>
                 
@@ -683,7 +683,7 @@
             <h2 style="color: var(--mvp-white);">Ready to Stop Guessing and Start Validating?</h2>
             <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Join 50+ founders who've used the 7-Day System to validate their ideas with confidence.</p>
             
-            <a href="#pricing" class="btn btn-primary" onclick="gtag('event', 'purchase_intent_final', {'event_category': 'Conversion'});">
+            <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary" onclick="gtag('event', 'purchase_intent_final', {'event_category': 'Conversion'});">
                 Get Your Validation System - $497
             </a>
         </div>
@@ -691,7 +691,7 @@
 
     <script>
         // Email signup form handler
-        function handleEmailSignup(event) {
+        async function handleEmailSignup(event) {
             event.preventDefault();
             
             const form = document.getElementById('emailForm');
@@ -708,11 +708,34 @@
                 'event_label': 'MVP Validation Checklist'
             });
             
-            // TODO: Replace with actual ConvertKit integration
-            setTimeout(() => {
+            try {
+                const response = await fetch('/api/email/lead-magnet', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        source: 'main_landing_page',
+                        leadMagnet: 'sprint0_checklist'
+                    }),
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Redirect to sprint 0 checklist page
+                    window.location.href = `/pages/checklists/sprint0-magnet-checklist.html?email=${encodeURIComponent(email)}`;
+                } else {
+                    throw new Error('Email capture failed');
+                }
+                
+            } catch (error) {
+                console.error('Email capture error:', error);
                 loading.style.display = 'none';
-                form.innerHTML = '<p style="color: var(--mvp-success); font-weight: bold;">✓ Checklist sent! Check your email.</p>';
-            }, 2000);
+                // Fallback: still redirect to sprint 0 for better UX
+                window.location.href = `/pages/checklists/sprint0-magnet-checklist.html?email=${encodeURIComponent(email)}`;
+            }
         }
         
         // FAQ toggle functionality

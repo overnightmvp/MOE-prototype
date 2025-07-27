@@ -301,7 +301,7 @@
             
             <div class="support-info">
                 <h3>Need Help?</h3>
-                <p>If you have any questions or don't receive your welcome email within 10 minutes, contact us at support@7daymvp.com or join our Discord for instant help.</p>
+                <p>If you have any questions or don't receive your welcome email within 10 minutes, contact us at support@overnightmvp.com or join our Discord for instant help.</p>
             </div>
         </div>
         
@@ -336,9 +336,12 @@
     </div>
     
     <script>
-        // Get session ID from URL parameters
+        // Get parameters from URL
         const urlParams = new URLSearchParams(window.location.search);
         const sessionId = urlParams.get('session_id');
+        const sprintNumber = urlParams.get('sprint');
+        const userEmail = urlParams.get('email');
+        const isCompleted = urlParams.get('completed');
         
         // Track conversion
         if (typeof gtag !== 'undefined' && sessionId) {
@@ -349,10 +352,28 @@
             });
         }
         
+        // Handle sprint flow without payment (email capture flow)
+        function handleSprintFlow() {
+            const dashboardLink = document.getElementById('accessDashboard');
+            
+            if (sprintNumber) {
+                dashboardLink.href = `/pages/onboarding/sprint${sprintNumber}-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
+            } else if (isCompleted) {
+                dashboardLink.textContent = 'Journey Complete! 🎉';
+                dashboardLink.href = `/pages/checklists/sprint0-magnet-checklist.html`;
+            } else {
+                // Default to sprint 0 for email captures
+                dashboardLink.href = `/pages/checklists/sprint0-magnet-checklist.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.textContent = 'Start Your Validation Journey 🚀';
+            }
+        }
+
         // Verify payment and set up user access
         async function verifyPayment() {
             if (!sessionId) {
-                console.error('No session ID found');
+                // No payment session - handle as sprint flow
+                handleSprintFlow();
                 return;
             }
             
@@ -369,6 +390,15 @@
                     // Update dashboard link with customer info
                     const dashboardLink = document.getElementById('accessDashboard');
                     dashboardLink.href = `/dashboard?customer=${data.customer}`;
+                    
+                    // Handle sprint-specific flow
+                    if (sprintNumber) {
+                        dashboardLink.href = `/pages/onboarding/sprint${sprintNumber}-onboarding.html?customer=${data.customer}`;
+                        dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
+                    } else if (isCompleted) {
+                        dashboardLink.textContent = 'Journey Complete! 🎉';
+                        dashboardLink.href = `/dashboard?customer=${data.customer}&completed=true`;
+                    }
                     
                     // Show appropriate upsell based on purchase
                     showUpsell(data.productType);
