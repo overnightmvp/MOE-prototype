@@ -457,7 +457,7 @@
                 
                 if (data.success) {
                     // Redirect to success page
-                    window.location.href = `/pages/success.html?sprint={{CURRENT_SPRINT}}&email=${encodeURIComponent(email)}`;
+                    window.location.href = `./pages/success.html?sprint={{CURRENT_SPRINT}}&email=${encodeURIComponent(email)}`;
                 } else {
                     alert('There was an issue. Please try again.');
                 }

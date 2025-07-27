@@ -111,7 +111,7 @@ class SprintNavigation {
         } else if (this.currentSprint === 7) {
             // Complete journey button for last sprint
             navButtons += `
-                <a href="/pages/success.html?completed=true" class="nav-btn nav-btn-secondary">
+                <a href="./pages/success.html?completed=true" class="nav-btn nav-btn-secondary">
                     Complete Journey 🎉
                 </a>
             `;

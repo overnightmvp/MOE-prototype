@@ -389,6 +389,7 @@
             max-width: 400px;
             margin: 30px auto;
             display: flex;
+            flex-direction: column;
             gap: 10px;
         }
         
@@ -704,7 +705,7 @@
             });
             
             // Redirect to success page with email parameter
-            window.location.href = `/pages/success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+            window.location.href = `./pages/success.html?email=${encodeURIComponent(email)}&source=main_landing`;
         }
         
         // FAQ toggle functionality
