@@ -373,14 +373,14 @@
             const dashboardLink = document.getElementById('accessDashboard');
             
             if (sprintNumber) {
-                dashboardLink.href = `/pages/sprint${sprintNumber}-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.href = `/onboarding/sprint${sprintNumber}-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
                 dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
             } else if (isCompleted) {
                 dashboardLink.textContent = 'Journey Complete! 🎉';
-                dashboardLink.href = `/pages/sprint0-onboarding.html`;
+                dashboardLink.href = `/onboarding/sprint0-onboarding.html`;
             } else {
                 // Default to sprint 0 for email captures
-                dashboardLink.href = `/pages/sprint0-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.href = `/onboarding/sprint0-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
                 dashboardLink.textContent = 'Start Your Validation Journey 🚀';
             }
         }
@@ -409,11 +409,11 @@
                     
                     // Handle sprint-specific flow
                     if (sprintNumber) {
-                        dashboardLink.href = `/pages/sprint${sprintNumber}-onboarding.html?customer=${data.customer}`;
+                        dashboardLink.href = `/onboarding/sprint${sprintNumber}-onboarding.html?customer=${data.customer}`;
                         dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
                     } else if (isCompleted) {
                         dashboardLink.textContent = 'Journey Complete! 🎉';
-                        dashboardLink.href = `/pages/sprint0-onboarding.html?customer=${data.customer}&completed=true`;
+                        dashboardLink.href = `/onboarding/sprint0-onboarding.html?customer=${data.customer}&completed=true`;
                     }
                     
                     // Show appropriate upsell based on purchase

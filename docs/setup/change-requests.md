@@ -16,7 +16,7 @@ analyse and plan these changes
 11. test changes,update project files so is consistent, commit changes.
 12. analyse the project for inconsistencies and help me clear them. 
 
-
+done
 
 ====
 
@@ -36,5 +36,41 @@ analyse and plan these changes
 - use sprint0-onboarding.html instead of sprint0-magnet-checklist.html. 
 - refactor all /checklists to match ui and fucntionality of sprint0-onboarding.html
 
-======
+done
 
+====== 
+(10PM)
+finish current task, execute the tasks below then continue original plan
+
+- add to all html pages <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6476354,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+all onboarding html pages
+- comment out elements class step-actions 
+- time remaining to display hh format
+- move srpint navigation element to its own row at the bottom 
+
+sprint0-onboarding.html
+
+- missing sprint navigation element 
+
+=====
+- make it a global rule after commiting a change /compact to: 1. Summarize the conversation so far and retain only the key points/context needed for next steps.”, 2. update customer_journey_blueprint.md and follow other best practices to optimise token consumption and keep s-tier quality, be brutally honest when planning cutting unnecessary work and added complexity, keep things concise and efficient.
+- analyse content files and organise the structure of this project, removing duplicates, gathering all non relevant files on a single folder and all maintain s-tier project organisation best practices. make questions for clarification. suggest best course of action based on consistency, simplicity and ease of customisation. im not looking for code refactoring, just project organisation an better urls.
+- create a data-colection.md file explaining how we are using Ga4.
+- map all documentation necessary to customise and repurpose this project. create setup guide.
+- show all planned tasks 
+
+
+====
+
+- analyse customer_journey_blueprint.md and update agentic_automation_framework.md

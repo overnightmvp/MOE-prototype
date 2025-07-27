@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 4: 7-Day Content Creation | 7-Day MVP Validation</title>
-    <meta name="description" content="Create comprehensive 7-day validation content including worksheets, videos, and interactive tools for Sprint 4. Interactive guide.">
+    <title>Sprint 3: Claude AI Integration | 7-Day MVP Validation</title>
+    <meta name="description" content="Integrate Claude AI for personalized market research, copy generation, and automated analysis in Sprint 3. Interactive guide.">
     
     <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
     <script>
@@ -444,8 +444,8 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>📚 Sprint 4: 7-Day Content Creation</h1>
-            <p>Create comprehensive validation content including worksheets, videos, and interactive tools</p>
+            <h1>🤖 Sprint 3: Claude AI Integration</h1>
+            <p>Integrate AI-powered market research, copy generation, and automated analysis</p>
         </div>
 
         <!-- Progress Section -->
@@ -462,7 +462,7 @@
                         <span class="stat-label">Time Spent</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeRemaining">46h</span>
+                        <span class="stat-number" id="timeRemaining">42h</span>
                         <span class="stat-label">Time Remaining</span>
                     </div>
                 </div>
@@ -470,153 +470,117 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text" id="progressText">Ready to start Sprint 4: 7-Day Content Creation</div>
+            <div class="progress-text" id="progressText">Ready to start Sprint 3: Claude AI Integration</div>
         </div>
 
         <div class="main-grid">
             <!-- Main Steps Section -->
             <div class="steps-section">
-                <h2 class="section-title">Sprint 4 Implementation Steps</h2>
+                <h2 class="section-title">Sprint 3 Implementation Steps</h2>
                 
-                <!-- Step 1: Day 1-2 Content: Idea Validation -->
+                <!-- Step 1: Claude API Setup & Integration -->
                 <div class="step active" data-step="1">
                     <div class="step-header" onclick="toggleStep(1)">
                         <div class="step-number">1</div>
                         <div class="step-info">
-                            <div class="step-title">Day 1-2 Content: Idea Validation</div>
-                            <div class="step-subtitle">Create validation worksheets and competitor analysis tools</div>
+                            <div class="step-title">Claude API Setup & Integration</div>
+                            <div class="step-subtitle">Configure Claude API with error handling and rate limiting</div>
                             <div class="step-time">⏱️ 12 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Create comprehensive content for Days 1-2 that guides users through idea validation, 
-                            market research, and competitor analysis with interactive tools and video guidance.
+                            Set up the Claude API integration with proper authentication, error handling, 
+                            and fallback systems to power your AI-driven validation features.
                         </div>
                         
                         <ul class="checklist" id="step1-checklist">
-                            <li data-item="validation-worksheet">Create idea validation worksheet template</li>
-                            <li data-item="step-instructions">Write step-by-step instructions</li>
-                            <li data-item="video-explanation">Record Johnny's video explanation (10 min)</li>
-                            <li data-item="competitor-tool">Build interactive competitor analysis tool</li>
-                            <li data-item="content-flow">Test content flow and user experience</li>
-                            <li data-item="ai-integration">Integrate AI-powered market insights</li>
+                            <li data-item="api-account">Set up Claude API account and authentication</li>
+                            <li data-item="api-wrapper">Build API wrapper with error handling</li>
+                            <li data-item="rate-limiting">Implement rate limiting and usage tracking</li>
+                            <li data-item="fallback-systems">Create fallback systems for API downtime</li>
+                            <li data-item="reliability-test">Test API reliability and response times</li>
+                            <li data-item="monitoring">Set up API monitoring and alerting</li>
                         </ul>
                         
                         <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDay12Content()">
-                                💡 Create Day 1-2 Content
+                            <button class="btn btn-primary" onclick="startClaudeSetup()">
+                                🤖 Setup Claude API
                             </button>
-                            <a href="/prototype/docs/sprint4/day1-2-guide.md" class="btn btn-secondary">
-                                📋 View Content Guide
+                            <a href="/prototype/docs/sprint3/claude-api-guide.md" class="btn btn-secondary">
+                                📋 View API Guide
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 2: Day 3-4 Content: Solution Design -->
+                <!-- Step 2: Prompt Library Development -->
                 <div class="step" data-step="2">
                     <div class="step-header" onclick="toggleStep(2)">
                         <div class="step-number">2</div>
                         <div class="step-info">
-                            <div class="step-title">Day 3-4 Content: Solution Design</div>
-                            <div class="step-subtitle">Build feature prioritization and user story tools</div>
-                            <div class="step-time">⏱️ 10 hours</div>
+                            <div class="step-title">Prompt Library Development</div>
+                            <div class="step-subtitle">Create optimized prompts for market research and analysis</div>
+                            <div class="step-time">⏱️ 16 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Develop content for Days 3-4 that helps users design their solution, prioritize features,
-                            and create user stories with AI assistance and technical feasibility analysis.
+                            Develop a comprehensive library of specialized prompts that generate high-quality 
+                            market research, competitor analysis, and business insights.
                         </div>
                         
                         <ul class="checklist" id="step2-checklist">
-                            <li data-item="solution-template">Create solution design template</li>
-                            <li data-item="prioritization-matrix">Build feature prioritization matrix tool</li>
-                            <li data-item="user-story-guidelines">Write user story generation guidelines</li>
-                            <li data-item="feasibility-video">Record technical feasibility video (8 min)</li>
-                            <li data-item="exercise-flow">Test exercise completion flow</li>
-                            <li data-item="ai-recommendations">Add AI-powered feature recommendations</li>
+                            <li data-item="market-research">Research and test market research prompts</li>
+                            <li data-item="competitor-analysis">Create competitor analysis prompt templates</li>
+                            <li data-item="copy-generation">Build copy generation prompt variations</li>
+                            <li data-item="data-analysis">Develop data analysis and insight prompts</li>
+                            <li data-item="prompt-quality">Test prompt quality and consistency</li>
+                            <li data-item="prompt-versioning">Implement prompt versioning and A/B testing</li>
                         </ul>
                         
                         <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDay34Content()">
-                                🎯 Create Day 3-4 Content
+                            <button class="btn btn-primary" onclick="startPromptDevelopment()">
+                                📝 Develop Prompts
                             </button>
-                            <a href="/prototype/docs/sprint4/solution-design-templates.md" class="btn btn-secondary">
-                                🛠️ View Templates
+                            <a href="/prototype/docs/sprint3/prompt-templates.md" class="btn btn-secondary">
+                                🎯 View Templates
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 3: Day 5-6 Content: Market Testing -->
+                <!-- Step 3: AI Interface & User Experience -->
                 <div class="step" data-step="3">
                     <div class="step-header" onclick="toggleStep(3)">
                         <div class="step-number">3</div>
                         <div class="step-info">
-                            <div class="step-title">Day 5-6 Content: Market Testing</div>
-                            <div class="step-subtitle">Create landing page templates and marketing playbook</div>
+                            <div class="step-title">AI Interface & User Experience</div>
+                            <div class="step-subtitle">Build chat interface and response management system</div>
                             <div class="step-time">⏱️ 14 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Build comprehensive market testing content including landing page templates, 
-                            copy generation tools, and traffic generation strategies for real market validation.
+                            Create an intuitive chat-like interface where users can interact with Claude AI,
+                            customize prompts, and manage their AI-generated insights and content.
                         </div>
                         
                         <ul class="checklist" id="step3-checklist">
-                            <li data-item="landing-templates">Create landing page template library</li>
-                            <li data-item="copy-interface">Build copy generation interface</li>
-                            <li data-item="traffic-playbook">Write traffic generation playbook</li>
-                            <li data-item="marketing-video">Record marketing strategy video (12 min)</li>
-                            <li data-item="builder-integration">Test integration with landing page builders</li>
-                            <li data-item="analytics-setup">Integrate analytics and tracking</li>
+                            <li data-item="chat-interface">Design chat-like interface for AI interactions</li>
+                            <li data-item="prompt-selection">Implement prompt selection and customization</li>
+                            <li data-item="response-formatting">Build response formatting and display</li>
+                            <li data-item="response-saving">Add response saving and export features</li>
+                            <li data-item="user-flow">Test user flow and experience</li>
+                            <li data-item="conversation-history">Implement conversation history and context</li>
                         </ul>
                         
                         <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDay56Content()">
-                                🚀 Create Day 5-6 Content
+                            <button class="btn btn-success" onclick="startAIInterface()">
+                                💬 Build AI Interface
                             </button>
-                            <a href="/prototype/docs/sprint4/marketing-templates.md" class="btn btn-secondary">
-                                📈 View Marketing Guide
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4: Day 7 Content: Validation Analysis -->
-                <div class="step" data-step="4">
-                    <div class="step-header" onclick="toggleStep(4)">
-                        <div class="step-number">4</div>
-                        <div class="step-info">
-                            <div class="step-title">Day 7 Content: Validation Analysis</div>
-                            <div class="step-subtitle">Build scorecard and automated report generation</div>
-                            <div class="step-time">⏱️ 10 hours</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-description">
-                            Create the final day content that helps users analyze their validation results, 
-                            generate comprehensive reports, and make go/no-go decisions with AI-powered insights.
-                        </div>
-                        
-                        <ul class="checklist" id="step4-checklist">
-                            <li data-item="validation-scorecard">Create validation scorecard template</li>
-                            <li data-item="report-generation">Build automated report generation</li>
-                            <li data-item="decision-framework">Write go/no-go decision framework</li>
-                            <li data-item="analysis-video">Record results analysis video (10 min)</li>
-                            <li data-item="complete-journey">Test complete 7-day journey</li>
-                            <li data-item="next-steps">Create next steps recommendations</li>
-                        </ul>
-                        
-                        <div class="step-actions">
-                            <button class="btn btn-success" onclick="startDay7Content()">
-                                📊 Create Day 7 Content
-                            </button>
-                            <button class="btn btn-secondary" onclick="reviewSprint4()">
-                                📋 Review Sprint 4
+                            <button class="btn btn-secondary" onclick="reviewSprint3()">
+                                📋 Review Sprint 3
                             </button>
                         </div>
                     </div>
@@ -630,8 +594,8 @@
                     <h3 class="card-title">Quick Help</h3>
                     <div class="help-item">
                         <span class="help-icon">📚</span>
-                        <a href="/prototype/docs/sprint4/" style="text-decoration: none; color: inherit;">
-                            Sprint 4 Documentation
+                        <a href="/prototype/docs/sprint3/" style="text-decoration: none; color: inherit;">
+                            Sprint 3 Documentation
                         </a>
                     </div>
                     <div class="help-item">
@@ -653,19 +617,15 @@
                     <h3 class="card-title">Recommended Timeline</h3>
                     <div class="timeline-item">
                         <span class="timeline-time">0-12h</span>
-                        <span>Day 1-2 Content Creation</span>
+                        <span>Claude API Setup</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">12-22h</span>
-                        <span>Day 3-4 Solution Design</span>
+                        <span class="timeline-time">12-28h</span>
+                        <span>Prompt Library Development</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">22-36h</span>
-                        <span>Day 5-6 Market Testing</span>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">36-46h</span>
-                        <span>Day 7 Analysis & Reports</span>
+                        <span class="timeline-time">28-42h</span>
+                        <span>AI Interface & UX</span>
                     </div>
                 </div>
 
@@ -674,7 +634,7 @@
                 <div class="sidebar-card">
                     <div class="emergency-contact">
                         <h4>🆘 Need Help?</h4>
-                        <p>Stuck on content creation or video production? Get immediate content strategy support.</p>
+                        <p>Stuck on Claude API integration? Get immediate technical support for AI implementation.</p>
                         <button class="btn btn-primary mt-20" onclick="requestSupport()">
                             Get Support
                         </button>
@@ -683,13 +643,13 @@
 
                 <!-- Success Preview -->
                 <div class="sidebar-card">
-                    <h3 class="card-title">🎯 Sprint 4 Deliverables</h3>
+                    <h3 class="card-title">🎯 Sprint 3 Deliverables</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">✅ Complete 7-day curriculum</li>
-                        <li style="padding: 5px 0;">✅ Interactive worksheets & tools</li>
-                        <li style="padding: 5px 0;">✅ Video guidance library</li>
-                        <li style="padding: 5px 0;">✅ AI-powered insights</li>
-                        <li style="padding: 5px 0;">✅ Automated reporting system</li>
+                        <li style="padding: 5px 0;">✅ Claude API integration</li>
+                        <li style="padding: 5px 0;">✅ Specialized prompt library</li>
+                        <li style="padding: 5px 0;">✅ AI chat interface</li>
+                        <li style="padding: 5px 0;">✅ Response management system</li>
+                        <li style="padding: 5px 0;">✅ Error handling & fallbacks</li>
                     </ul>
                 </div>
             </div>
@@ -699,14 +659,14 @@
         <div style="margin-top: 30px; background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
             <h3 class="card-title">Sprint Navigation</h3>
             <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                <a href="/pages/sprint0-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 0</a>
-                <a href="/pages/sprint1-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 1</a>
-                <a href="/pages/sprint2-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 2</a>
-                <a href="/pages/sprint3-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 3</a>
-                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 4</span>
-                <a href="/pages/sprint5-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 5</a>
-                <a href="/pages/sprint6-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 6</a>
-                <a href="/pages/sprint7-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 7</a>
+                <a href="/onboarding/sprint0-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 0</a>
+                <a href="/onboarding/sprint1-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 1</a>
+                <a href="/onboarding/sprint2-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 2</a>
+                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 3</span>
+                <a href="/onboarding/sprint4-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 4</a>
+                <a href="/onboarding/sprint5-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 5</a>
+                <a href="/onboarding/sprint6-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 6</a>
+                <a href="/onboarding/sprint7-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 7</a>
             </div>
         </div>
     </div>
@@ -737,7 +697,7 @@
         });
 
         function loadProgress() {
-            const savedProgress = localStorage.getItem('sprint4-progress');
+            const savedProgress = localStorage.getItem('sprint3-progress');
             if (savedProgress) {
                 const progress = JSON.parse(savedProgress);
                 completedSteps = progress.completedSteps || 0;
@@ -752,7 +712,7 @@
                 });
                 
                 // Update step states
-                for (let i = 1; i <= 4; i++) {
+                for (let i = 1; i <= 3; i++) {
                     const step = document.querySelector(`[data-step="${i}"]`);
                     if (progress.completedStepNumbers && progress.completedStepNumbers.includes(i)) {
                         step.classList.add('completed');
@@ -771,7 +731,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint4/progress/${encodeURIComponent(userEmail)}`);
+                const response = await fetch(`/api/sprint3/progress/${encodeURIComponent(userEmail)}`);
                 const data = await response.json();
                 
                 if (data.success && data.progress) {
@@ -790,7 +750,7 @@
                     });
                     
                     // Set active step
-                    if (progress.currentStep <= 4) {
+                    if (progress.currentStep <= 3) {
                         setActiveStep(progress.currentStep);
                     }
                     
@@ -832,7 +792,7 @@
                 lastUpdated: Date.now()
             };
             
-            localStorage.setItem('sprint4-progress', JSON.stringify(progress));
+            localStorage.setItem('sprint3-progress', JSON.stringify(progress));
             
             // Save to server if user email available
             if (userEmail) {
@@ -844,7 +804,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint4/progress/${encodeURIComponent(userEmail)}`, {
+                const response = await fetch(`/api/sprint3/progress/${encodeURIComponent(userEmail)}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -867,19 +827,19 @@
         }
 
         function updateProgress() {
-            const totalSteps = 4;
+            const totalSteps = 3;
             const progressPercent = (completedSteps / totalSteps) * 100;
             
             document.getElementById('completedSteps').textContent = `${completedSteps}/${totalSteps}`;
             document.getElementById('timeSpent').textContent = `${Math.round(timeSpent).toString().padStart(2, '0')}h`;
-            document.getElementById('timeRemaining').textContent = `${Math.max(0, 46 - timeSpent).toString().padStart(2, '0')}h`;
+            document.getElementById('timeRemaining').textContent = `${Math.max(0, 42 - timeSpent).toString().padStart(2, '0')}h`;
             document.getElementById('progressFill').style.width = `${progressPercent}%`;
             
             let progressText = '';
             if (completedSteps === 0) {
-                progressText = 'Ready to start Sprint 4: 7-Day Content Creation';
+                progressText = 'Ready to start Sprint 3: Claude AI Integration';
             } else if (completedSteps === totalSteps) {
-                progressText = '🎉 Sprint 4 Complete! 7-day content is ready';
+                progressText = '🎉 Sprint 3 Complete! AI integration is ready';
             } else {
                 progressText = `Step ${completedSteps + 1} in progress - ${Math.round(progressPercent)}% complete`;
             }
@@ -921,7 +881,7 @@
             completedSteps = Math.max(completedSteps, stepNumber);
             
             // Activate next step
-            if (stepNumber < 4) {
+            if (stepNumber < 3) {
                 setActiveStep(stepNumber + 1);
             }
             
@@ -930,7 +890,7 @@
             
             // Track completion in analytics
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint4_step_complete', {
+                gtag('event', 'sprint3_step_complete', {
                     event_category: 'Sprint Progress',
                     event_label: `Step ${stepNumber}`,
                     value: stepNumber
@@ -964,47 +924,42 @@
         });
 
         // Step action functions
-        function startDay12Content() {
-            alert('Opening Day 1-2 content creation guide...');
+        function startClaudeSetup() {
+            alert('Opening Claude API setup guide...');
             // This would open a detailed guide or start wizard
         }
 
-        function startDay34Content() {
-            alert('Starting Day 3-4 solution design content...');
-            // This would guide through solution design content
+        function startPromptDevelopment() {
+            alert('Starting prompt library development...');
+            // This would guide through prompt creation
         }
 
-        function startDay56Content() {
-            alert('Opening Day 5-6 market testing content...');
-            // This would start the market testing content creation
+        function startAIInterface() {
+            alert('Opening AI interface builder...');
+            // This would start the interface development process
         }
 
-        function startDay7Content() {
-            alert('Creating Day 7 validation analysis content...');
-            // This would start the final day content creation
-        }
-
-        function reviewSprint4() {
-            alert('Opening Sprint 4 review and next steps...');
-            // This would show summary and transition to Sprint 5
+        function reviewSprint3() {
+            alert('Opening Sprint 3 review and next steps...');
+            // This would show summary and transition to Sprint 4
         }
 
         function requestSupport() {
             // This would open a support chat or contact form
-            if (confirm('Would you like to schedule a Sprint 4 content strategy call?')) {
+            if (confirm('Would you like to schedule a Sprint 3 support call?')) {
                 window.open('https://calendly.com/toshioj/30min', '_blank');
             }
         }
 
         function trackUser(email) {
             // Track user engagement
-            console.log(`Tracking Sprint 4 for: ${email}`);
+            console.log(`Tracking Sprint 3 for: ${email}`);
             
             // Send analytics event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint4_onboarding_start', {
+                gtag('event', 'sprint3_onboarding_start', {
                     event_category: 'Sprint Progress',
-                    event_label: 'Sprint 4 Guide Access',
+                    event_label: 'Sprint 3 Guide Access',
                     custom_parameter: email
                 });
             }
@@ -1019,14 +974,14 @@
 
         // Completion celebration
         function celebrateCompletion() {
-            if (completedSteps === 4) {
+            if (completedSteps === 3) {
                 const celebration = document.createElement('div');
                 celebration.innerHTML = `
                     <div class="success-message">
-                        <h3>🎉 Sprint 4 Complete!</h3>
-                        <p>You've successfully created your complete 7-day validation content! Your curriculum is ready for customers. Ready to move to Sprint 5.</p>
-                        <button class="btn btn-primary" onclick="proceedToSprint5()">
-                            🚀 Continue to Sprint 5
+                        <h3>🎉 Sprint 3 Complete!</h3>
+                        <p>You've successfully integrated Claude AI! Your validation system now has powerful AI capabilities. Ready to move to Sprint 4.</p>
+                        <button class="btn btn-primary" onclick="proceedToSprint4()">
+                            🚀 Continue to Sprint 4
                         </button>
                     </div>
                 `;
@@ -1034,8 +989,8 @@
             }
         }
 
-        function proceedToSprint5() {
-            window.location.href = '/pages/sprint5-onboarding.html';
+        function proceedToSprint4() {
+            window.location.href = '/onboarding/sprint4-onboarding.html';
         }
 
         // Check for completion on load
