@@ -33,6 +33,8 @@ analyse and plan these changes
 2. comment out discord community. 
 3. a id=accessDashboard point to -> sprint0-onboarding.html
 
-- use sprint0-onboarding.html instead of 
-/checklists
-1. 
+- use sprint0-onboarding.html instead of sprint0-magnet-checklist.html. 
+- refactor all /checklists to match ui and fucntionality of sprint0-onboarding.html
+
+======
+

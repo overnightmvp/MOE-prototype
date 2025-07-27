@@ -1,13 +1,18 @@
-# Customer Journey Map & Service Blueprint
-*Complete touchpoint mapping for 7-Day MVP Validation System*
+# Customer Journey Blueprint - 7-Day MVP Validation System
+*Optimized touchpoint mapping for efficient token usage and s-tier quality*
 
-## CUSTOMER JOURNEY OVERVIEW
+## EXECUTIVE SUMMARY
+**System**: Interactive 8-sprint (0-7) MVP validation framework with AI-powered guidance
+**Customer**: Solo founders needing rapid idea validation before development
+**Core Flow**: Landing Page → Email Capture → Payment → 8-Sprint Onboarding → Completion
+**Revenue Model**: One-time $497 payment via Polar.sh
+**Key Differentiator**: AI-assisted validation with progressive onboarding system
 
-### Customer Persona: "Desperate First-Time Founder"
-- **Profile:** Solo founder with an idea, scared to start
-- **Goal:** Validate MVP idea quickly and confidently
-- **Pain:** Fear of wasting months building wrong thing
-- **Context:** Burned by previous attempts, wants proof before building
+## CUSTOMER PERSONA
+- **Profile:** First-time founder with unvalidated idea
+- **Goal:** Validate MVP concept in 7 days with confidence
+- **Pain:** Fear of building wrong product, wasting time/money
+- **Solution Fit:** Structured validation process with AI guidance
 
 ---
 

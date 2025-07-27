@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 0 Setup Guide | 7-Day MVP Validation</title>
-    <meta name="description" content="Complete step-by-step guide to set up your MVP validation system in 7 hours. Follow our proven process from accounts to production.">
-    
+    <title>Sprint 5: Community & Support | 7-Day MVP Validation</title>
+    <meta name="description" content="Build community features, support systems, and progress tracking for Sprint 5. Interactive guide.">
+
     <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
     <script>
         (function(h,o,t,j,a,r){
@@ -395,6 +395,15 @@
             margin-bottom: 10px;
         }
         
+        /* Sprint Navigation - moved to bottom */
+        .sprint-navigation {
+            margin-top: 30px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .main-grid {
@@ -444,8 +453,8 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🚀 Sprint 0 Setup Guide</h1>
-            <p>Complete your MVP validation system setup in 7 hours with our step-by-step guide</p>
+            <h1>👥 Sprint 5: Community & Support</h1>
+            <p>Build community features, support systems, and progress tracking for user engagement</p>
         </div>
 
         <!-- Progress Section -->
@@ -458,11 +467,11 @@
                         <span class="stat-label">Steps Complete</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeSpent">0h</span>
+                        <span class="stat-number" id="timeSpent">00h</span>
                         <span class="stat-label">Time Spent</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeRemaining">7h</span>
+                        <span class="stat-number" id="timeRemaining">26h</span>
                         <span class="stat-label">Time Remaining</span>
                     </div>
                 </div>
@@ -470,151 +479,116 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text" id="progressText">Ready to start your Sprint 0 setup</div>
+            <div class="progress-text" id="progressText">Ready to start Sprint 5: Community & Support</div>
         </div>
 
         <div class="main-grid">
             <!-- Main Steps Section -->
             <div class="steps-section">
-                <h2 class="section-title">Setup Steps</h2>
+                <h2 class="section-title">Sprint 5 Implementation Steps</h2>
                 
-                <!-- Step 1: Account Creation -->
+                <!-- Step 1: Discord Community Setup -->
                 <div class="step active" data-step="1">
                     <div class="step-header" onclick="toggleStep(1)">
                         <div class="step-number">1</div>
                         <div class="step-info">
-                            <div class="step-title">Create Essential Service Accounts</div>
-                            <div class="step-subtitle">Set up Stripe, Plunk, GA4, Claude, and Discord</div>
-                            <div class="step-time">⏱️ 2 hours</div>
+                            <div class="step-title">Discord Community Setup</div>
+                            <div class="step-subtitle">Create branded Discord server with auto-role assignment</div>
+                            <div class="step-time">⏱️ 08 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Create and configure the 5 essential service accounts that power your MVP validation system. 
-                            Each service handles a critical part of your customer journey.
+                            Set up a Discord community where customers can connect, share progress, 
+                            and support each other through their validation journey.
                         </div>
                         
                         <ul class="checklist" id="step1-checklist">
-                            <li data-item="stripe">Set up Stripe payment processing (4 product tiers)</li>
-                            <li data-item="plunk">Configure Plunk email automation</li>
-                            <li data-item="ga4">Create Google Analytics 4 property</li>
-                            <li data-item="claude">Get Claude API access</li>
-                            <li data-item="discord">Set up Discord community server</li>
+                            <li data-item="discord-server">Create Discord server with branded channels</li>
+                            <li data-item="auto-roles">Set up auto-role assignment for customers</li>
+                            <li data-item="progress-sharing">Build progress sharing templates and bots</li>
+                            <li data-item="moderation">Create moderation guidelines and tools</li>
+                            <li data-item="onboarding-flow">Test community onboarding flow</li>
                         </ul>
                         
-                        <div class="step-actions">
-                            <a href="#" class="btn btn-primary" onclick="startAccountSetup()">
-                                🚀 Start Account Setup
+                        <!-- <div class="step-actions">
+                            <button class="btn btn-primary" onclick="startDiscordSetup()">
+                                💬 Setup Discord Community
+                            </button>
+                            <a href="/prototype/docs/sprint5/discord-guide.md" class="btn btn-secondary">
+                                📋 View Discord Guide
                             </a>
-                            <a href="/api/downloads/sprint0-checklist" class="btn btn-secondary">
-                                📋 Download Checklist
-                            </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Step 2: Technical Setup -->
+                <!-- Step 2: Support System Implementation -->
                 <div class="step" data-step="2">
                     <div class="step-header" onclick="toggleStep(2)">
                         <div class="step-number">2</div>
                         <div class="step-info">
-                            <div class="step-title">Development Environment Setup</div>
-                            <div class="step-subtitle">Configure local development and integrations</div>
-                            <div class="step-time">⏱️ 2 hours</div>
+                            <div class="step-title">Support System Implementation</div>
+                            <div class="step-subtitle">Set up ticketing, chatbot, and knowledge base</div>
+                            <div class="step-time">⏱️ 10 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Set up your development environment and integrate all services. 
-                            This creates the technical foundation for your MVP system.
+                            Create a comprehensive support system with AI chatbot, ticketing system,
+                            and knowledge base to provide excellent customer service.
                         </div>
                         
                         <ul class="checklist" id="step2-checklist">
-                            <li data-item="repo">Clone repository and install dependencies</li>
-                            <li data-item="env">Configure environment variables</li>
-                            <li data-item="database">Set up local database</li>
-                            <li data-item="apis">Test all API integrations</li>
-                            <li data-item="local">Verify local development server</li>
+                            <li data-item="ticketing-system">Set up customer support ticketing (Intercom/Zendesk)</li>
+                            <li data-item="ai-chatbot">Create AI chatbot for common questions</li>
+                            <li data-item="knowledge-base">Build knowledge base with FAQs</li>
+                            <li data-item="escalation">Set up escalation procedures to human support</li>
+                            <li data-item="response-times">Test support response times and quality</li>
                         </ul>
                         
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startTechnicalSetup()">
-                                ⚙️ Start Technical Setup
+                        <!-- <div class="step-actions">
+                            <button class="btn btn-primary" onclick="startSupportSystem()">
+                                🎧 Setup Support System
                             </button>
-                            <a href="https://github.com/overnightmvp/MOE-prototype" class="btn btn-secondary" target="_blank">
-                                💻 View Repository
+                            <a href="/prototype/docs/sprint5/support-templates.md" class="btn btn-secondary">
+                                📞 View Support Templates
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Step 3: Testing & Validation -->
+                <!-- Step 3: Progress Tracking & Gamification -->
                 <div class="step" data-step="3">
                     <div class="step-header" onclick="toggleStep(3)">
                         <div class="step-number">3</div>
                         <div class="step-info">
-                            <div class="step-title">System Testing & Validation</div>
-                            <div class="step-subtitle">End-to-end testing of all components</div>
-                            <div class="step-time">⏱️ 2 hours</div>
+                            <div class="step-title">Progress Tracking & Gamification</div>
+                            <div class="step-subtitle">Implement badges, achievements, and milestone celebrations</div>
+                            <div class="step-time">⏱️ 08 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Test your complete system end-to-end to ensure everything works perfectly 
-                            before launching to customers.
+                            Build engaging progress tracking with achievement badges, certificates,
+                            and milestone celebrations to increase user engagement and completion rates.
                         </div>
                         
                         <ul class="checklist" id="step3-checklist">
-                            <li data-item="payments">Test payment processing (test mode)</li>
-                            <li data-item="emails">Verify email automation</li>
-                            <li data-item="analytics">Confirm analytics tracking</li>
-                            <li data-item="downloads">Test file download system</li>
-                            <li data-item="forms">Validate all form submissions</li>
+                            <li data-item="completion-tracking">Implement completion tracking system</li>
+                            <li data-item="achievement-badges">Create achievement badges and certificates</li>
+                            <li data-item="progress-sharing">Build progress sharing features</li>
+                            <li data-item="milestone-emails">Set up milestone celebration emails</li>
+                            <li data-item="engagement-features">Test engagement and retention features</li>
                         </ul>
                         
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startTesting()">
-                                🧪 Start Testing
+                        <!-- <div class="step-actions">
+                            <button class="btn btn-success" onclick="startGamification()">
+                                🏆 Build Gamification
                             </button>
-                            <button class="btn btn-secondary" onclick="runDiagnostics()">
-                                🔍 Run Diagnostics
+                            <button class="btn btn-secondary" onclick="reviewSprint5()">
+                                📋 Review Sprint 5
                             </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4: Production Deployment -->
-                <div class="step" data-step="4">
-                    <div class="step-header" onclick="toggleStep(4)">
-                        <div class="step-number">4</div>
-                        <div class="step-info">
-                            <div class="step-title">Production Deployment</div>
-                            <div class="step-subtitle">Deploy your system and go live</div>
-                            <div class="step-time">⏱️ 1 hour</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-description">
-                            Deploy your MVP validation system to production and start accepting real customers. 
-                            Your system is ready to generate revenue!
-                        </div>
-                        
-                        <ul class="checklist" id="step4-checklist">
-                            <li data-item="deploy">Deploy to Netlify</li>
-                            <li data-item="domain">Configure custom domain</li>
-                            <li data-item="ssl">Enable SSL certificate</li>
-                            <li data-item="monitoring">Set up monitoring</li>
-                            <li data-item="launch">Go live and test production</li>
-                        </ul>
-                        
-                        <div class="step-actions">
-                            <button class="btn btn-success" onclick="startDeployment()">
-                                🚀 Deploy to Production
-                            </button>
-                            <button class="btn btn-secondary" onclick="reviewChecklist()">
-                                📋 Review Checklist
-                            </button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -626,8 +600,8 @@
                     <h3 class="card-title">Quick Help</h3>
                     <div class="help-item">
                         <span class="help-icon">📚</span>
-                        <a href="/prototype/docs/setup/sprint-0-foundation.md" style="text-decoration: none; color: inherit;">
-                            Complete Documentation
+                        <a href="/prototype/docs/sprint5/" style="text-decoration: none; color: inherit;">
+                            Sprint 5 Documentation
                         </a>
                     </div>
                     <div class="help-item">
@@ -648,20 +622,16 @@
                 <div class="sidebar-card">
                     <h3 class="card-title">Recommended Timeline</h3>
                     <div class="timeline-item">
-                        <span class="timeline-time">0-2h</span>
-                        <span>Account Creation</span>
+                        <span class="timeline-time">00-08h</span>
+                        <span>Discord Community Setup</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">2-4h</span>
-                        <span>Technical Setup</span>
+                        <span class="timeline-time">08-18h</span>
+                        <span>Support System Implementation</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">4-6h</span>
-                        <span>Testing & Validation</span>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">6-7h</span>
-                        <span>Production Deploy</span>
+                        <span class="timeline-time">18-26h</span>
+                        <span>Progress Tracking & Gamification</span>
                     </div>
                 </div>
 
@@ -669,7 +639,7 @@
                 <div class="sidebar-card">
                     <div class="emergency-contact">
                         <h4>🆘 Need Help?</h4>
-                        <p>Stuck on a step? Get immediate support to keep your setup on track.</p>
+                        <p>Stuck on community setup or support systems? Get immediate assistance.</p>
                         <button class="btn btn-primary mt-20" onclick="requestSupport()">
                             Get Support
                         </button>
@@ -678,28 +648,28 @@
 
                 <!-- Success Preview -->
                 <div class="sidebar-card">
-                    <h3 class="card-title">🎯 What You'll Have</h3>
+                    <h3 class="card-title">🎯 Sprint 5 Deliverables</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">✅ Payment processing system</li>
-                        <li style="padding: 5px 0;">✅ Email automation</li>
-                        <li style="padding: 5px 0;">✅ Customer analytics</li>
-                        <li style="padding: 5px 0;">✅ Lead generation</li>
-                        <li style="padding: 5px 0;">✅ Production deployment</li>
+                        <li style="padding: 5px 0;">✅ Discord community server</li>
+                        <li style="padding: 5px 0;">✅ Customer support system</li>
+                        <li style="padding: 5px 0;">✅ AI chatbot integration</li>
+                        <li style="padding: 5px 0;">✅ Progress tracking system</li>
+                        <li style="padding: 5px 0;">✅ Achievement badges</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Sprint Navigation - moved to bottom -->
-        <div style="margin-top: 30px; background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <div class="sprint-navigation">
             <h3 class="card-title">Sprint Navigation</h3>
             <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 0</span>
+                <a href="/pages/sprint0-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 0</a>
                 <a href="/pages/sprint1-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 1</a>
                 <a href="/pages/sprint2-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 2</a>
                 <a href="/pages/sprint3-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 3</a>
                 <a href="/pages/sprint4-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 4</a>
-                <a href="/pages/sprint5-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 5</a>
+                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 5</span>
                 <a href="/pages/sprint6-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 6</a>
                 <a href="/pages/sprint7-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 7</a>
             </div>
@@ -717,7 +687,6 @@
 
         // Load saved progress
         window.addEventListener('load', function() {
-            // Get email from URL params if redirected from email capture
             const urlParams = new URLSearchParams(window.location.search);
             userEmail = urlParams.get('email');
             
@@ -732,13 +701,12 @@
         });
 
         function loadProgress() {
-            const savedProgress = localStorage.getItem('sprint0-progress');
+            const savedProgress = localStorage.getItem('sprint5-progress');
             if (savedProgress) {
                 const progress = JSON.parse(savedProgress);
                 completedSteps = progress.completedSteps || 0;
                 timeSpent = progress.timeSpent || 0;
                 
-                // Restore checklist states
                 Object.keys(progress.checklistItems || {}).forEach(itemId => {
                     const checkbox = document.querySelector(`[data-item="${itemId}"]`);
                     if (checkbox && progress.checklistItems[itemId]) {
@@ -746,8 +714,7 @@
                     }
                 });
                 
-                // Update step states
-                for (let i = 1; i <= 4; i++) {
+                for (let i = 1; i <= 3; i++) {
                     const step = document.querySelector(`[data-step="${i}"]`);
                     if (progress.completedStepNumbers && progress.completedStepNumbers.includes(i)) {
                         step.classList.add('completed');
@@ -755,7 +722,6 @@
                     }
                 }
                 
-                // Set active step
                 if (progress.activeStep) {
                     setActiveStep(progress.activeStep);
                 }
@@ -766,7 +732,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/onboarding/progress/${encodeURIComponent(userEmail)}`);
+                const response = await fetch(`/api/sprint5/progress/${encodeURIComponent(userEmail)}`);
                 const data = await response.json();
                 
                 if (data.success && data.progress) {
@@ -775,7 +741,6 @@
                     completedSteps = progress.completedSteps.length;
                     timeSpent = (Date.now() - progress.startTime) / (1000 * 60 * 60);
                     
-                    // Restore step states
                     progress.completedSteps.forEach(stepNum => {
                         const step = document.querySelector(`[data-step="${stepNum}"]`);
                         if (step) {
@@ -784,12 +749,10 @@
                         }
                     });
                     
-                    // Set active step
-                    if (progress.currentStep <= 4) {
+                    if (progress.currentStep <= 3) {
                         setActiveStep(progress.currentStep);
                     }
                     
-                    // Restore checklist items
                     Object.keys(progress.stepProgress || {}).forEach(itemId => {
                         const checkbox = document.querySelector(`[data-item="${itemId}"]`);
                         if (checkbox && progress.stepProgress[itemId]) {
@@ -799,13 +762,11 @@
                 }
             } catch (error) {
                 console.error('Failed to load progress from server:', error);
-                // Fallback to local storage
                 loadProgress();
             }
         }
 
         function saveProgress() {
-            // Save to local storage
             const checklistItems = {};
             document.querySelectorAll('.checklist [data-item]').forEach(item => {
                 checklistItems[item.dataset.item] = item.classList.contains('completed');
@@ -827,9 +788,8 @@
                 lastUpdated: Date.now()
             };
             
-            localStorage.setItem('sprint0-progress', JSON.stringify(progress));
+            localStorage.setItem('sprint5-progress', JSON.stringify(progress));
             
-            // Save to server if user email available
             if (userEmail) {
                 saveProgressToServer(progress);
             }
@@ -839,7 +799,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/onboarding/progress/${encodeURIComponent(userEmail)}`, {
+                const response = await fetch(`/api/sprint5/progress/${encodeURIComponent(userEmail)}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -862,19 +822,19 @@
         }
 
         function updateProgress() {
-            const totalSteps = 4;
+            const totalSteps = 3;
             const progressPercent = (completedSteps / totalSteps) * 100;
             
             document.getElementById('completedSteps').textContent = `${completedSteps}/${totalSteps}`;
             document.getElementById('timeSpent').textContent = `${Math.round(timeSpent).toString().padStart(2, '0')}h`;
-            document.getElementById('timeRemaining').textContent = `${Math.max(0, 7 - timeSpent).toString().padStart(2, '0')}h`;
+            document.getElementById('timeRemaining').textContent = `${Math.max(0, 26 - timeSpent).toString().padStart(2, '0')}h`;
             document.getElementById('progressFill').style.width = `${progressPercent}%`;
             
             let progressText = '';
             if (completedSteps === 0) {
-                progressText = 'Ready to start your Sprint 0 setup';
+                progressText = 'Ready to start Sprint 5: Community & Support';
             } else if (completedSteps === totalSteps) {
-                progressText = '🎉 Sprint 0 Complete! Ready for production launch';
+                progressText = '🎉 Sprint 5 Complete! Community and support systems are ready';
             } else {
                 progressText = `Step ${completedSteps + 1} in progress - ${Math.round(progressPercent)}% complete`;
             }
@@ -883,14 +843,12 @@
         }
 
         function toggleStep(stepNumber) {
-            // Close all other steps
             document.querySelectorAll('.step').forEach(step => {
                 if (step.dataset.step != stepNumber) {
                     step.classList.remove('active');
                 }
             });
             
-            // Toggle current step
             const currentStep = document.querySelector(`[data-step="${stepNumber}"]`);
             currentStep.classList.toggle('active');
             
@@ -915,40 +873,16 @@
             
             completedSteps = Math.max(completedSteps, stepNumber);
             
-            // Activate next step
-            if (stepNumber < 4) {
+            if (stepNumber < 3) {
                 setActiveStep(stepNumber + 1);
             }
             
             updateProgress();
             saveProgress();
             
-            // Track completion on server
-            if (userEmail) {
-                try {
-                    const response = await fetch(`/api/onboarding/complete-step/${encodeURIComponent(userEmail)}/${stepNumber}`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    });
-                    
-                    const data = await response.json();
-                    if (data.success && data.allComplete) {
-                        // All steps completed!
-                        setTimeout(() => {
-                            celebrateCompletion();
-                        }, 1000);
-                    }
-                } catch (error) {
-                    console.error('Failed to mark step complete on server:', error);
-                }
-            }
-            
-            // Track completion in analytics
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint0_step_complete', {
-                    event_category: 'Onboarding',
+                gtag('event', 'sprint5_step_complete', {
+                    event_category: 'Sprint Progress',
                     event_label: `Step ${stepNumber}`,
                     value: stepNumber
                 });
@@ -959,7 +893,6 @@
             element.classList.toggle('completed');
             saveProgress();
             
-            // Check if all items in this step are completed
             const stepElement = element.closest('.step');
             const stepNumber = parseInt(stepElement.dataset.step);
             const allItems = stepElement.querySelectorAll('.checklist [data-item]');
@@ -970,7 +903,6 @@
             }
         }
 
-        // Add click handlers to checklist items
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.checklist [data-item]').forEach(item => {
                 item.addEventListener('click', function() {
@@ -980,92 +912,50 @@
             });
         });
 
-        // Step action functions
-        function startAccountSetup() {
-            alert('Opening account setup guide...');
-            // This would open a detailed guide or external links
-        }
-
-        function startTechnicalSetup() {
-            alert('Starting technical setup process...');
-            // This would guide through repository setup
-        }
-
-        function startTesting() {
-            alert('Beginning system testing...');
-            // This would open testing interface
-        }
-
-        function startDeployment() {
-            alert('Initiating production deployment...');
-            // This would guide through deployment process
-        }
-
-        function runDiagnostics() {
-            alert('Running system diagnostics...');
-            // This would test all integrations
-        }
-
-        function reviewChecklist() {
-            alert('Opening complete checklist review...');
-            // This would show a summary of all setup items
-        }
-
         function requestSupport() {
-            // This would open a support chat or contact form
-            if (confirm('Would you like to schedule a 15-minute setup assistance call?')) {
-                window.open('https://calendly.com/your-calendar-link', '_blank');
+            if (confirm('Would you like to schedule a Sprint 5 support call?')) {
+                window.open('https://calendly.com/toshioj/30min', '_blank');
             }
         }
 
         function trackUser(email) {
-            // Track user engagement
-            console.log(`Tracking onboarding for: ${email}`);
+            console.log(`Tracking Sprint 5 for: ${email}`);
             
-            // Send analytics event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint0_onboarding_start', {
-                    event_category: 'Onboarding',
-                    event_label: 'Sprint 0 Guide Access',
+                gtag('event', 'sprint5_onboarding_start', {
+                    event_category: 'Sprint Progress',
+                    event_label: 'Sprint 5 Guide Access',
                     custom_parameter: email
                 });
             }
         }
 
-        // Time tracking
         setInterval(function() {
-            timeSpent = (Date.now() - startTime) / (1000 * 60 * 60); // Convert to hours
+            timeSpent = (Date.now() - startTime) / (1000 * 60 * 60);
             updateProgress();
             saveProgress();
-        }, 60000); // Update every minute
+        }, 60000);
 
-        // Completion celebration
         function celebrateCompletion() {
-            if (completedSteps === 4) {
+            if (completedSteps === 3) {
                 const celebration = document.createElement('div');
                 celebration.innerHTML = `
                     <div class="success-message">
-                        <h3>🎉 Congratulations!</h3>
-                        <p>You've successfully completed Sprint 0! Your MVP validation system is ready for launch.</p>
-                        <button class="btn btn-primary" onclick="proceedToLaunch()">
-                            🚀 Launch Your System
+                        <h3>🎉 Sprint 5 Complete!</h3>
+                        <p>You've successfully built your community and support systems! Ready to move to Sprint 6.</p>
+                        <button class="btn btn-primary" onclick="proceedToSprint6()">
+                            🚀 Continue to Sprint 6
                         </button>
                     </div>
                 `;
                 document.querySelector('.steps-section').appendChild(celebration);
-                
-                // Fire confetti or celebration animation
-                if (typeof confetti !== 'undefined') {
-                    confetti();
-                }
             }
         }
 
-        function proceedToLaunch() {
-            window.location.href = '/prototype/frontend/pages/index.html';
+        function proceedToSprint6() {
+            window.location.href = '/pages/sprint6-onboarding.html';
         }
 
-        // Check for completion on load
         window.addEventListener('load', function() {
             setTimeout(celebrateCompletion, 1000);
         });
