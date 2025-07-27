@@ -1,0 +1,24 @@
+# Netlify redirects for 7-Day MVP Validation System
+
+# Main redirects
+/                           /pages/index.html                           200
+/get-started               /pages/sprint0-checklist.html               302
+/onboarding                /pages/sprint0-onboarding.html              302
+/setup                     /pages/sprint0-onboarding.html              302
+/checklist                 /pages/sprint0-checklist.html               302
+/free-guide               /pages/sprint0-checklist.html               302
+
+# Purchase flow
+/buy                       /pages/index.html#pricing                   302
+/purchase                  /pages/index.html#pricing                   302
+/success                   /pages/success.html                         302
+
+# Assets
+/validation-guide          /assets/mvp-validation-checklist.md         200
+/sprint0-guide            /assets/sprint0-setup-checklist.md          200
+
+# API fallbacks (for development)
+/api/*                     https://api.7daymvp.com/:splat               200
+
+# SPA fallback
+/*                         /pages/index.html                           404
