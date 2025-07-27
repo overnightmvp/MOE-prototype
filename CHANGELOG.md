@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-01-27
+
+### Added
+- Secure markdown file download system replacing PDF generation
+- Sprint 0 checklist delivery via email automation
+- HMAC token verification for secure downloads
+- Comprehensive git workflow with conventional commits
+- Project documentation framework (README, CHANGELOG, CONTRIBUTING)
+
+### Changed
+- Email templates updated for markdown format delivery
+- Download system simplified from PDF to markdown files
+- Package.json cleaned of unused PDF dependencies
+- Frontend messaging updated to reflect markdown downloads
+
+### Enhanced
+- Plunk service integration with Sprint 0 checklist method
+- Email route handling for different lead magnet types
+- Environment configuration with download security settings
+- Documentation updated with current implementation state
+
+### Technical Details
+- `backend/routes/downloads.js` - New secure file serving system
+- `backend/services/plunk.js` - Added `sendSprint0Checklist` method
+- `frontend/email-templates/` - Professional HTML email templates
+- Token-based security for download link generation
+- Git repository established with proper workflow documentation
+
 ## [1.0.0] - 2025-01-27
 
 ### Added

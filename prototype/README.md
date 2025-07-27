@@ -120,6 +120,20 @@ npm run deploy
 - **File Storage:** AWS S3 for customer uploads
 - **Real-time Updates:** WebSocket for live progress
 
+## 🗂️ Recent Updates
+
+### Sprint 0 Enhancements ✅
+- **Markdown Downloads** - Replaced PDF generation with secure markdown file serving
+- **Email Integration** - Complete Sprint 0 checklist delivery via Plunk automation
+- **Token Security** - Secure download links with HMAC verification
+- **Git Workflow** - Established version control with conventional commits
+
+### File Structure Updates
+- `backend/routes/downloads.js` - Secure file serving with token verification
+- `frontend/email-templates/` - Professional email templates for lead magnets
+- `backend/services/plunk.js` - Enhanced with Sprint 0 checklist delivery
+- `config/env/.env.example` - Updated with download security configuration
+
 ## 📈 Success Metrics Tracking
 
 ### Conversion Funnel
