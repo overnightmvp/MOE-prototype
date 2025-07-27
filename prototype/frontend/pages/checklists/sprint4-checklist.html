@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 4: 7-Day Content Creation | 7-Day MVP Validation</title>
+    <meta name="description" content="Create comprehensive 7-day content with daily instructions, templates, worksheets, and video guidance. Complete Sprint 4 of the 7-Day MVP Validation System.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sprint 4: 7-Day Content Creation - 7-Day MVP Validation">
+    <meta property="og:description" content="Create comprehensive 7-day content with daily instructions, templates, worksheets, and video guidance. Complete Sprint 4 of the 7-Day MVP Validation System.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://overnightmvp.netlify.app/pages/checklists/sprint4-checklist.html">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L99CMW68TS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L99CMW68TS');
+    </script>
+    
+    <style>
+        :root {
+            --sprint-primary: #6366f1;
+            --sprint-secondary: #06b6d4;
+            --sprint-accent: #f59e0b;
+            --sprint-success: #10b981;
+            --sprint-warning: #f97316;
+            --sprint-error: #ef4444;
+            --sprint-black: #1f2937;
+            --sprint-dark-gray: #374151;
+            --sprint-gray: #6b7280;
+            --sprint-light-gray: #f9fafb;
+            --sprint-white: #ffffff;
+            --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--sprint-black);
+            background: linear-gradient(135deg, var(--sprint-light-gray) 0%, var(--sprint-white) 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Sprint Navigation */
+        .sprint-nav {
+            background: var(--sprint-white);
+            border-bottom: 2px solid var(--sprint-light-gray);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sprint-progress {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .sprint-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--sprint-gray);
+            color: var(--sprint-gray);
+        }
+        
+        .sprint-step.completed {
+            background: var(--sprint-success);
+            border-color: var(--sprint-success);
+            color: var(--sprint-white);
+        }
+        
+        .sprint-step.current {
+            background: var(--sprint-primary);
+            border-color: var(--sprint-primary);
+            color: var(--sprint-white);
+            transform: scale(1.1);
+        }
+        
+        .sprint-step:hover {
+            transform: scale(1.05);
+        }
+        
+        .global-progress {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .progress-bar {
+            width: 120px;
+            height: 6px;
+            background: var(--sprint-light-gray);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sprint-primary), var(--sprint-secondary));
+            width: 50%;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            font-size: 0.8rem;
+            color: var(--sprint-gray);
+            font-weight: 600;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--sprint-primary) 0%, var(--sprint-secondary) 100%);
+            color: var(--sprint-white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+            background: var(--sprint-white);
+        }
+        
+        .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--sprint-black);
+        }
+        
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .checklist-section {
+            background: var(--sprint-light-gray);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 3px solid var(--sprint-primary);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+        }
+        
+        .checklist-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--sprint-black);
+        }
+        
+        .checklist-items {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .checklist-items li {
+            padding: 12px 0;
+            padding-left: 40px;
+            position: relative;
+            font-weight: 500;
+            color: var(--sprint-dark-gray);
+        }
+        
+        .checklist-items li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--sprint-primary);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        .estimate {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--sprint-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        
+        /* Email Capture */
+        .email-capture {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--sprint-primary) 0%, var(--sprint-secondary) 100%);
+            color: var(--sprint-white);
+            text-align: center;
+        }
+        
+        .email-capture h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 18px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+        }
+        
+        .email-submit {
+            background: var(--sprint-accent);
+            color: var(--sprint-white);
+            border: none;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        /* Navigation */
+        .navigation {
+            padding: 60px 0;
+            background: var(--sprint-light-gray);
+            text-align: center;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .nav-btn-primary {
+            background: var(--sprint-primary);
+            color: var(--sprint-white);
+        }
+        
+        .nav-btn-secondary {
+            background: var(--sprint-white);
+            color: var(--sprint-primary);
+            border: 2px solid var(--sprint-primary);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .sprint-progress {
+                gap: 8px;
+            }
+            
+            .sprint-step {
+                width: 35px;
+                height: 35px;
+                font-size: 0.8rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sprint Navigation -->
+    <nav class="sprint-nav">
+        <div class="nav-container">
+            <div class="sprint-progress">
+                <a href="/pages/checklists/sprint0-magnet-checklist.html" class="sprint-step completed">0</a>
+                <a href="/pages/checklists/sprint1-checklist.html" class="sprint-step completed">1</a>
+                <a href="/pages/checklists/sprint2-checklist.html" class="sprint-step completed">2</a>
+                <a href="/pages/checklists/sprint3-checklist.html" class="sprint-step completed">3</a>
+                <a href="/pages/checklists/sprint4-checklist.html" class="sprint-step current">4</a>
+                <a href="/pages/checklists/sprint5-checklist.html" class="sprint-step">5</a>
+                <a href="/pages/checklists/sprint6-checklist.html" class="sprint-step">6</a>
+                <a href="/pages/checklists/sprint7-checklist.html" class="sprint-step">7</a>
+            </div>
+            
+            <div class="global-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="progress-text">50% Complete</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <h1>Sprint 4: 7-Day Content Creation</h1>
+            <p class="subtitle">Create comprehensive daily content with instructions, templates, worksheets, and video guidance for core value delivery</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <h2 class="section-title">Sprint 4 Tasks & Checklist</h2>
+            
+            <div class="checklist-grid">
+                <!-- Day 1-2 Content: Idea Validation -->
+                <div class="checklist-section">
+                    <h3>📋 Day 1-2 Content: Idea Validation</h3>
+                    <ul class="checklist-items">
+                        <li>Create idea validation worksheet template</li>
+                        <li>Write step-by-step instructions</li>
+                        <li>Record Johnny's video explanation (10 min)</li>
+                        <li>Build interactive competitor analysis tool</li>
+                        <li>Test content flow and user experience</li>
+                    </ul>
+                    <div class="estimate">📅 Estimate: 12 hours</div>
+                </div>
+
+                <!-- Day 3-4 Content: Solution Design -->
+                <div class="checklist-section">
+                    <h3>🎯 Day 3-4 Content: Solution Design</h3>
+                    <ul class="checklist-items">
+                        <li>Create solution design template</li>
+                        <li>Build feature prioritization matrix tool</li>
+                        <li>Write user story generation guidelines</li>
+                        <li>Record technical feasibility video (8 min)</li>
+                        <li>Test exercise completion flow</li>
+                    </ul>
+                    <div class="estimate">📅 Estimate: 10 hours</div>
+                </div>
+
+                <!-- Day 5-6 Content: Market Testing -->
+                <div class="checklist-section">
+                    <h3>🚀 Day 5-6 Content: Market Testing</h3>
+                    <ul class="checklist-items">
+                        <li>Create landing page template library</li>
+                        <li>Build copy generation interface</li>
+                        <li>Write traffic generation playbook</li>
+                        <li>Record marketing strategy video (12 min)</li>
+                        <li>Test integration with landing page builders</li>
+                    </ul>
+                    <div class="estimate">📅 Estimate: 14 hours</div>
+                </div>
+
+                <!-- Day 7 Content: Validation Analysis -->
+                <div class="checklist-section">
+                    <h3>📊 Day 7 Content: Validation Analysis</h3>
+                    <ul class="checklist-items">
+                        <li>Create validation scorecard template</li>
+                        <li>Build automated report generation</li>
+                        <li>Write go/no-go decision framework</li>
+                        <li>Record results analysis video (10 min)</li>
+                        <li>Test complete 7-day journey</li>
+                    </ul>
+                    <div class="estimate">📅 Estimate: 10 hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture -->
+    <section class="email-capture">
+        <div class="container">
+            <h2>Ready to Start Sprint 4?</h2>
+            <p>Get the complete Sprint 4 implementation guide and create your comprehensive 7-day content system</p>
+            
+            <form class="email-form" id="emailForm" onsubmit="handleEmailSubmit(event)">
+                <input type="email" class="email-input" placeholder="Enter your email address" required>
+                <button type="submit" class="email-submit">Get Sprint 4 Guide</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="navigation">
+        <div class="container">
+            <div class="nav-buttons">
+                <a href="/pages/checklists/sprint3-checklist.html" class="nav-btn nav-btn-secondary">← Previous: Sprint 3</a>
+                <a href="/pages/onboarding/sprint4-onboarding.html" class="nav-btn nav-btn-primary">Start Sprint 4 →</a>
+                <a href="/pages/checklists/sprint5-checklist.html" class="nav-btn nav-btn-secondary">Next: Sprint 5 →</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Email form handling
+        async function handleEmailSubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('emailForm');
+            const email = form.querySelector('input[type="email"]').value;
+            
+            // Track email capture
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'email_capture', {
+                    event_category: 'Lead Generation',
+                    event_label: 'Sprint 4 Checklist'
+                });
+            }
+            
+            try {
+                const response = await fetch('/api/email/lead-magnet', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        source: 'sprint4_checklist_page',
+                        leadMagnet: 'sprint4_checklist'
+                    }),
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Redirect to success page
+                    window.location.href = `/pages/success.html?sprint=4&email=${encodeURIComponent(email)}`;
+                } else {
+                    alert('There was an issue. Please try again.');
+                }
+                
+            } catch (error) {
+                console.error('Email capture error:', error);
+                alert('There was an issue. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
