@@ -478,7 +478,6 @@
             <p class="subtitle">Get your complete AI-powered MVP validation system. Transform your idea into a proven concept in 7 days, not 7 months.</p>
             
             <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary">Get 7-Day Validation System - $497</a>
-            <a href="#learn-more" class="btn btn-secondary">See How It Works</a>
             
             <p class="social-proof">✨ Used by 50+ founders • ⭐ 4.9/5 rated • 🎯 80% validation success rate</p>
         </div>
@@ -612,9 +611,17 @@
                     <li>Money-back guarantee if not satisfied</li>
                 </ul>
                 
-                <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary" onclick="gtag('event', 'purchase_intent', {'event_category': 'Conversion'});">
+                <button class="btn btn-primary" onclick="revealEmailForm()" id="startValidatingBtn">
                     Start Validating Today! 🎯
-                </a>
+                </button>
+                
+                <!-- Hidden Email Form -->
+                <div id="emailRevealForm" style="display: none; margin-top: 20px;">
+                    <form class="email-signup" onsubmit="handleEmailReveal(event)">
+                        <input type="email" class="email-input" placeholder="Enter your email to get started" required style="margin-bottom: 10px; width: 100%; padding: 15px; border: 2px solid var(--mvp-primary); border-radius: 8px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Get My Validation System</button>
+                    </form>
+                </div>
                 
                 <p style="margin-top: 20px; color: var(--mvp-gray); font-size: 0.9rem;">
                     <strong>Save $9,500+</strong> vs hiring a consultant
@@ -655,27 +662,6 @@
         </div>
     </section>
 
-    <!-- Email Signup Section -->
-    <section style="padding: 60px 20px; background: var(--mvp-light-gray); text-align: center;">
-        <div class="container">
-            <h2 style="margin-bottom: 20px;">Not Ready to Purchase?</h2>
-            <p style="margin-bottom: 30px; color: var(--mvp-gray);">Get our free "MVP Validation Checklist" and see exactly what questions you need to answer before building anything.</p>
-            
-            <form class="email-signup" id="emailForm" onsubmit="handleEmailSignup(event)">
-                <input type="email" class="email-input" placeholder="Enter your email" required>
-                <button type="submit" class="email-submit">Get Free Checklist</button>
-            </form>
-            
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Sending your checklist...</p>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: var(--mvp-gray); margin-top: 15px;">
-                No spam. Unsubscribe anytime. We respect your privacy.
-            </p>
-        </div>
-    </section>
 
     <!-- Final CTA Section -->
     <section style="background: linear-gradient(135deg, var(--mvp-primary) 0%, var(--mvp-secondary) 100%); color: var(--mvp-white); padding: 80px 0; text-align: center;">
@@ -690,52 +676,35 @@
     </section>
 
     <script>
-        // Email signup form handler
-        async function handleEmailSignup(event) {
+        // Reveal email form when Start Validating Today is clicked
+        function revealEmailForm() {
+            const btn = document.getElementById('startValidatingBtn');
+            const form = document.getElementById('emailRevealForm');
+            
+            btn.style.display = 'none';
+            form.style.display = 'block';
+            
+            // Track button click
+            gtag('event', 'email_form_reveal', {
+                'event_category': 'Lead Generation',
+                'event_label': 'Start Validating Today Button'
+            });
+        }
+
+        // Handle email form submission
+        async function handleEmailReveal(event) {
             event.preventDefault();
             
-            const form = document.getElementById('emailForm');
-            const loading = document.getElementById('loading');
-            const email = form.querySelector('input[type="email"]').value;
-            
-            // Show loading spinner
-            form.style.display = 'none';
-            loading.style.display = 'block';
+            const email = event.target.querySelector('input[type="email"]').value;
             
             // Track email signup
             gtag('event', 'email_signup', {
                 'event_category': 'Lead Generation',
-                'event_label': 'MVP Validation Checklist'
+                'event_label': 'Email Reveal Form'
             });
             
-            try {
-                const response = await fetch('/api/email/lead-magnet', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        source: 'main_landing_page',
-                        leadMagnet: 'sprint0_checklist'
-                    }),
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    // Redirect to sprint 0 checklist page
-                    window.location.href = `/pages/checklists/sprint0-magnet-checklist.html?email=${encodeURIComponent(email)}`;
-                } else {
-                    throw new Error('Email capture failed');
-                }
-                
-            } catch (error) {
-                console.error('Email capture error:', error);
-                loading.style.display = 'none';
-                // Fallback: still redirect to sprint 0 for better UX
-                window.location.href = `/pages/checklists/sprint0-magnet-checklist.html?email=${encodeURIComponent(email)}`;
-            }
+            // Redirect to success page with email parameter
+            window.location.href = `/pages/success.html?email=${encodeURIComponent(email)}&source=main_landing`;
         }
         
         // FAQ toggle functionality

@@ -3,14 +3,763 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7-Day MVP Validation System</title>
-    <meta http-equiv="refresh" content="0; url=./pages/index.html">
-    <link rel="canonical" href="./pages/index.html" />
+    <title>7-Day MVP Validation System | Stop Building Wrong Things</title>
+    <meta name="description" content="Validate your MVP idea in 7 days with AI-powered analysis. Skip months of uncertainty and know exactly what to build and how to sell it.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="7-Day MVP Validation System | AI-Powered Startup Validation">
+    <meta property="og:description" content="Transform your idea into a validated MVP in just 7 days using AI assistance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://overnightmvp.netlify.app">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L99CMW68TS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L99CMW68TS');
+    </script>
+    
+    <style>
+        /* OvernightMVP Design System - Adapted for 7-Day MVP Validation */
+        :root {
+            /* Primary Brand Colors */
+            --mvp-primary: #FF6B6B;
+            --mvp-secondary: #4ECDC4;
+            --mvp-accent: #FFD93D;
+            --mvp-success: #6BCF7F;
+            --mvp-warning: #FFA726;
+            
+            /* Neutral Colors */
+            --mvp-black: #2C2C2C;
+            --mvp-dark-gray: #4A4A4A;
+            --mvp-gray: #7A7A7A;
+            --mvp-light-gray: #F5F5F5;
+            --mvp-white: #FFFFFF;
+            
+            /* Typography */
+            --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-heading: "Inter", sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--mvp-black);
+            background-color: var(--mvp-light-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--mvp-black);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.875rem;
+            color: var(--mvp-black);
+        }
+        
+        h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.25rem, 3vw, 1.8rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--mvp-black);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            font-family: var(--font-primary);
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 3px solid var(--mvp-black);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--mvp-primary);
+            color: var(--mvp-white);
+            box-shadow: 6px 6px 0px var(--mvp-black);
+        }
+        
+        .btn-primary:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--mvp-black);
+        }
+        
+        .btn-secondary {
+            background-color: var(--mvp-accent);
+            color: var(--mvp-black);
+            box-shadow: 6px 6px 0px var(--mvp-black);
+        }
+        
+        .btn-secondary:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--mvp-black);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--mvp-primary) 0%, var(--mvp-secondary) 100%);
+            color: var(--mvp-white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            color: var(--mvp-white);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 500;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+        
+        .social-proof {
+            margin-top: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: var(--mvp-white);
+        }
+        
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .pain-point {
+            background: var(--mvp-light-gray);
+            padding: 32px;
+            border: 3px solid var(--mvp-black);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 6px 6px 0px var(--mvp-black);
+            transition: all 0.2s ease;
+        }
+        
+        .pain-point:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--mvp-black);
+        }
+        
+        .pain-point .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: var(--mvp-light-gray);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            padding: 32px;
+            border: 3px solid var(--mvp-black);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            background: var(--mvp-white);
+            box-shadow: 6px 6px 0px var(--mvp-black);
+        }
+        
+        .feature:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--mvp-black);
+        }
+        
+        .feature ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .feature li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+            font-weight: 500;
+        }
+        
+        .feature li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--mvp-success);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--mvp-white);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 32px 20px;
+        }
+        
+        .step-number {
+            background: var(--mvp-primary);
+            color: var(--mvp-white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 3px solid var(--mvp-black);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: var(--mvp-light-gray);
+            text-align: center;
+        }
+        
+        .pricing-card {
+            background: var(--mvp-white);
+            padding: 50px 40px;
+            border: 5px solid var(--mvp-black);
+            border-radius: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 8px 8px 0px var(--mvp-black);
+            position: relative;
+        }
+        
+        .pricing-badge {
+            background: var(--mvp-accent);
+            color: var(--mvp-black);
+            padding: 12px 24px;
+            border: 3px solid var(--mvp-black);
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 4px 4px 0px var(--mvp-black);
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--mvp-black);
+            margin: 20px 0;
+        }
+        
+        .includes {
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .includes li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 35px;
+            font-weight: 500;
+        }
+        
+        .includes li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--mvp-success);
+            font-weight: 800;
+            background-color: var(--mvp-success);
+            border: 2px solid var(--mvp-black);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--mvp-white);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: var(--mvp-white);
+        }
+        
+        .faq-item {
+            background: var(--mvp-light-gray);
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 3px solid var(--mvp-black);
+            border-radius: 12px;
+            box-shadow: 4px 4px 0px var(--mvp-black);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .faq-item:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--mvp-black);
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--mvp-black);
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: var(--mvp-dark-gray);
+            font-weight: 500;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Email Signup */
+        .email-signup {
+            max-width: 400px;
+            margin: 30px auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 15px;
+            border: 3px solid var(--mvp-black);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .email-submit {
+            background: var(--mvp-success);
+            color: var(--mvp-white);
+            border: 3px solid var(--mvp-black);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .email-submit:hover {
+            background: var(--mvp-secondary);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 280px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .pain-points {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .email-signup {
+                flex-direction: column;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid var(--mvp-primary);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="./pages/index.html">7-Day MVP Validation System</a>...</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Stop Building Wrong Things.<br>Start Validating Smart. 🚀</h1>
+            <p class="subtitle">Get your complete AI-powered MVP validation system. Transform your idea into a proven concept in 7 days, not 7 months.</p>
+            
+            <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary">Get 7-Day Validation System - $497</a>
+            
+            <p class="social-proof">✨ Used by 50+ founders • ⭐ 4.9/5 rated • 🎯 80% validation success rate</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Are You Building in the Dark? 😰</h2>
+            
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="icon">🤯</div>
+                    <h3>Analysis Paralysis</h3>
+                    <p>Spending weeks researching and planning instead of validating your core assumptions with real customers.</p>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="icon">💸</div>
+                    <h3>Expensive Guesswork</h3>
+                    <p>Building features nobody wants, burning months of development time and thousands of dollars.</p>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="icon">❓</div>
+                    <h3>No Clear Direction</h3>
+                    <p>Endless decisions with no framework to validate what customers actually need and will pay for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="learn-more">
+        <div class="container">
+            <h2>The 7-Day MVP Validation System:<br>AI-Powered Certainty ⚡</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🤖 Day 1-2: Idea Validation</h3>
+                    <p><strong>AI-powered market research and validation:</strong></p>
+                    <ul>
+                        <li>Automated competitor analysis</li>
+                        <li>Market size estimation</li>
+                        <li>Problem validation interviews</li>
+                        <li>Target audience analysis</li>
+                        <li>Validation scorecard</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎯 Day 3-4: Solution Design</h3>
+                    <p><strong>Design your MVP with AI assistance:</strong></p>
+                    <ul>
+                        <li>Feature prioritization matrix</li>
+                        <li>User story generation</li>
+                        <li>Technical feasibility analysis</li>
+                        <li>Value proposition refinement</li>
+                        <li>MVP scope definition</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>🚀 Day 5-7: Market Testing</h3>
+                    <p><strong>Launch and validate with real customers:</strong></p>
+                    <ul>
+                        <li>Landing page templates & copy</li>
+                        <li>Traffic generation playbook</li>
+                        <li>A/B testing framework</li>
+                        <li>Analytics and insights</li>
+                        <li>Go/no-go recommendation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works: From Idea to Validation in 7 Days</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Start Your Journey</h3>
+                    <p>Purchase and get instant access to Day 1 materials. No waiting, no setup required.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI-Guided Validation</h3>
+                    <p>Follow the daily framework with Claude AI assistance. Get professional analysis in minutes, not hours.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Test with Real Customers</h3>
+                    <p>Launch your validation tests using proven templates and get real market feedback.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Get Your Answer</h3>
+                    <p>Day 7: Receive your data-driven go/no-go recommendation and next steps roadmap.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Start Validating Today 💪</h2>
+            
+            <div class="pricing-card">
+                <div class="pricing-badge">Launch Special</div>
+                <h3>7-Day MVP Validation System</h3>
+                <div class="price">$497</div>
+                <p style="color: var(--mvp-gray); margin-bottom: 30px;">One-time payment • Instant access • Money-back guarantee</p>
+                
+                <ul class="includes">
+                    <li><strong>Complete 7-Day Framework</strong></li>
+                    <li>AI-powered market research & analysis</li>
+                    <li>Daily email guidance & templates</li>
+                    <li>Landing page builder & copy templates</li>
+                    <li>Traffic generation playbook</li>
+                    <li>Validation scorecard & decision framework</li>
+                    <li>Discord community access</li>
+                    <li>24/7 AI assistant support</li>
+                    <li>Money-back guarantee if not satisfied</li>
+                </ul>
+                
+                <button class="btn btn-primary" onclick="revealEmailForm()" id="startValidatingBtn">
+                    Start Validating Today! 🎯
+                </button>
+                
+                <!-- Hidden Email Form -->
+                <div id="emailRevealForm" style="display: none; margin-top: 20px;">
+                    <form class="email-signup" onsubmit="handleEmailReveal(event)">
+                        <input type="email" class="email-input" placeholder="Enter your email to get started" required style="margin-bottom: 10px; width: 100%; padding: 15px; border: 2px solid var(--mvp-primary); border-radius: 8px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Get My Validation System</button>
+                    </form>
+                </div>
+                
+                <p style="margin-top: 20px; color: var(--mvp-gray); font-size: 0.9rem;">
+                    <strong>Save $9,500+</strong> vs hiring a consultant
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions 🤔</h2>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">How is this different from other validation courses?</div>
+                <div class="faq-answer">This isn't a generic course. Every validation exercise is powered by AI that provides personalized analysis for YOUR specific idea. You get custom market research, competitor analysis, and recommendations - not generic templates.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">What if I'm not technical? Can I still use this?</div>
+                <div class="faq-answer">Absolutely! The system is designed for non-technical founders. All the technical work is handled by AI, and the templates are easy to customize. You focus on the business validation, not the technical implementation.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">How quickly will I get results?</div>
+                <div class="faq-answer">You'll have your validation results by Day 7. Most founders know whether to proceed or pivot by Day 5. The AI analysis provides insights in minutes that would take weeks to research manually.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">What if my idea doesn't validate?</div>
+                <div class="faq-answer">That's exactly what you want to know! Better to learn this in 7 days than after 7 months of building. We'll show you exactly why it didn't validate and provide specific recommendations for pivoting or improving your concept.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Is there ongoing support after the 7 days?</div>
+                <div class="faq-answer">Yes! You get lifetime access to the Discord community and can upgrade to 1:1 implementation coaching ($997) if you want personalized guidance for building your validated MVP.</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Final CTA Section -->
+    <section style="background: linear-gradient(135deg, var(--mvp-primary) 0%, var(--mvp-secondary) 100%); color: var(--mvp-white); padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: var(--mvp-white);">Ready to Stop Guessing and Start Validating?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Join 50+ founders who've used the 7-Day System to validate their ideas with confidence.</p>
+            
+            <a href="https://polar.sh/overnightmvp/products/7-day-mvp-validation-system" class="btn btn-primary" onclick="gtag('event', 'purchase_intent_final', {'event_category': 'Conversion'});">
+                Get Your Validation System - $497
+            </a>
+        </div>
+    </section>
+
     <script>
-        window.location.href = './pages/index.html';
+        // Reveal email form when Start Validating Today is clicked
+        function revealEmailForm() {
+            const btn = document.getElementById('startValidatingBtn');
+            const form = document.getElementById('emailRevealForm');
+            
+            btn.style.display = 'none';
+            form.style.display = 'block';
+            
+            // Track button click
+            gtag('event', 'email_form_reveal', {
+                'event_category': 'Lead Generation',
+                'event_label': 'Start Validating Today Button'
+            });
+        }
+
+        // Handle email form submission
+        async function handleEmailReveal(event) {
+            event.preventDefault();
+            
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Track email signup
+            gtag('event', 'email_signup', {
+                'event_category': 'Lead Generation',
+                'event_label': 'Email Reveal Form'
+            });
+            
+            // Redirect to success page with email parameter
+            window.location.href = `/pages/success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+        }
+        
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            const isActive = answer.classList.contains('active');
+            
+            // Close all other answers
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            
+            // Toggle current answer
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Track scroll depth for analytics
+        let maxScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                    gtag('event', 'scroll', {
+                        'event_category': 'Engagement',
+                        'event_label': `${maxScroll}% Scroll Depth`
+                    });
+                }
+            }
+        });
+        
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'Conversion',
+                    'event_label': this.textContent.trim()
+                });
+            });
+        });
     </script>
 </body>
 </html>

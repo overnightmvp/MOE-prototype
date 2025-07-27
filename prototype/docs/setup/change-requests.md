@@ -20,4 +20,19 @@ analyse and plan these changes
 
 ====
 
-1. update headers of all html pages and make sure they carry the GA4 Tracking 
+- index.html
+1. remove #learn-more button.
+2. Start Validating Today reveal newletter subscription field, collects email and redirects to success.html.
+3. Remove <!-- Email Signup Section -->
+4. url to be /index.html 
+
+
+- success.html
+<!-- Upsell Section -->
+1. upsell action redirect to -> https://calendly.com/toshioj/30min
+2. comment out discord community. 
+3. a id=accessDashboard point to -> sprint0-onboarding.html
+
+- use sprint0-onboarding.html instead of 
+/checklists
+1. 

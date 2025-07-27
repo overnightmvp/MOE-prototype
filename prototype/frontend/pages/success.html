@@ -272,6 +272,7 @@
                     </div>
                 </div>
                 
+                <!-- 
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
@@ -279,6 +280,7 @@
                         <p>Access our exclusive Discord community for peer support and real-time help from other founders.</p>
                     </div>
                 </div>
+                -->
                 
                 <div class="step">
                     <div class="step-number">3</div>
@@ -290,18 +292,20 @@
             </div>
             
             <div class="action-buttons">
-                <a href="/dashboard" class="btn btn-primary" id="accessDashboard">
+                <a href="/pages/sprint0-onboarding.html" class="btn btn-primary" id="accessDashboard">
                     Access Your Dashboard 🚀
                 </a>
                 
+                <!-- 
                 <a href="https://discord.gg/your-server" class="btn btn-secondary" target="_blank">
                     Join Discord Community 💬
                 </a>
+                -->
             </div>
             
             <div class="support-info">
                 <h3>Need Help?</h3>
-                <p>If you have any questions or don't receive your welcome email within 10 minutes, contact us at support@overnightmvp.com or join our Discord for instant help.</p>
+                <p>If you have any questions or don't receive your welcome email within 10 minutes, contact us at support@overnightmvp.com for instant help.</p>
             </div>
         </div>
         
@@ -320,9 +324,9 @@
                 </ul>
             </div>
             
-            <button class="btn btn-primary" onclick="handleUpsell()" id="upsellBtn">
-                Yes, Add Coaching Session - $997
-            </button>
+            <a href="https://calendly.com/toshioj/30min" class="btn btn-primary" target="_blank" onclick="gtag('event', 'calendly_click', {'event_category': 'Upsell'});">
+                Schedule Free Strategy Call
+            </a>
             
             <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
                 This offer expires in 24 hours and won't be available again.
@@ -357,14 +361,14 @@
             const dashboardLink = document.getElementById('accessDashboard');
             
             if (sprintNumber) {
-                dashboardLink.href = `/pages/onboarding/sprint${sprintNumber}-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.href = `/pages/sprint${sprintNumber}-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
                 dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
             } else if (isCompleted) {
                 dashboardLink.textContent = 'Journey Complete! 🎉';
-                dashboardLink.href = `/pages/checklists/sprint0-magnet-checklist.html`;
+                dashboardLink.href = `/pages/sprint0-onboarding.html`;
             } else {
                 // Default to sprint 0 for email captures
-                dashboardLink.href = `/pages/checklists/sprint0-magnet-checklist.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.href = `/pages/sprint0-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
                 dashboardLink.textContent = 'Start Your Validation Journey 🚀';
             }
         }
@@ -393,11 +397,11 @@
                     
                     // Handle sprint-specific flow
                     if (sprintNumber) {
-                        dashboardLink.href = `/pages/onboarding/sprint${sprintNumber}-onboarding.html?customer=${data.customer}`;
+                        dashboardLink.href = `/pages/sprint${sprintNumber}-onboarding.html?customer=${data.customer}`;
                         dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
                     } else if (isCompleted) {
                         dashboardLink.textContent = 'Journey Complete! 🎉';
-                        dashboardLink.href = `/dashboard?customer=${data.customer}&completed=true`;
+                        dashboardLink.href = `/pages/sprint0-onboarding.html?customer=${data.customer}&completed=true`;
                     }
                     
                     // Show appropriate upsell based on purchase
