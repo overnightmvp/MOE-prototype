@@ -1,0 +1,120 @@
+{
+  "name": "7day-mvp-validation-system",
+  "version": "1.0.0",
+  "description": "AI-powered MVP validation platform that helps founders validate their ideas in 7 days",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "nodemon backend/server.js",
+    "dev:frontend": "live-server frontend --port=3000",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm run minify:css && npm run minify:js",
+    "build:backend": "echo 'Backend build complete'",
+    "start": "node backend/server.js",
+    "start:prod": "NODE_ENV=production node backend/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "eslint . --ext .js,.jsx --fix",
+    "format": "prettier --write .",
+    "minify:css": "cleancss -o frontend/styles/main.min.css frontend/styles/main.css",
+    "minify:js": "terser frontend/js/main.js -o frontend/js/main.min.js",
+    "deploy": "netlify deploy --prod",
+    "deploy:preview": "netlify deploy",
+    "setup": "npm install && npm run setup:env",
+    "setup:env": "cp config/env/.env.example .env",
+    "db:migrate": "node backend/scripts/migrate.js",
+    "db:seed": "node backend/scripts/seed.js",
+    "email:test": "node backend/scripts/test-email.js",
+    "analytics:report": "node backend/scripts/analytics-report.js"
+  },
+  "keywords": [
+    "mvp",
+    "validation",
+    "startup",
+    "ai",
+    "claude",
+    "stripe",
+    "plunk",
+    "analytics"
+  ],
+  "author": "Johnny Toshio <johnny@7daymvp.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/7day-mvp-validation.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2",
+    "stripe": "^14.7.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "pg": "^8.11.3",
+    "redis": "^4.6.11",
+    "winston": "^3.11.0",
+    "cron": "^3.1.6",
+    "multer": "^1.4.5-lts.1",
+    "@google-analytics/data": "^4.5.0",
+    "handlebars": "^4.7.8",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "live-server": "^1.2.2",
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.26.0",
+    "netlify-cli": "^17.10.1",
+    "@types/jest": "^29.5.8"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "backend/**/*.js",
+      "!backend/server.js",
+      "!backend/config/**",
+      "!backend/scripts/**"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2021": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-unused-vars": "warn",
+      "no-console": "off"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2
+  }
+}

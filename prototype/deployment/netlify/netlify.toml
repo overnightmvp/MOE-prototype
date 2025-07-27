@@ -1,0 +1,134 @@
+# Netlify Configuration for 7-Day MVP Validation System
+# Production-ready deployment configuration
+
+[build]
+  publish = "frontend"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Performance headers
+    X-DNS-Prefetch-Control = "on"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Disposition = "attachment"
+
+# Redirects for better SEO and user experience
+[[redirects]]
+  from = "/get-started"
+  to = "/#pricing"
+  status = 302
+
+[[redirects]]
+  from = "/buy"
+  to = "/#pricing"
+  status = 302
+
+[[redirects]]
+  from = "/purchase"
+  to = "/#pricing"
+  status = 302
+
+[[redirects]]
+  from = "/checklist"
+  to = "/#lead-magnet"
+  status = 302
+
+[[redirects]]
+  from = "/free-guide"
+  to = "/#lead-magnet"
+  status = 302
+
+[[redirects]]
+  from = "/validation-guide"
+  to = "/assets/mvp-validation-checklist.pdf"
+  status = 200
+
+# API redirects to backend service
+[[redirects]]
+  from = "/api/*"
+  to = "https://api.7daymvp.com/:splat"
+  status = 200
+  force = true
+
+# Handle SPA routing (if implementing React Router)
+[[redirects]]
+  from = "/dashboard/*"
+  to = "/dashboard/index.html"
+  status = 200
+
+# Handle 404s gracefully
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Forms for Netlify Forms (email capture fallback)
+[[forms]]
+  name = "email-signup"
+  
+[[forms]]
+  name = "contact"
+
+# Environment-specific redirects
+[context.deploy-preview]
+  [[context.deploy-preview.redirects]]
+    from = "/api/*"
+    to = "https://staging-api.7daymvp.com/:splat"
+    status = 200
+
+[context.branch-deploy]
+  [[context.branch-deploy.redirects]]
+    from = "/api/*"
+    to = "https://dev-api.7daymvp.com/:splat"
+    status = 200
+
+# Edge functions (if needed)
+[[edge_functions]]
+  function = "analytics"
+  path = "/track/*"
+
+[[edge_functions]]
+  function = "auth"
+  path = "/dashboard/*"

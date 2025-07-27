@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your 7-Day Journey! | MVP Validation Success</title>
+    <meta name="description" content="Payment successful! Access your 7-Day MVP Validation System and start validating your idea today.">
+    
+    <!-- Prevent indexing of success page -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PLACEHOLDER');
+    </script>
+    
+    <style>
+        /* Import styles from main landing page */
+        :root {
+            --mvp-primary: #FF6B6B;
+            --mvp-secondary: #4ECDC4;
+            --mvp-accent: #FFD93D;
+            --mvp-success: #6BCF7F;
+            --mvp-black: #2C2C2C;
+            --mvp-dark-gray: #4A4A4A;
+            --mvp-light-gray: #F5F5F5;
+            --mvp-white: #FFFFFF;
+            --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, var(--mvp-success) 0%, var(--mvp-secondary) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mvp-black);
+        }
+        
+        .success-container {
+            max-width: 600px;
+            margin: 20px;
+            background: var(--mvp-white);
+            border-radius: 20px;
+            border: 5px solid var(--mvp-black);
+            box-shadow: 8px 8px 0px var(--mvp-black);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .success-header {
+            background: var(--mvp-success);
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .success-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--mvp-black);
+        }
+        
+        .success-header p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .success-content {
+            padding: 40px 30px;
+        }
+        
+        .success-steps {
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--mvp-light-gray);
+            border-radius: 12px;
+            border: 2px solid var(--mvp-black);
+        }
+        
+        .step-number {
+            background: var(--mvp-primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 5px;
+            color: var(--mvp-black);
+        }
+        
+        .step-content p {
+            color: var(--mvp-dark-gray);
+            line-height: 1.5;
+        }
+        
+        .action-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 3px solid var(--mvp-black);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--mvp-primary);
+            color: var(--mvp-white);
+            box-shadow: 6px 6px 0px var(--mvp-black);
+        }
+        
+        .btn-primary:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--mvp-black);
+        }
+        
+        .btn-secondary {
+            background-color: var(--mvp-accent);
+            color: var(--mvp-black);
+            box-shadow: 6px 6px 0px var(--mvp-black);
+        }
+        
+        .btn-secondary:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--mvp-black);
+        }
+        
+        .support-info {
+            background: var(--mvp-light-gray);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            border: 2px solid var(--mvp-black);
+        }
+        
+        .support-info h3 {
+            color: var(--mvp-black);
+            margin-bottom: 10px;
+        }
+        
+        .support-info p {
+            color: var(--mvp-dark-gray);
+            line-height: 1.5;
+        }
+        
+        .upsell-section {
+            background: linear-gradient(135deg, var(--mvp-accent) 0%, var(--mvp-success) 100%);
+            padding: 30px;
+            margin-top: 20px;
+            border-top: 3px solid var(--mvp-black);
+        }
+        
+        .upsell-section h3 {
+            margin-bottom: 15px;
+        }
+        
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid var(--mvp-primary);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                margin: 10px;
+            }
+            
+            .success-header {
+                padding: 30px 20px;
+            }
+            
+            .success-header h1 {
+                font-size: 2rem;
+            }
+            
+            .success-content {
+                padding: 30px 20px;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin: 0 auto 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <!-- Success Header -->
+        <div class="success-header">
+            <div class="success-icon">🎉</div>
+            <h1>Payment Successful!</h1>
+            <p>Welcome to your 7-Day MVP Validation journey</p>
+        </div>
+        
+        <!-- Success Content -->
+        <div class="success-content">
+            <div class="success-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Check Your Email</h3>
+                        <p>Your welcome email with access instructions is on its way. Check your inbox and spam folder.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Join the Community</h3>
+                        <p>Access our exclusive Discord community for peer support and real-time help from other founders.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start Day 1</h3>
+                        <p>Begin your validation journey with Day 1 materials. Your AI assistant is ready to help!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="/dashboard" class="btn btn-primary" id="accessDashboard">
+                    Access Your Dashboard 🚀
+                </a>
+                
+                <a href="https://discord.gg/your-server" class="btn btn-secondary" target="_blank">
+                    Join Discord Community 💬
+                </a>
+            </div>
+            
+            <div class="support-info">
+                <h3>Need Help?</h3>
+                <p>If you have any questions or don't receive your welcome email within 10 minutes, contact us at support@7daymvp.com or join our Discord for instant help.</p>
+            </div>
+        </div>
+        
+        <!-- Upsell Section -->
+        <div class="upsell-section" id="upsellSection">
+            <h3>⚡ Exclusive One-Time Offer</h3>
+            <p>Since you're committed to validation, get personalized 1:1 coaching to implement your results:</p>
+            
+            <div style="margin: 20px 0;">
+                <strong>Implementation Coaching Session (90 minutes) - $997</strong>
+                <ul style="text-align: left; margin: 10px 0; padding-left: 20px;">
+                    <li>Personalized review of your validation results</li>
+                    <li>Custom implementation roadmap</li>
+                    <li>Direct access to Johnny for 30 days</li>
+                    <li>Technical guidance and next steps</li>
+                </ul>
+            </div>
+            
+            <button class="btn btn-primary" onclick="handleUpsell()" id="upsellBtn">
+                Yes, Add Coaching Session - $997
+            </button>
+            
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                This offer expires in 24 hours and won't be available again.
+            </p>
+        </div>
+    </div>
+    
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+    
+    <script>
+        // Get session ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        // Track conversion
+        if (typeof gtag !== 'undefined' && sessionId) {
+            gtag('event', 'purchase', {
+                transaction_id: sessionId,
+                event_category: 'Ecommerce',
+                event_label: 'Core Product Purchase'
+            });
+        }
+        
+        // Verify payment and set up user access
+        async function verifyPayment() {
+            if (!sessionId) {
+                console.error('No session ID found');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/payments/verify-session/${sessionId}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Store customer information
+                    localStorage.setItem('customerId', data.customer);
+                    localStorage.setItem('productType', data.productType);
+                    localStorage.setItem('purchaseAmount', data.amount);
+                    
+                    // Update dashboard link with customer info
+                    const dashboardLink = document.getElementById('accessDashboard');
+                    dashboardLink.href = `/dashboard?customer=${data.customer}`;
+                    
+                    // Show appropriate upsell based on purchase
+                    showUpsell(data.productType);
+                    
+                } else {
+                    console.error('Payment verification failed:', data);
+                    showPaymentError();
+                }
+                
+            } catch (error) {
+                console.error('Error verifying payment:', error);
+                showPaymentError();
+            }
+        }
+        
+        function showUpsell(productType) {
+            const upsellSection = document.getElementById('upsellSection');
+            
+            // Only show upsell for core product purchases
+            if (productType !== 'core') {
+                upsellSection.style.display = 'none';
+                return;
+            }
+            
+            // Track upsell view
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_item', {
+                    event_category: 'Upsell',
+                    event_label: 'Coaching Session'
+                });
+            }
+        }
+        
+        async function handleUpsell() {
+            const upsellBtn = document.getElementById('upsellBtn');
+            const loading = document.getElementById('loading');
+            
+            upsellBtn.disabled = true;
+            loading.style.display = 'block';
+            
+            try {
+                // Create checkout session for coaching
+                const response = await fetch('/api/payments/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        productType: 'coaching',
+                        email: '', // Will be populated from customer record
+                        customerInfo: {
+                            source: 'upsell_page',
+                            originalPurchase: 'core'
+                        }
+                    }),
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Track upsell click
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'begin_checkout', {
+                            event_category: 'Upsell',
+                            event_label: 'Coaching Session',
+                            currency: 'USD',
+                            value: 997
+                        });
+                    }
+                    
+                    // Redirect to checkout
+                    window.location.href = data.url;
+                } else {
+                    throw new Error(data.error);
+                }
+                
+            } catch (error) {
+                console.error('Upsell checkout error:', error);
+                alert('Sorry, there was an error processing your request. Please try again.');
+                
+                upsellBtn.disabled = false;
+                loading.style.display = 'none';
+            }
+        }
+        
+        function showPaymentError() {
+            document.querySelector('.success-header h1').textContent = 'Payment Verification Needed';
+            document.querySelector('.success-header p').textContent = 'Please contact support to verify your purchase';
+            document.querySelector('.success-icon').textContent = '⚠️';
+            document.getElementById('upsellSection').style.display = 'none';
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            verifyPayment();
+            
+            // Auto-hide upsell after 24 hours (for demo, using 1 hour)
+            setTimeout(() => {
+                const upsellSection = document.getElementById('upsellSection');
+                if (upsellSection) {
+                    upsellSection.style.opacity = '0.5';
+                    document.getElementById('upsellBtn').disabled = true;
+                    document.getElementById('upsellBtn').textContent = 'Offer Expired';
+                }
+            }, 3600000); // 1 hour
+        });
+        
+        // Track time on success page
+        let startTime = Date.now();
+        window.addEventListener('beforeunload', function() {
+            const timeSpent = Math.round((Date.now() - startTime) / 1000);
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'timing_complete', {
+                    name: 'success_page_time',
+                    value: timeSpent
+                });
+            }
+        });
+    </script>
+</body>
+</html>
