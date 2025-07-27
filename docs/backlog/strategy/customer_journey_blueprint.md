@@ -13,7 +13,21 @@
 
 ## PRE-PURCHASE JOURNEY
 
-### Stage 1: AWARENESS (LinkedIn/Content Discovery)
+### Stage 1a: AWARENESS (LinkedIn/Content Discovery)
+**Customer Actions:**
+- Sees Johnny's LinkedIn post about failure stories
+- Clicks on profile, reads about Bangkok/BJJ lifestyle
+- Downloads free "5-Minute Market Validation" worksheet
+
+**Touchpoints:**
+1. LinkedIn post (hook content)
+2. LinkedIn profile view
+3. Landing page visit
+4. Email opt-in form
+5. Free worksheet download
+
+**Customer Emotions:** Curious → Interested → Hopeful
+### Stage 1b: AWARENESS (LinkedIn/Content Discovery)
 **Customer Actions:**
 - Sees Johnny's LinkedIn post about failure stories
 - Clicks on profile, reads about Bangkok/BJJ lifestyle

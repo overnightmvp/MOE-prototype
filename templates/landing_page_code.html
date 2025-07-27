@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The $100k Test - Skip the Planning, Get Your Roadmap</title>
+    <meta name="description" content="Get your personalized $100k product roadmap in 10 minutes. Skip months of planning and know exactly what to build and how to sell it.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The $100k Test - Skip the Planning, Get Your Roadmap">
+    <meta property="og:description" content="Get your personalized $100k product roadmap in 10 minutes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://majestic-naiad-472ef2.netlify.app">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTN9BMLLW1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VTN9BMLLW1');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .header .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+        
+        .price-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .problem-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .problem-emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .problem-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .solution-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .solution-subtitle {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #666;
+        }
+        
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* What You Get Section */
+        .what-you-get {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .what-you-get h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .deliverables {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .deliverable {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .deliverable h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        
+        .deliverable-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .deliverable ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .deliverable li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .deliverable li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            text-align: center;
+        }
+        
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 0 auto 40px;
+            max-width: 500px;
+        }
+        
+        .price {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .price-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .pricing-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .faq-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #e9ecef;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #dee2e6;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Email Signup Form */
+        .email-signup {
+            max-width: 400px;
+            margin: 30px auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        .email-submit {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .email-submit:hover {
+            background: #218838;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .problems-grid,
+            .how-it-works,
+            .deliverables {
+                grid-template-columns: 1fr;
+            }
+            
+            .email-signup {
+                flex-direction: column;
+            }
+            
+            .price {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animation for form submission */
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <h1> Transform Claude into your AI-Cofounders <br>A complete framework from idea to traffic.</h1>
+            <p class="subtitle">Transform 30 minutes of interview into 500+ high-quality, scheduled X posts.</p>
+            
+            <a href="https://toshioj.gumroad.com/l/overnightmvp" class="cta-button" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Header'});">
+                Get Your Roadmap Now
+            </a>
+            
+            <div class="price-highlight">
+                Only $99 • 3-Page Custom Roadmap • 48-Hour Action Plan
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>Stuck in Product Development Purgatory?</h2>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-emoji">🤯</div>
+                    <h3>Analysis Paralysis</h3>
+                    <p>Spending weeks researching, planning, and documenting instead of building and validating your idea.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-emoji">❓</div>
+                    <h3>Too Many Options</h3>
+                    <p>"Should I build feature A or B first? B2B or B2C? Freemium or paid?" Endless decisions, no clear direction.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-emoji">💸</div>
+                    <h3>Expensive Guesswork</h3>
+                    <p>Building the wrong thing for months, or hiring consultants for thousands of dollars to tell you what you already suspect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <h2>The $100k Test</h2>
+            <p class="solution-subtitle">One question. One answer. Your complete roadmap to revenue.</p>
+            
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Describe Your Idea</h3>
+                    <p>Tell us your product idea in 2-3 sentences. That's it. No complex forms or questionnaires.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI analyzes your idea against proven revenue patterns and identifies the fastest path to $100k.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Roadmap</h3>
+                    <p>Receive a 3-page action plan with specific steps, timeline, and your next 48-hour priorities.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Take Action</h3>
+                    <p>Stop planning and start building. You'll know exactly what to do and why it matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="what-you-get">
+        <div class="container">
+            <h2>Your Complete $100k Roadmap Includes:</h2>
+            
+            <div class="deliverables">
+                <div class="deliverable">
+                    <h3><span class="deliverable-icon">🎯</span>Problem Validation Strategy</h3>
+                    <p>How to test if people actually want this, before you build it.</p>
+                    <ul>
+                        <li>3 specific validation experiments</li>
+                        <li>Success/failure criteria</li>
+                        <li>Where to find your first testers</li>
+                        <li>Timeline: 1-2 weeks</li>
+                    </ul>
+                </div>
+                
+                <div class="deliverable">
+                    <h3><span class="deliverable-icon">🚀</span>MVP Blueprint</h3>
+                    <p>Build these features first, ignore everything else.</p>
+                    <ul>
+                        <li>Core feature set (maximum impact)</li>
+                        <li>What NOT to build initially</li>
+                        <li>8-week development timeline</li>
+                        <li>Tech stack recommendations</li>
+                    </ul>
+                </div>
+                
+                <div class="deliverable">
+                    <h3><span class="deliverable-icon">💰</span>Revenue Roadmap</h3>
+                    <p>Your specific path from $0 to $100k revenue.</p>
+                    <ul>
+                        <li>Customer acquisition strategy</li>
+                        <li>Pricing and sales process</li>
+                        <li>Key milestones and metrics</li>
+                        <li>Marketing channel priorities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2>Get Your $100k Roadmap Today</h2>
+            
+            <div class="pricing-card">
+                <div class="price">$99</div>
+                <p class="price-subtitle">One-time payment • Instant delivery</p>
+                
+                <ul class="pricing-features">
+                    <li>Custom 3-page roadmap for your specific idea</li>
+                    <li>Problem validation experiments</li>
+                    <li>MVP development blueprint</li>
+                    <li>Revenue strategy and sales plan</li>
+                    <li>48-hour action items</li>
+                    <li>Email support for questions</li>
+                </ul>
+                
+                <!-- Replace this href with your actual Gumroad product URL -->
+                <a href="https://toshioj.gumroad.com/l/overnightmvp" class="cta-button" onclick="gtag('event', 'purchase', {'event_category': 'Purchase', 'event_label': 'Main CTA'});">
+                    Get Your Roadmap Instantly
+                </a>
+            </div>
+            
+            <p style="margin-top: 30px; opacity: 0.8;">
+                💡 Skip months of uncertainty. Know exactly what to build and how to sell it.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How is this different from generic business advice?</div>
+                <div class="faq-answer">Every roadmap is custom-generated for your specific product idea. We analyze your concept against proven revenue patterns and give you a personalized strategy, not generic templates.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What if I need more personalized help?</div>
+                <div class="faq-answer">After receiving your roadmap, you can book a 90-minute Implementation Sprint ($297) for deeper strategic guidance and real-time problem solving.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How quickly will I receive my roadmap?</div>
+                <div class="faq-answer">Within 24 hours of providing your product idea details. Most customers receive their custom roadmap within 12 hours.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What if my idea won't work?</div>
+                <div class="faq-answer">That's exactly what you want to know! We'll tell you honestly if there's a viable path to $100k and suggest pivots or improvements if needed. Better to know now than after months of work.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is there a money-back guarantee?</div>
+                <div class="faq-answer">Yes. If you're not satisfied with the quality and specificity of your roadmap, we'll refund your purchase within 30 days.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup Section (Alternative for those not ready to buy) -->
+    <section style="padding: 60px 20px; background: #f8f9fa; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Not Ready to Purchase?</h2>
+            <p style="margin-bottom: 30px; color: #666;">Get our free "Product Validation Checklist" and see if this approach is right for you.</p>
+            
+            <form class="email-signup" id="emailForm" onsubmit="handleEmailSignup(event)">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="email-submit">Get Free Checklist</button>
+            </form>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Sending your checklist...</p>
+            </div>
+            
+            <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
+                No spam. Unsubscribe anytime. We respect your privacy.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Stop Guessing and Start Building?</h2>
+            <p>Join hundreds of founders who've used the $100k Test to validate their ideas and build successful products.</p>
+            
+            <!-- Replace this href with your actual Gumroad product URL -->
+            <a href="https://toshioj.gumroad.com/l/overnightmvp" class="cta-button" onclick="gtag('event', 'purchase', {'event_category': 'Purchase', 'event_label': 'Final CTA'});">
+                Get Your $100k Roadmap - $99
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Email signup form handler
+        function handleEmailSignup(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('emailForm');
+            const loading = document.getElementById('loading');
+            const email = form.querySelector('input[type="email"]').value;
+            
+            // Show loading spinner
+            form.style.display = 'none';
+            loading.style.display = 'block';
+            
+            // Track email signup
+            gtag('event', 'email_signup', {
+                'event_category': 'Lead Generation',
+                'event_label': 'Free Checklist'
+            });
+            
+            // TODO: Replace with your actual email service integration
+            // For now, simulate the process
+            setTimeout(() => {
+                loading.style.display = 'none';
+                form.innerHTML = '<p style="color: #28a745; font-weight: bold;">✓ Checklist sent! Check your email.</p>';
+                
+                // Here you would integrate with your email service:
+                // - Mailchimp API
+                // - ConvertKit API  
+                // - SendGrid API
+                // - Or your preferred email platform
+            }, 2000);
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Toggle current answer
+                answer.style.display = isVisible ? 'none' : 'block';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Track scroll depth for analytics
+        let maxScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                    gtag('event', 'scroll', {
+                        'event_category': 'Engagement',
+                        'event_label': `${maxScroll}% Scroll Depth`
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

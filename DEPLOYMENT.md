@@ -94,18 +94,20 @@ prototype/frontend/                 # Deploy directory
 - [ ] Core Web Vitals scores are good
 - [ ] SSL certificate active
 
-## Expected Live URLs
+## ✅ Live URLs (Deployment Complete!)
 
-After deployment, these URLs should work:
+**🚀 LIVE SITE:** https://overnightmvp.netlify.app
 
 ```
-https://your-site.netlify.app/                    → Landing page
-https://your-site.netlify.app/get-started         → Sprint 0 checklist
-https://your-site.netlify.app/onboarding          → Interactive guide
-https://your-site.netlify.app/setup               → Interactive guide (alias)
-https://your-site.netlify.app/checklist           → Sprint 0 checklist (alias)
-https://your-site.netlify.app/validation-guide    → Checklist download
+https://overnightmvp.netlify.app/pages/index.html          → Main landing page
+https://overnightmvp.netlify.app/get-started               → Sprint 0 checklist
+https://overnightmvp.netlify.app/onboarding                → Interactive guide
+https://overnightmvp.netlify.app/setup                     → Interactive guide (alias)
+https://overnightmvp.netlify.app/checklist                 → Sprint 0 checklist (alias)
+https://overnightmvp.netlify.app/validation-guide          → Checklist download
 ```
+
+**Analytics:** Google Analytics 4 (G-L99CMW68TS) tracking active
 
 ## Configuration Files
 

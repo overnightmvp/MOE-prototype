@@ -12,7 +12,7 @@
 ## CORE PRODUCT DEFINITION
 
 ### The Product
-**7-Day MVP Validation System** - A step-by-step framework that takes founders from idea to validated MVP in one week.
+**Minimum Offer Ecosystem AI-Framework** - A step-by-step framework that takes founders from idea to validated MVP in one week.
 
 ### Why This Matters
 - Founders waste 6+ months building wrong things
@@ -31,8 +31,8 @@
 
 ## MINIMUM VIABLE PRODUCT (MVP)
 
-### Core Features (Week 1)
-1. **Day 1-2: Idea Validation Worksheet**
+### Core Features
+1. **Idea Validation Worksheet**
    - Problem hypothesis testing
    - Market size quick-check
    - Competition gap analysis
@@ -130,9 +130,9 @@
 ## TECHNICAL REQUIREMENTS
 
 ### Tech Stack (Keep It Simple)
-- **Landing Page:** Webflow or ConvertKit
-- **Payment:** Stripe
-- **Delivery:** Teachable or Kajabi
+- **Landing Page:** 
+- **Payment:** 
+- **Delivery:** 
 - **Analytics:** Google Analytics + Hotjar
 - **Email:** Plunk
 - **Community:** Discord or Circle
