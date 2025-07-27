@@ -28,6 +28,7 @@ app.use('/assets', express.static(path.join(__dirname, '../frontend/assets')));
 app.use('/api/email', require('./routes/email'));
 app.use('/api/payments', require('./routes/payments'));
 app.use('/api/downloads', require('./routes/downloads'));
+app.use('/api/onboarding', require('./routes/onboarding'));
 
 // Health check
 app.get('/health', (req, res) => {

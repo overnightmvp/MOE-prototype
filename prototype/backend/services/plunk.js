@@ -237,13 +237,17 @@ class PlunkService {
       // Generate secure download link
       const downloadToken = this.generateDownloadToken(email, 'sprint0-setup-checklist.md');
       const downloadLink = `${process.env.BASE_URL || 'https://7daymvp.com'}/api/downloads/secure/sprint0-setup-checklist.md?email=${encodeURIComponent(email)}&token=${downloadToken}`;
+      
+      // Generate onboarding link
+      const onboardingLink = `${process.env.BASE_URL || 'https://7daymvp.com'}/prototype/frontend/pages/sprint0-onboarding.html?email=${encodeURIComponent(email)}&source=${source}`;
 
-      // Trigger Sprint 0 checklist delivery email with download link
+      // Trigger Sprint 0 checklist delivery email with download and onboarding links
       await this.triggerEvent(email, 'sprint0-checklist-delivery', {
         source,
         download_date: new Date().toISOString(),
         checklist_type: 'sprint0_setup',
-        download_link: downloadLink
+        download_link: downloadLink,
+        onboarding_link: onboardingLink
       });
 
       return { success: true, message: 'Sprint 0 checklist sent successfully' };

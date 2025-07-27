@@ -853,7 +853,11 @@
                     form.innerHTML = `
                         <div style="background: rgba(16, 185, 129, 0.1); padding: 20px; border-radius: 15px; border: 2px solid var(--sprint-success);">
                             <h3 style="color: var(--sprint-success); margin-bottom: 10px;">✓ Checklist Sent!</h3>
-                            <p style="margin: 0; color: var(--sprint-white);">Check your email for the complete Sprint 0 setup guide with download link. If you don't see it in 5 minutes, check your spam folder.</p>
+                            <p style="margin-bottom: 15px; color: var(--sprint-white);">Check your email for the complete Sprint 0 setup guide with download link.</p>
+                            <a href="/prototype/frontend/pages/sprint0-onboarding.html?email=${encodeURIComponent(email)}" 
+                               style="display: inline-block; background: var(--sprint-primary); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                                🚀 Start Your Setup Now
+                            </a>
                         </div>
                     `;
                     

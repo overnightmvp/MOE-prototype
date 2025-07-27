@@ -45,11 +45,13 @@ overnight-mvp/
 - **Checkout Flow** - Stripe integration with error handling
 - **Success Experience** - Post-purchase upsells and onboarding
 - **Sprint 0 Portal** - Complete setup checklist delivery
+- **Onboarding Experience** - Interactive step-by-step guidance with progress tracking
 
 #### 🔧 Technical Infrastructure
-- **Backend API** - Express.js with route handling for payments, email, downloads
+- **Backend API** - Express.js with route handling for payments, email, downloads, onboarding
 - **Email Service** - Plunk automation with 7+ sequences and Sprint 0 checklist delivery
 - **File Downloads** - Secure token-based markdown file serving system
+- **Progress Tracking** - Real-time onboarding progress with server synchronization
 - **Environment Config** - Production-ready deployment with all service integrations
 - **Git Workflow** - Conventional commits with sprint tracking and documentation
 

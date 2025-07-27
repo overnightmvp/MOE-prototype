@@ -130,8 +130,10 @@ npm run deploy
 
 ### File Structure Updates
 - `backend/routes/downloads.js` - Secure file serving with token verification
+- `backend/routes/onboarding.js` - Progress tracking and user guidance system
+- `frontend/pages/sprint0-onboarding.html` - Interactive step-by-step onboarding experience
 - `frontend/email-templates/` - Professional email templates for lead magnets
-- `backend/services/plunk.js` - Enhanced with Sprint 0 checklist delivery
+- `backend/services/plunk.js` - Enhanced with Sprint 0 checklist delivery and onboarding links
 - `config/env/.env.example` - Updated with download security configuration
 
 ## 📈 Success Metrics Tracking

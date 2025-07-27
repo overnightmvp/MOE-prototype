@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-01-27
+
+### Added
+- Interactive Sprint 0 onboarding experience with step-by-step guidance
+- Real-time progress tracking with server synchronization
+- Backend API for onboarding progress management
+- Email integration with onboarding links for seamless user flow
+- Comprehensive user experience with visual progress indicators
+
+### Enhanced
+- Email capture system now redirects to guided onboarding experience
+- Sprint 0 checklist emails include both download and interactive guide links
+- Progress persistence across browser sessions and devices
+- Analytics tracking for onboarding completion and step-by-step progress
+
+### Technical Implementation
+- `backend/routes/onboarding.js` - Progress API with completion tracking
+- `frontend/pages/sprint0-onboarding.html` - Full interactive onboarding dashboard
+- Server integration for progress synchronization and analytics
+- Mobile-responsive design with modern UI/UX patterns
+
 ## [1.1.0] - 2025-01-27
 
 ### Added
