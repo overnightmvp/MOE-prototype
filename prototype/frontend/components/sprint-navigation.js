@@ -95,7 +95,7 @@ class SprintNavigation {
         
         // Start/Continue current sprint button
         navButtons += `
-            <a href="/pages/onboarding/sprint${this.currentSprint}-onboarding.html" class="nav-btn nav-btn-primary">
+            <a href="../onboarding/sprint${this.currentSprint}-onboarding.html" class="nav-btn nav-btn-primary">
                 Start Sprint ${this.currentSprint} →
             </a>
         `;
