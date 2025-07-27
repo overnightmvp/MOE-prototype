@@ -17,7 +17,7 @@
 **Customer Actions:**
 - Sees Johnny's LinkedIn post about failure stories
 - Clicks on profile, reads about Bangkok/BJJ lifestyle
-- Downloads free "5-Minute Market Validation" worksheet
+- Downloads free "mvp checklist" worksheet
 
 **Touchpoints:**
 1. LinkedIn post (hook content)
