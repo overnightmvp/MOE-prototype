@@ -753,8 +753,8 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint2/progress/${encodeURIComponent(userEmail)}`);
-                const data = await response.json();
+                // GTM Testing: const response = await fetch(`/api/sprint2/progress/${encodeURIComponent(userEmail)}`);
+                // GTM Testing: const data = await response.json();
                 
                 if (data.success && data.progress) {
                     const progress = data.progress;
@@ -826,7 +826,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint2/progress/${encodeURIComponent(userEmail)}`, {
+                // GTM Testing: const response = await fetch(`/api/sprint2/progress/${encodeURIComponent(userEmail)}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -839,7 +839,7 @@
                     }),
                 });
                 
-                const data = await response.json();
+                // GTM Testing: const data = await response.json();
                 if (!data.success) {
                     console.warn('Failed to save progress to server:', data.error);
                 }

@@ -788,8 +788,8 @@
             
             try {
                 // Temporarily disabled for GTM testing
-                // const response = await fetch(`/api/onboarding/progress/${encodeURIComponent(userEmail)}`);
-                // const data = await response.json();
+                // // GTM Testing: const response = await fetch(`/api/onboarding/progress/${encodeURIComponent(userEmail)}`);
+                // // GTM Testing: const data = await response.json();
                 
                 if (false) { // data.success && data.progress) {
                     const progress = data.progress;
@@ -862,7 +862,7 @@
             
             try {
                 // Temporarily disabled for GTM testing  
-                // const response = await fetch(`/api/onboarding/progress/${encodeURIComponent(userEmail)}`, {
+                // // GTM Testing: const response = await fetch(`/api/onboarding/progress/${encodeURIComponent(userEmail)}`, {
                 //     method: 'POST',
                 //     headers: {
                 //         'Content-Type': 'application/json',
@@ -875,7 +875,7 @@
                 //     }),
                 // });
                 
-                // const data = await response.json();
+                // // GTM Testing: const data = await response.json();
                 // if (!data.success) {
                 //     console.warn('Failed to save progress to server:', data.error);
                 // }
@@ -949,14 +949,14 @@
             // Track completion on server
             if (userEmail) {
                 try {
-                    const response = await fetch(`/api/onboarding/complete-step/${encodeURIComponent(userEmail)}/${stepNumber}`, {
+                    // GTM Testing: const response = await fetch(`/api/onboarding/complete-step/${encodeURIComponent(userEmail)}/${stepNumber}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         }
                     });
                     
-                    const data = await response.json();
+                    // GTM Testing: const data = await response.json();
                     if (data.success && data.allComplete) {
                         // All steps completed!
                         setTimeout(() => {

@@ -438,8 +438,8 @@
             }
             
             try {
-                const response = await fetch(`/api/payments/verify-session/${sessionId}`);
-                const data = await response.json();
+                // GTM Testing: const response = await fetch(`/api/payments/verify-session/${sessionId}`);
+                // GTM Testing: const data = await response.json();
                 
                 if (data.success) {
                     // Store customer information
@@ -516,7 +516,7 @@
                     }),
                 });
                 
-                const data = await response.json();
+                // GTM Testing: const data = await response.json();
                 
                 if (response.ok) {
                     // Track upsell click
