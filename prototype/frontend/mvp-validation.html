@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Validation System | 7-Day Startup Validation</title>
+    <meta name="description" content="Complete 7-day MVP validation system with step-by-step checklist, progress tracking, and proven methodology.">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-57CDVXRW');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="stylesheet" href="assets/css/sprint.css">
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --warning: #f97316;
+            --error: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            gap: 4px;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover {
+            background: var(--gray-100);
+        }
+        
+        .nav-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .nav-tab.completed {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        /* Progress Overview */
+        .progress-overview {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .progress-stats {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .progress-stat {
+            text-align: center;
+        }
+        
+        .progress-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .progress-stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+        
+        .overall-progress {
+            width: 100%;
+            height: 12px;
+            background: var(--gray-200);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .overall-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 6px;
+        }
+        
+        .progress-text {
+            text-align: center;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+        
+        /* Sprint Content */
+        .sprint-content {
+            display: none;
+        }
+        
+        .sprint-content.active {
+            display: block;
+            animation: slideIn 0.4s ease-out;
+        }
+        
+        .sprint-header {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sprint-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .sprint-description {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 20px;
+        }
+        
+        .sprint-meta {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .sprint-time, .sprint-difficulty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+        
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        
+        .step-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .step-card.completed {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-card.completed .step-number {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .step-info {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--gray-800);
+        }
+        
+        .step-subtitle {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+        
+        .step-time {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--gray-400);
+            font-size: 1.3rem;
+            transition: all 0.2s ease;
+        }
+        
+        .checklist li.completed::before {
+            content: "✓";
+            color: var(--success);
+        }
+        
+        .checklist li.completed {
+            color: var(--gray-500);
+            text-decoration: line-through;
+        }
+        
+        .checklist li:hover {
+            color: var(--primary);
+        }
+        
+        /* Step Actions */
+        .step-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #5145cd;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-200);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+        }
+        
+        /* Success Metrics */
+        .success-metrics {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metrics-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--gray-800);
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 15px;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .metric-item:hover {
+            border-color: var(--primary);
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-top: 5px;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            
+            .progress-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .sprint-meta {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Animation */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Completion Celebration */
+        .completion-celebration {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            display: none;
+        }
+        
+        .completion-celebration.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .celebration-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .celebration-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57CDVXRW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+<main id="main-content" class="mvp-validation-container">
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🚀 MVP Validation System</h1>
+            <p>Complete 7-day startup validation with proven methodology</p>
+            <div class="header-stats">
+                <div class="stat">
+                    <span class="stat-number">35-40h</span>
+                    <span class="stat-label">Total Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">85%+</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">$0-10K</span>
+                    <span class="stat-label">First 30 Days</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-sprint="0">🏁 Sprint 0</button>
+            <button class="nav-tab" data-sprint="1">🔬 Sprint 1</button>
+            <button class="nav-tab" data-sprint="2">🏗️ Sprint 2</button>
+            <button class="nav-tab" data-sprint="3">💰 Sprint 3</button>
+            <button class="nav-tab" data-sprint="4">🤖 Sprint 4</button>
+            <button class="nav-tab" data-sprint="5">📧 Sprint 5</button>
+            <button class="nav-tab" data-sprint="6">🎨 Sprint 6</button>
+            <button class="nav-tab" data-sprint="7">🧪 Sprint 7</button>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="progress-overview">
+            <div class="progress-header">
+                <h2>Overall Progress</h2>
+                <div class="progress-stats">
+                    <div class="progress-stat">
+                        <span class="progress-stat-number" id="totalCompleted">0</span>
+                        <span class="progress-stat-label">Tasks Complete</span>
+                    </div>
+                    <div class="progress-stat">
+                        <span class="progress-stat-number" id="totalTime">0h</span>
+                        <span class="progress-stat-label">Time Invested</span>
+                    </div>
+                    <div class="progress-stat">
+                        <span class="progress-stat-number" id="sprintsCompleted">0/8</span>
+                        <span class="progress-stat-label">Sprints Done</span>
+                    </div>
+                </div>
+            </div>
+            <div class="overall-progress">
+                <div class="overall-progress-fill" id="overallProgressFill"></div>
+            </div>
+            <div class="progress-text" id="overallProgressText">Ready to start your MVP validation journey</div>
+        </div>
+
+        <!-- Sprint 0: Foundation Setup -->
+        <div class="sprint-content active" data-sprint="0">
+            <div class="sprint-header">
+                <h2 class="sprint-title">🏁 Sprint 0: Foundation Setup</h2>
+                <p class="sprint-description">Set up all essential services, development environment, and deploy your MVP foundation.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 7 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Medium</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="0-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Essential Service Accounts</h3>
+                            <p class="step-subtitle">Set up Stripe, Plunk, GA4, Claude, and Discord</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="stripe">Set up Stripe payment processing (4 product tiers)</li>
+                        <li data-task="plunk">Configure Plunk email automation</li>
+                        <li data-task="ga4">Create Google Analytics 4 property</li>
+                        <li data-task="claude">Get Claude API access</li>
+                        <li data-task="discord">Set up Discord community server</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startAccountSetup()">🚀 Start Setup</button>
+                        <button class="btn btn-secondary" onclick="downloadChecklist('sprint0')">📋 Checklist</button>
+                    </div>
+                </div>
+
+                <div class="step-card" data-step="0-2">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Development Environment</h3>
+                            <p class="step-subtitle">Configure local development and integrations</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="repo">Clone repository and install dependencies</li>
+                        <li data-task="env">Configure environment variables</li>
+                        <li data-task="database">Set up local database</li>
+                        <li data-task="apis">Test all API integrations</li>
+                        <li data-task="local">Verify local development server</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startDevSetup()">⚙️ Start Dev Setup</button>
+                        <a href="https://github.com/overnightmvp/template" class="btn btn-secondary" target="_blank">💻 Repository</a>
+                    </div>
+                </div>
+
+                <div class="step-card" data-step="0-3">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <h3 class="step-title">System Testing</h3>
+                            <p class="step-subtitle">End-to-end testing of all components</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="payments">Test payment processing (test mode)</li>
+                        <li data-task="emails">Verify email automation</li>
+                        <li data-task="analytics">Confirm analytics tracking</li>
+                        <li data-task="downloads">Test file download system</li>
+                        <li data-task="forms">Validate all form submissions</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startTesting()">🧪 Start Testing</button>
+                        <button class="btn btn-secondary" onclick="runDiagnostics()">🔍 Diagnostics</button>
+                    </div>
+                </div>
+
+                <div class="step-card" data-step="0-4">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Production Deployment</h3>
+                            <p class="step-subtitle">Deploy your system and go live</p>
+                            <div class="step-time">⏱️ 1 hour</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="deploy">Deploy to Netlify</li>
+                        <li data-task="domain">Configure custom domain</li>
+                        <li data-task="ssl">Enable SSL certificate</li>
+                        <li data-task="monitoring">Set up monitoring</li>
+                        <li data-task="launch">Go live and test production</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-success" onclick="startDeployment()">🚀 Deploy</button>
+                        <button class="btn btn-secondary" onclick="reviewSprint(0)">📋 Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 1: Market Research -->
+        <div class="sprint-content" data-sprint="1">
+            <div class="sprint-header">
+                <h2 class="sprint-title">🔬 Sprint 1: Market Research & Validation</h2>
+                <p class="sprint-description">Research your market, validate your idea, and create compelling messaging.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 5 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Easy</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="1-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Customer Research</h3>
+                            <p class="step-subtitle">Define ideal customer and pain points</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="persona">Define ideal customer persona</li>
+                        <li data-task="pain-points">Identify 3-5 critical problems</li>
+                        <li data-task="market-size">Research TAM/SAM/SOM</li>
+                        <li data-task="competitors">Analyze 5-10 direct competitors</li>
+                        <li data-task="pricing">Study competitor pricing models</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startResearch()">🔍 Start Research</button>
+                        <button class="btn btn-secondary" onclick="downloadTemplate('persona')">👥 Persona Template</button>
+                    </div>
+                </div>
+
+                <div class="step-card" data-step="1-2">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Solution Definition</h3>
+                            <p class="step-subtitle">Define value proposition and MVP features</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="value-prop">Write clear 1-sentence value proposition</li>
+                        <li data-task="features">Define MVP feature set (max 5 features)</li>
+                        <li data-task="user-journey">Map customer flow from awareness to purchase</li>
+                        <li data-task="metrics">Define 3-5 key KPIs</li>
+                        <li data-task="criteria">Set go/no-go decision thresholds</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="defineSolution()">💡 Define Solution</button>
+                        <button class="btn btn-secondary" onclick="downloadTemplate('solution')">📝 Solution Template</button>
+                    </div>
+                </div>
+
+                <div class="step-card" data-step="1-3">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Landing Page Creation</h3>
+                            <p class="step-subtitle">Create compelling landing page copy</p>
+                            <div class="step-time">⏱️ 1 hour</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="headline">Write compelling value proposition headline</li>
+                        <li data-task="benefits">List 3-5 key customer benefits</li>
+                        <li data-task="social-proof">Add testimonials/logos (if available)</li>
+                        <li data-task="cta">Create clear call-to-action</li>
+                        <li data-task="lead-magnet">Set up email capture lead magnet</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="createLanding()">📄 Create Landing</button>
+                        <button class="btn btn-secondary" onclick="downloadTemplate('landing')">🎨 Landing Template</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 2: Customer Portal -->
+        <div class="sprint-content" data-sprint="2">
+            <div class="sprint-header">
+                <h2 class="sprint-title">🏗️ Sprint 2: Customer Portal & Auth</h2>
+                <p class="sprint-description">Build secure authentication, dashboard interface, and content management system.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 5 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Medium</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="2-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">User Authentication</h3>
+                            <p class="step-subtitle">Set up secure login/registration</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="auth-setup">Set up secure login/registration</li>
+                        <li data-task="password-reset">Implement password reset</li>
+                        <li data-task="profile">Create user profile management</li>
+                        <li data-task="roles">Set up role-based access</li>
+                        <li data-task="security">Test security measures</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startAuth()">🔐 Start Auth</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 3: Payment & Monetization -->
+        <div class="sprint-content" data-sprint="3">
+            <div class="sprint-header">
+                <h2 class="sprint-title">💰 Sprint 3: Payment & Monetization</h2>
+                <p class="sprint-description">Integrate payment processing and optimize revenue streams.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 5 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Medium</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="3-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Payment Integration</h3>
+                            <p class="step-subtitle">Set up Stripe/Polar payments</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="payment-setup">Integrate payment processor</li>
+                        <li data-task="tiers">Set up 3-4 pricing tiers</li>
+                        <li data-task="checkout">Create checkout flow</li>
+                        <li data-task="security">Implement payment security</li>
+                        <li data-task="testing">Test payment scenarios</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startPayments()">💳 Start Payments</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 4: AI Integration -->
+        <div class="sprint-content" data-sprint="4">
+            <div class="sprint-header">
+                <h2 class="sprint-title">🤖 Sprint 4: AI Integration & Automation</h2>
+                <p class="sprint-description">Add AI capabilities and automate key workflows.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 5 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Hard</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="4-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">AI Assistant Setup</h3>
+                            <p class="step-subtitle">Connect Claude/GPT APIs</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="ai-api">Connect AI APIs</li>
+                        <li data-task="prompts">Create prompt templates</li>
+                        <li data-task="processing">Handle AI responses</li>
+                        <li data-task="errors">Implement error handling</li>
+                        <li data-task="costs">Track usage costs</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startAI()">🤖 Start AI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 5: Email & Communication -->
+        <div class="sprint-content" data-sprint="5">
+            <div class="sprint-header">
+                <h2 class="sprint-title">📧 Sprint 5: Email & Communication</h2>
+                <p class="sprint-description">Set up email automation and customer communication systems.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 4 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Easy</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="5-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Email System Setup</h3>
+                            <p class="step-subtitle">Configure email automation</p>
+                            <div class="step-time">⏱️ 1.5 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="email-provider">Set up email provider</li>
+                        <li data-task="domain-auth">Configure domain authentication</li>
+                        <li data-task="templates">Create email templates</li>
+                        <li data-task="segments">Set up customer segments</li>
+                        <li data-task="deliverability">Test email delivery</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startEmail()">📧 Start Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 6: UI/UX & Optimization -->
+        <div class="sprint-content" data-sprint="6">
+            <div class="sprint-header">
+                <h2 class="sprint-title">🎨 Sprint 6: UI/UX & Optimization</h2>
+                <p class="sprint-description">Perfect user experience and optimize conversion rates.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 4 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Medium</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="6-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Design System</h3>
+                            <p class="step-subtitle">Create unified design language</p>
+                            <div class="step-time">⏱️ 1.5 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="brand">Define brand identity</li>
+                        <li data-task="components">Create component library</li>
+                        <li data-task="consistency">Ensure design consistency</li>
+                        <li data-task="mobile">Optimize mobile experience</li>
+                        <li data-task="accessibility">Meet accessibility standards</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startDesign()">🎨 Start Design</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sprint 7: Beta Testing & Launch -->
+        <div class="sprint-content" data-sprint="7">
+            <div class="sprint-header">
+                <h2 class="sprint-title">🧪 Sprint 7: Beta Testing & Launch</h2>
+                <p class="sprint-description">Conduct beta testing, stress testing, and prepare for launch.</p>
+                <div class="sprint-meta">
+                    <div class="sprint-time">⏱️ 5 hours total</div>
+                    <div class="sprint-difficulty">📊 Difficulty: Medium</div>
+                </div>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-step="7-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Beta Testing Program</h3>
+                            <p class="step-subtitle">Recruit testers and collect feedback</p>
+                            <div class="step-time">⏱️ 2 hours</div>
+                        </div>
+                    </div>
+                    <ul class="checklist">
+                        <li data-task="beta-recruit">Recruit 10+ beta testers</li>
+                        <li data-task="guidelines">Create testing guidelines</li>
+                        <li data-task="monitoring">Monitor beta progress</li>
+                        <li data-task="feedback">Document all feedback</li>
+                        <li data-task="iteration">Implement critical fixes</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="startBeta()">🧪 Start Beta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Metrics -->
+        <div class="success-metrics">
+            <h3 class="metrics-title">📊 Success Metrics & KPIs</h3>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-value" id="mrrMetric">$0</span>
+                    <span class="metric-label">Monthly Recurring Revenue</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" id="conversionMetric">0%</span>
+                    <span class="metric-label">Conversion Rate</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" id="usersMetric">0</span>
+                    <span class="metric-label">Active Users</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" id="npsMetric">0</span>
+                    <span class="metric-label">NPS Score</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completion Celebration -->
+        <div class="completion-celebration" id="completionCelebration">
+            <h2 class="celebration-title">🎉 MVP Validated Successfully!</h2>
+            <p class="celebration-text">Congratulations! You've completed the full validation process and are ready to scale your startup.</p>
+            <button class="btn btn-primary" onclick="launchMVP()" style="background: white; color: var(--success); font-size: 1.1rem; padding: 15px 30px;">
+                🚀 Launch Your MVP
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let currentSprint = 0;
+        let completedTasks = {};
+        let sprintProgress = {
+            0: { completed: 0, total: 20 },
+            1: { completed: 0, total: 15 },
+            2: { completed: 0, total: 15 },
+            3: { completed: 0, total: 15 },
+            4: { completed: 0, total: 15 },
+            5: { completed: 0, total: 10 },
+            6: { completed: 0, total: 10 },
+            7: { completed: 0, total: 10 }
+        };
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            loadProgress();
+            updateOverallProgress();
+            initializeEventListeners();
+        });
+
+        // Navigation between sprints
+        function switchSprint(sprintNumber) {
+            console.log('Switching to sprint:', sprintNumber);
+            
+            // Hide all sprint content
+            document.querySelectorAll('.sprint-content').forEach(content => {
+                content.classList.remove('active');
+                console.log('Hiding sprint content:', content.dataset.sprint);
+            });
+            
+            // Show selected sprint
+            const targetSprint = document.querySelector(`[data-sprint="${sprintNumber}"].sprint-content`);
+            console.log('Target sprint found:', targetSprint);
+            
+            if (targetSprint) {
+                targetSprint.classList.add('active');
+                console.log('Made sprint active:', sprintNumber);
+            }
+            
+            // Update navigation tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            const activeTab = document.querySelector(`[data-sprint="${sprintNumber}"].nav-tab`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+            
+            currentSprint = sprintNumber;
+            saveProgress();
+            
+            // Track navigation in GTM
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'sprint_navigation', {
+                    event_category: 'MVP Validation',
+                    event_label: `Sprint ${sprintNumber}`,
+                    value: sprintNumber
+                });
+            }
+        }
+
+        // Initialize event listeners
+        function initializeEventListeners() {
+            // Navigation tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const sprintNumber = parseInt(tab.dataset.sprint);
+                    switchSprint(sprintNumber);
+                });
+            });
+
+            // Task checkboxes
+            document.querySelectorAll('.checklist li').forEach(item => {
+                item.addEventListener('click', function() {
+                    toggleTask(this);
+                });
+                item.style.cursor = 'pointer';
+            });
+        }
+
+        // Toggle task completion
+        function toggleTask(element) {
+            const taskId = element.dataset.task;
+            const stepElement = element.closest('.step-card');
+            const stepId = stepElement.dataset.step;
+            
+            element.classList.toggle('completed');
+            
+            // Update completed tasks tracking
+            if (!completedTasks[stepId]) {
+                completedTasks[stepId] = {};
+            }
+            completedTasks[stepId][taskId] = element.classList.contains('completed');
+            
+            // Check if step is completed
+            const stepTasks = stepElement.querySelectorAll('.checklist li');
+            const completedStepTasks = stepElement.querySelectorAll('.checklist li.completed');
+            
+            if (stepTasks.length === completedStepTasks.length) {
+                stepElement.classList.add('completed');
+                setTimeout(() => celebrateStepCompletion(stepId), 500);
+            } else {
+                stepElement.classList.remove('completed');
+            }
+            
+            updateSprintProgress();
+            updateOverallProgress();
+            saveProgress();
+            
+            // Track task completion in GTM
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'task_completion', {
+                    event_category: 'MVP Validation',
+                    event_label: `${stepId}-${taskId}`,
+                    value: element.classList.contains('completed') ? 1 : 0
+                });
+            }
+        }
+
+        // Update sprint progress
+        function updateSprintProgress() {
+            Object.keys(sprintProgress).forEach(sprintNum => {
+                const sprintContent = document.querySelector(`[data-sprint="${sprintNum}"].sprint-content`);
+                if (sprintContent) {
+                    const totalTasks = sprintContent.querySelectorAll('.checklist li').length;
+                    const completedTasks = sprintContent.querySelectorAll('.checklist li.completed').length;
+                    
+                    sprintProgress[sprintNum] = {
+                        completed: completedTasks,
+                        total: totalTasks
+                    };
+                    
+                    // Update nav tab state
+                    const navTab = document.querySelector(`[data-sprint="${sprintNum}"].nav-tab`);
+                    if (completedTasks === totalTasks && totalTasks > 0) {
+                        navTab.classList.add('completed');
+                    } else {
+                        navTab.classList.remove('completed');
+                    }
+                }
+            });
+        }
+
+        // Update overall progress
+        function updateOverallProgress() {
+            let totalTasks = 0;
+            let totalCompleted = 0;
+            let totalTime = 0;
+            let completedSprints = 0;
+
+            Object.values(sprintProgress).forEach(sprint => {
+                totalTasks += sprint.total;
+                totalCompleted += sprint.completed;
+                if (sprint.completed === sprint.total && sprint.total > 0) {
+                    completedSprints++;
+                }
+            });
+
+            // Calculate time spent (rough estimate based on completion)
+            const timePerTask = 2; // 2 hours average per task
+            totalTime = Math.round(totalCompleted * timePerTask);
+
+            const progressPercentage = totalTasks > 0 ? (totalCompleted / totalTasks) * 100 : 0;
+
+            // Update UI
+            document.getElementById('totalCompleted').textContent = `${totalCompleted}/${totalTasks}`;
+            document.getElementById('totalTime').textContent = `${totalTime}h`;
+            document.getElementById('sprintsCompleted').textContent = `${completedSprints}/8`;
+            document.getElementById('overallProgressFill').style.width = `${progressPercentage}%`;
+
+            // Update progress text
+            let progressText = '';
+            if (totalCompleted === 0) {
+                progressText = 'Ready to start your MVP validation journey';
+            } else if (totalCompleted === totalTasks) {
+                progressText = '🎉 MVP Validation Complete! Ready to launch';
+                showCompletionCelebration();
+            } else {
+                progressText = `${Math.round(progressPercentage)}% complete - Keep going!`;
+            }
+            document.getElementById('overallProgressText').textContent = progressText;
+        }
+
+        // Show completion celebration
+        function showCompletionCelebration() {
+            document.getElementById('completionCelebration').classList.add('show');
+            
+            // Track completion in GTM
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'mvp_validation_complete', {
+                    event_category: 'MVP Validation',
+                    event_label: 'Full Validation Complete',
+                    value: 100
+                });
+            }
+        }
+
+        // Celebrate step completion
+        function celebrateStepCompletion(stepId) {
+            // Add visual celebration effect
+            const stepCard = document.querySelector(`[data-step="${stepId}"]`);
+            stepCard.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                stepCard.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Track step completion in GTM
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'step_completion', {
+                    event_category: 'MVP Validation',
+                    event_label: stepId,
+                    value: 1
+                });
+            }
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            const progressData = {
+                currentSprint,
+                completedTasks,
+                sprintProgress,
+                lastUpdated: Date.now()
+            };
+            localStorage.setItem('mvp-validation-progress', JSON.stringify(progressData));
+        }
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('mvp-validation-progress');
+            if (savedProgress) {
+                const data = JSON.parse(savedProgress);
+                currentSprint = data.currentSprint || 0;
+                completedTasks = data.completedTasks || {};
+                sprintProgress = data.sprintProgress || sprintProgress;
+                
+                // Restore task states
+                Object.keys(completedTasks).forEach(stepId => {
+                    Object.keys(completedTasks[stepId]).forEach(taskId => {
+                        if (completedTasks[stepId][taskId]) {
+                            const taskElement = document.querySelector(`[data-step="${stepId}"] [data-task="${taskId}"]`);
+                            if (taskElement) {
+                                taskElement.classList.add('completed');
+                            }
+                        }
+                    });
+                });
+                
+                // Restore step completion states
+                document.querySelectorAll('.step-card').forEach(stepCard => {
+                    const stepTasks = stepCard.querySelectorAll('.checklist li');
+                    const completedStepTasks = stepCard.querySelectorAll('.checklist li.completed');
+                    
+                    if (stepTasks.length === completedStepTasks.length && stepTasks.length > 0) {
+                        stepCard.classList.add('completed');
+                    }
+                });
+                
+                // Switch to saved sprint
+                switchSprint(currentSprint);
+            }
+        }
+
+        // Action handlers
+        function startAccountSetup() {
+            alert('Opening account setup guide...');
+        }
+
+        function downloadChecklist(sprint) {
+            alert(`Downloading ${sprint} checklist...`);
+        }
+
+        function startDevSetup() {
+            alert('Opening development setup guide...');
+        }
+
+        function startTesting() {
+            alert('Opening testing guide...');
+        }
+
+        function runDiagnostics() {
+            alert('Running system diagnostics...');
+        }
+
+        function startDeployment() {
+            alert('Opening deployment guide...');
+        }
+
+        function reviewSprint(sprintNum) {
+            alert(`Opening Sprint ${sprintNum} review...`);
+        }
+
+        function startResearch() {
+            alert('Opening market research guide...');
+        }
+
+        function downloadTemplate(type) {
+            alert(`Downloading ${type} template...`);
+        }
+
+        function defineSolution() {
+            alert('Opening solution definition guide...');
+        }
+
+        function createLanding() {
+            alert('Opening landing page creator...');
+        }
+
+        function launchMVP() {
+            alert('🚀 Congratulations! Redirecting to launch checklist...');
+            // This would redirect to a launch preparation page
+        }
+
+        // Additional action handlers for new sprints
+        function startAuth() {
+            alert('Opening authentication setup guide...');
+        }
+
+        function startPayments() {
+            alert('Opening payment integration guide...');
+        }
+
+        function startAI() {
+            alert('Opening AI integration guide...');
+        }
+
+        function startEmail() {
+            alert('Opening email automation guide...');
+        }
+
+        function startDesign() {
+            alert('Opening design system guide...');
+        }
+
+        function startBeta() {
+            alert('Opening beta testing guide...');
+        }
+
+        // Auto-save progress every 30 seconds
+        setInterval(saveProgress, 30000);
+    </script>
+</main>
+</body>
+</html>
