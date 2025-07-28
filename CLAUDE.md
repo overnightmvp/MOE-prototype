@@ -324,7 +324,9 @@ Maintainability: Difficult → Centralized & scalable
 1. **A/B Testing**: Test new design vs old for conversion metrics
 2. **Performance Monitoring**: Track Core Web Vitals improvements
 3. **User Feedback**: Collect feedback on new design system
-4. **Advanced Features**: Implement progressive enhancement patterns
+4. **AI Integration**: Consider Claude API integration for enhanced user experience
+   - *See: `/docs/backlog/strategy/claude-ai-integration-framework.md`*
+5. **Advanced Features**: Implement progressive enhancement patterns
 
 ---
 
