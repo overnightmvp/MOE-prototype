@@ -73,4 +73,4 @@ sprint0-onboarding.html
 
 ====
 
-- analyse customer_journey_blueprint.md and update agentic_automation_framework.md
+- analyse customer_journey_blueprint.md and update strategic framework documentation

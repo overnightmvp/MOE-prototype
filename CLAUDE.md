@@ -330,4 +330,69 @@ Maintainability: Difficult → Centralized & scalable
 
 ---
 
+## 📚 **Complete Documentation Index**
+
+### 🏠 **Core Reference Documents**
+- **[CLAUDE.md](CLAUDE.md)** - ⭐ Master deployment & development guide (this file)
+- **[PROJECT-STATUS.md](PROJECT-STATUS.md)** - Current project health dashboard
+- **[UX-AUDIT-REPORT.md](UX-AUDIT-REPORT.md)** - Comprehensive UX analysis & recommendations
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Production deployment procedures
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history & release notes
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Development workflow standards
+
+### 🛠️ **Setup & Configuration**
+- **[docs/setup-guide.md](docs/setup-guide.md)** - Complete setup & customization guide
+- **[docs/customization-guide.md](docs/customization-guide.md)** - Industry adaptation templates
+- **[docs/setup/sprint-0-foundation.md](docs/setup/sprint-0-foundation.md)** - Foundation setup checklist
+- **[docs/setup/plunk-integration.md](docs/setup/plunk-integration.md)** - Email automation setup
+- **[docs/data-collection.md](docs/data-collection.md)** - Analytics & tracking implementation
+
+### 📊 **Strategy & Planning Documents**
+- **[docs/backlog/strategy/development_backlog.md](docs/backlog/strategy/development_backlog.md)** - 8-sprint development roadmap
+- **[docs/backlog/strategy/customer_journey_blueprint.md](docs/backlog/strategy/customer_journey_blueprint.md)** - Complete customer experience map
+- **[docs/backlog/strategy/product_brain.md](docs/backlog/strategy/product_brain.md)** - Core product definition & strategy
+
+### 🔮 **Future Enhancement Frameworks**
+- **[docs/backlog/strategy/claude-ai-integration-framework.md](docs/backlog/strategy/claude-ai-integration-framework.md)** - AI integration roadmap
+- **[docs/backlog/strategy/prd-strategy.md](docs/backlog/strategy/prd-strategy.md)** - Product requirements strategy
+- **[docs/backlog/strategy/linkedin_strategy.md](docs/backlog/strategy/linkedin_strategy.md)** - LinkedIn marketing approach
+- **[docs/backlog/strategy/gumroad_strategy.md](docs/backlog/strategy/gumroad_strategy.md)** - Alternative payment platform strategy
+
+### 🔧 **Technical Documentation**
+- **[docs/api/external-services.md](docs/api/external-services.md)** - External service integrations
+- **[docs/backlog/claude_code_deployment.md](docs/backlog/claude_code_deployment.md)** - Claude Code deployment patterns
+- **[docs/setup/change-requests.md](docs/setup/change-requests.md)** - Change management process
+
+### 🗃️ **Project Management & Tracking**
+- **[docs/backlog/changes.md](docs/backlog/changes.md)** - Change log & feature requests
+- **[docs/backlog/RECOVERED-FILES.md](docs/backlog/RECOVERED-FILES.md)** - Git history recovery log
+
+### 📁 **Archive (Reference Only)**
+- **[archive/outdated-docs/](archive/outdated-docs/)** - Outdated documentation for reference
+- **[archive/duplicate-files/](archive/duplicate-files/)** - Previous duplicate files
+- **[archive/legacy-checklists/](archive/legacy-checklists/)** - Legacy HTML templates
+
+### 🚨 **Quick Access Emergency Procedures**
+```bash
+# Rollback deployment
+netlify rollback
+
+# Emergency commit & deploy
+git add . && git commit -m "hotfix: critical issue" && git push
+
+# Check system status
+git status && netlify status
+
+# Access deployment logs
+netlify logs
+```
+
+### 📱 **Key URLs & Resources**
+- **Live Site**: https://overnightmvp.netlify.app
+- **Analytics**: Google Analytics (G-L99CMW68TS)
+- **Repository**: GitHub main branch (auto-deploy enabled)
+- **Design System**: `/prototype/frontend/assets/css/design-system.css`
+
+---
+
 *This guide evolves with the project. Update regularly to maintain S-tier standards.*
