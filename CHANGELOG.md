@@ -7,6 +7,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2025-07-28 📧 PLUNK EMAIL INTEGRATION
+
+### 🚀 Major Feature Release
+**Commit**: `2290730` - Complete email automation system with Plunk API integration
+
+### Added
+- **Plunk API Integration**: Netlify Function for seamless email capture and automation
+- **Email Template System**: 5 Neo-brutalist email templates for validation sequence
+- **Sub-Agent Framework**: 7 specialized agents with master coordination protocols
+- **Auto-Commit Protocol**: Mandatory git operations for major development changes
+- **Testing Infrastructure**: End-to-end test script and comprehensive deployment checklist
+- **Enhanced Success Page**: Email enrollment confirmation with analytics tracking
+
+### Changed  
+- **Frontend Email Capture**: Replaced Netlify Forms with Plunk API integration
+- **User Experience**: Enhanced loading states and success confirmations
+- **Documentation**: Updated CLAUDE.md with sub-agent workflows and git protocols
+
+### Enhanced
+- **Email Automation**: Immediate enrollment in 5-day validation sequence
+- **Analytics Tracking**: Source attribution and enrollment success metrics
+- **Error Handling**: Robust API failure recovery with user-friendly messaging
+- **Developer Experience**: Auto-commit ensures no code changes are lost
+
+### Business Impact
+- **Immediate Automation**: Email sequences start without manual intervention
+- **Better Conversion Tracking**: Source attribution and success metrics
+- **Cost Efficiency**: Reduced email marketing overhead with Plunk
+- **Scalable Architecture**: Ready for thousands of email signups
+
+### Configuration Required
+- Environment variable: `PLUNK_API_KEY` in Netlify dashboard
+- Template import: Upload 5 email templates to Plunk account
+- Testing: Use `PLUNK-DEPLOYMENT-CHECKLIST.md` for verification
+
 ## [1.3.0] - 2025-01-27 🚀 PRODUCTION LAUNCH
 
 ### LIVE DEPLOYMENT

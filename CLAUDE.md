@@ -402,15 +402,34 @@ git commit -m "feat: [SERVICE_NAME] integration system complete
 Co-Authored-By: Claude <noreply@anthropic.com>"
 ```
 
-### **Auto-Push Verification**
-After every auto-commit, the agent MUST verify:
+### **Auto-Push Verification & Documentation Update**
+After every auto-commit, the agent MUST verify and update documentation:
+
 ```bash
-# Verify push succeeded
+# 1. Verify push succeeded
 git status && echo "✅ Changes committed and pushed successfully"
 
-# Confirm deployment trigger
+# 2. Confirm deployment trigger
 echo "🚀 Auto-deployment should trigger on Netlify"
 echo "🧪 Ready for user testing at: https://overnightmvp.netlify.app"
+```
+
+**3. MANDATORY Documentation Update:**
+After pushing, the agent MUST immediately update:
+
+- **📊 PROJECT-STATUS.md**: Update current project status, completed features, next priorities
+- **📋 CHANGELOG.md**: Add entry with version, changes, and business impact  
+- **🔧 CLAUDE.md**: Update any relevant command references or workflow changes
+- **📚 README files**: Update setup instructions if integration requires new steps
+
+**Documentation Update Protocol:**
+```bash
+# Update PROJECT-STATUS.md with latest status
+echo "✅ [DATE] Major feature deployed: [FEATURE_NAME]" >> PROJECT-STATUS.md
+
+# Update relevant documentation sections
+# Then commit documentation updates
+git add PROJECT-STATUS.md CHANGELOG.md && git commit -m "docs: update project status after [FEATURE_NAME] deployment" && git push origin main
 ```
 
 ### **Emergency Override**
