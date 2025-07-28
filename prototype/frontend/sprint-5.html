@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 4: 7-Day Content Creation | 7-Day MVP Validation</title>
-    <meta name="description" content="Create comprehensive 7-day validation content including worksheets, videos, and interactive tools for Sprint 4. Interactive guide.">
-    
+    <title>Sprint 5: Community & Support | 7-Day MVP Validation</title>
+    <meta name="description" content="Build community features, support systems, and progress tracking for Sprint 5. Interactive guide.">
+
     <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
     <script>
         (function(h,o,t,j,a,r){
@@ -19,8 +19,8 @@
     </script>
     
     <!-- Design System CSS -->
-    <link rel="stylesheet" href="../assets/css/design-system.css">
-    <link rel="stylesheet" href="../assets/css/onboarding.css">
+    <link rel="stylesheet" href="./assets/css/design-system.css">
+    <link rel="stylesheet" href="./assets/css/onboarding.css">
     
     <!-- Skip Navigation for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -402,6 +402,15 @@
             margin-bottom: 10px;
         }
         
+        /* Sprint Navigation - moved to bottom */
+        .sprint-navigation {
+            margin-top: 30px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .main-grid {
@@ -452,8 +461,8 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>📚 Sprint 4: 7-Day Content Creation</h1>
-            <p>Create comprehensive validation content including worksheets, videos, and interactive tools</p>
+            <h1>👥 Sprint 5: Community & Support</h1>
+            <p>Build community features, support systems, and progress tracking for user engagement</p>
         </div>
 
         <!-- Progress Section -->
@@ -466,11 +475,11 @@
                         <span class="stat-label">Steps Complete</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeSpent">0h</span>
+                        <span class="stat-number" id="timeSpent">00h</span>
                         <span class="stat-label">Time Spent</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeRemaining">46h</span>
+                        <span class="stat-number" id="timeRemaining">26h</span>
                         <span class="stat-label">Time Remaining</span>
                     </div>
                 </div>
@@ -478,155 +487,116 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text" id="progressText">Ready to start Sprint 4: 7-Day Content Creation</div>
+            <div class="progress-text" id="progressText">Ready to start Sprint 5: Community & Support</div>
         </div>
 
         <div class="main-grid">
             <!-- Main Steps Section -->
             <div class="steps-section">
-                <h2 class="section-title">Sprint 4 Implementation Steps</h2>
+                <h2 class="section-title">Sprint 5 Implementation Steps</h2>
                 
-                <!-- Step 1: Day 1-2 Content: Idea Validation -->
+                <!-- Step 1: Discord Community Setup -->
                 <div class="step active" data-step="1">
                     <div class="step-header" onclick="toggleStep(1)">
                         <div class="step-number">1</div>
                         <div class="step-info">
-                            <div class="step-title">Day 1-2 Content: Idea Validation</div>
-                            <div class="step-subtitle">Create validation worksheets and competitor analysis tools</div>
-                            <div class="step-time">⏱️ 12 hours</div>
+                            <div class="step-title">Discord Community Setup</div>
+                            <div class="step-subtitle">Create branded Discord server with auto-role assignment</div>
+                            <div class="step-time">⏱️ 08 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Create comprehensive content for Days 1-2 that guides users through idea validation, 
-                            market research, and competitor analysis with interactive tools and video guidance.
+                            Set up a Discord community where customers can connect, share progress, 
+                            and support each other through their validation journey.
                         </div>
                         
                         <ul class="checklist" id="step1-checklist">
-                            <li data-item="validation-worksheet">Create idea validation worksheet template</li>
-                            <li data-item="step-instructions">Write step-by-step instructions</li>
-                            <li data-item="video-explanation">Record Johnny's video explanation (10 min)</li>
-                            <li data-item="competitor-tool">Build interactive competitor analysis tool</li>
-                            <li data-item="content-flow">Test content flow and user experience</li>
-                            <li data-item="ai-integration">Integrate AI-powered market insights</li>
+                            <li data-item="discord-server">Create Discord server with branded channels</li>
+                            <li data-item="auto-roles">Set up auto-role assignment for customers</li>
+                            <li data-item="progress-sharing">Build progress sharing templates and bots</li>
+                            <li data-item="moderation">Create moderation guidelines and tools</li>
+                            <li data-item="onboarding-flow">Test community onboarding flow</li>
                         </ul>
                         
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDay12Content()">
-                                💡 Create Day 1-2 Content
+                        <!-- <div class="step-actions">
+                            <button class="btn btn-primary" onclick="startDiscordSetup()">
+                                💬 Setup Discord Community
                             </button>
-                            <a href="/prototype/docs/sprint4/day1-2-guide.md" class="btn btn-secondary">
-                                📋 View Content Guide
+                            <a href="/prototype/docs/sprint5/discord-guide.md" class="btn btn-secondary">
+                                📋 View Discord Guide
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Step 2: Day 3-4 Content: Solution Design -->
+                <!-- Step 2: Support System Implementation -->
                 <div class="step" data-step="2">
                     <div class="step-header" onclick="toggleStep(2)">
                         <div class="step-number">2</div>
                         <div class="step-info">
-                            <div class="step-title">Day 3-4 Content: Solution Design</div>
-                            <div class="step-subtitle">Build feature prioritization and user story tools</div>
+                            <div class="step-title">Support System Implementation</div>
+                            <div class="step-subtitle">Set up ticketing, chatbot, and knowledge base</div>
                             <div class="step-time">⏱️ 10 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Develop content for Days 3-4 that helps users design their solution, prioritize features,
-                            and create user stories with AI assistance and technical feasibility analysis.
+                            Create a comprehensive support system with AI chatbot, ticketing system,
+                            and knowledge base to provide excellent customer service.
                         </div>
                         
                         <ul class="checklist" id="step2-checklist">
-                            <li data-item="solution-template">Create solution design template</li>
-                            <li data-item="prioritization-matrix">Build feature prioritization matrix tool</li>
-                            <li data-item="user-story-guidelines">Write user story generation guidelines</li>
-                            <li data-item="feasibility-video">Record technical feasibility video (8 min)</li>
-                            <li data-item="exercise-flow">Test exercise completion flow</li>
-                            <li data-item="ai-recommendations">Add AI-powered feature recommendations</li>
+                            <li data-item="ticketing-system">Set up customer support ticketing (Intercom/Zendesk)</li>
+                            <li data-item="ai-chatbot">Create AI chatbot for common questions</li>
+                            <li data-item="knowledge-base">Build knowledge base with FAQs</li>
+                            <li data-item="escalation">Set up escalation procedures to human support</li>
+                            <li data-item="response-times">Test support response times and quality</li>
                         </ul>
                         
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDay34Content()">
-                                🎯 Create Day 3-4 Content
+                        <!-- <div class="step-actions">
+                            <button class="btn btn-primary" onclick="startSupportSystem()">
+                                🎧 Setup Support System
                             </button>
-                            <a href="/prototype/docs/sprint4/solution-design-templates.md" class="btn btn-secondary">
-                                🛠️ View Templates
+                            <a href="/prototype/docs/sprint5/support-templates.md" class="btn btn-secondary">
+                                📞 View Support Templates
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Step 3: Day 5-6 Content: Market Testing -->
+                <!-- Step 3: Progress Tracking & Gamification -->
                 <div class="step" data-step="3">
                     <div class="step-header" onclick="toggleStep(3)">
                         <div class="step-number">3</div>
                         <div class="step-info">
-                            <div class="step-title">Day 5-6 Content: Market Testing</div>
-                            <div class="step-subtitle">Create landing page templates and marketing playbook</div>
-                            <div class="step-time">⏱️ 14 hours</div>
+                            <div class="step-title">Progress Tracking & Gamification</div>
+                            <div class="step-subtitle">Implement badges, achievements, and milestone celebrations</div>
+                            <div class="step-time">⏱️ 08 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Build comprehensive market testing content including landing page templates, 
-                            copy generation tools, and traffic generation strategies for real market validation.
+                            Build engaging progress tracking with achievement badges, certificates,
+                            and milestone celebrations to increase user engagement and completion rates.
                         </div>
                         
                         <ul class="checklist" id="step3-checklist">
-                            <li data-item="landing-templates">Create landing page template library</li>
-                            <li data-item="copy-interface">Build copy generation interface</li>
-                            <li data-item="traffic-playbook">Write traffic generation playbook</li>
-                            <li data-item="marketing-video">Record marketing strategy video (12 min)</li>
-                            <li data-item="builder-integration">Test integration with landing page builders</li>
-                            <li data-item="analytics-setup">Integrate analytics and tracking</li>
+                            <li data-item="completion-tracking">Implement completion tracking system</li>
+                            <li data-item="achievement-badges">Create achievement badges and certificates</li>
+                            <li data-item="progress-sharing">Build progress sharing features</li>
+                            <li data-item="milestone-emails">Set up milestone celebration emails</li>
+                            <li data-item="engagement-features">Test engagement and retention features</li>
                         </ul>
                         
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDay56Content()">
-                                🚀 Create Day 5-6 Content
+                        <!-- <div class="step-actions">
+                            <button class="btn btn-success" onclick="startGamification()">
+                                🏆 Build Gamification
                             </button>
-                            <a href="/prototype/docs/sprint4/marketing-templates.md" class="btn btn-secondary">
-                                📈 View Marketing Guide
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4: Day 7 Content: Validation Analysis -->
-                <div class="step" data-step="4">
-                    <div class="step-header" onclick="toggleStep(4)">
-                        <div class="step-number">4</div>
-                        <div class="step-info">
-                            <div class="step-title">Day 7 Content: Validation Analysis</div>
-                            <div class="step-subtitle">Build scorecard and automated report generation</div>
-                            <div class="step-time">⏱️ 10 hours</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-description">
-                            Create the final day content that helps users analyze their validation results, 
-                            generate comprehensive reports, and make go/no-go decisions with AI-powered insights.
-                        </div>
-                        
-                        <ul class="checklist" id="step4-checklist">
-                            <li data-item="validation-scorecard">Create validation scorecard template</li>
-                            <li data-item="report-generation">Build automated report generation</li>
-                            <li data-item="decision-framework">Write go/no-go decision framework</li>
-                            <li data-item="analysis-video">Record results analysis video (10 min)</li>
-                            <li data-item="complete-journey">Test complete 7-day journey</li>
-                            <li data-item="next-steps">Create next steps recommendations</li>
-                        </ul>
-                        
-                        <div class="step-actions">
-                            <button class="btn btn-success" onclick="startDay7Content()">
-                                📊 Create Day 7 Content
+                            <button class="btn btn-secondary" onclick="reviewSprint5()">
+                                📋 Review Sprint 5
                             </button>
-                            <button class="btn btn-secondary" onclick="reviewSprint4()">
-                                📋 Review Sprint 4
-                            </button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -638,8 +608,8 @@
                     <h3 class="card-title">Quick Help</h3>
                     <div class="help-item">
                         <span class="help-icon">📚</span>
-                        <a href="/prototype/docs/sprint4/" style="text-decoration: none; color: inherit;">
-                            Sprint 4 Documentation
+                        <a href="/prototype/docs/sprint5/" style="text-decoration: none; color: inherit;">
+                            Sprint 5 Documentation
                         </a>
                     </div>
                     <div class="help-item">
@@ -660,29 +630,24 @@
                 <div class="sidebar-card">
                     <h3 class="card-title">Recommended Timeline</h3>
                     <div class="timeline-item">
-                        <span class="timeline-time">0-12h</span>
-                        <span>Day 1-2 Content Creation</span>
+                        <span class="timeline-time">00-08h</span>
+                        <span>Discord Community Setup</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">12-22h</span>
-                        <span>Day 3-4 Solution Design</span>
+                        <span class="timeline-time">08-18h</span>
+                        <span>Support System Implementation</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">22-36h</span>
-                        <span>Day 5-6 Market Testing</span>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">36-46h</span>
-                        <span>Day 7 Analysis & Reports</span>
+                        <span class="timeline-time">18-26h</span>
+                        <span>Progress Tracking & Gamification</span>
                     </div>
                 </div>
-
 
                 <!-- Emergency Support -->
                 <div class="sidebar-card">
                     <div class="emergency-contact">
                         <h4>🆘 Need Help?</h4>
-                        <p>Stuck on content creation or video production? Get immediate content strategy support.</p>
+                        <p>Stuck on community setup or support systems? Get immediate assistance.</p>
                         <button class="btn btn-primary mt-20" onclick="requestSupport()">
                             Get Support
                         </button>
@@ -691,28 +656,28 @@
 
                 <!-- Success Preview -->
                 <div class="sidebar-card">
-                    <h3 class="card-title">🎯 Sprint 4 Deliverables</h3>
+                    <h3 class="card-title">🎯 Sprint 5 Deliverables</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">✅ Complete 7-day curriculum</li>
-                        <li style="padding: 5px 0;">✅ Interactive worksheets & tools</li>
-                        <li style="padding: 5px 0;">✅ Video guidance library</li>
-                        <li style="padding: 5px 0;">✅ AI-powered insights</li>
-                        <li style="padding: 5px 0;">✅ Automated reporting system</li>
+                        <li style="padding: 5px 0;">✅ Discord community server</li>
+                        <li style="padding: 5px 0;">✅ Customer support system</li>
+                        <li style="padding: 5px 0;">✅ AI chatbot integration</li>
+                        <li style="padding: 5px 0;">✅ Progress tracking system</li>
+                        <li style="padding: 5px 0;">✅ Achievement badges</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Sprint Navigation - moved to bottom -->
-        <div style="margin-top: 30px; background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <div class="sprint-navigation">
             <h3 class="card-title">Sprint Navigation</h3>
             <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
                 <a href="./sprint0-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 0</a>
                 <a href="./sprint1-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 1</a>
                 <a href="./sprint2-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 2</a>
                 <a href="./sprint3-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 3</a>
-                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 4</span>
-                <a href="./sprint5-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 5</a>
+                <a href="./sprint4-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 4</a>
+                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 5</span>
                 <a href="./sprint6-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 6</a>
                 <a href="./sprint7-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 7</a>
             </div>
@@ -730,7 +695,6 @@
 
         // Load saved progress
         window.addEventListener('load', function() {
-            // Get email from URL params if redirected from email capture
             const urlParams = new URLSearchParams(window.location.search);
             userEmail = urlParams.get('email');
             
@@ -745,13 +709,12 @@
         });
 
         function loadProgress() {
-            const savedProgress = localStorage.getItem('sprint4-progress');
+            const savedProgress = localStorage.getItem('sprint5-progress');
             if (savedProgress) {
                 const progress = JSON.parse(savedProgress);
                 completedSteps = progress.completedSteps || 0;
                 timeSpent = progress.timeSpent || 0;
                 
-                // Restore checklist states
                 Object.keys(progress.checklistItems || {}).forEach(itemId => {
                     const checkbox = document.querySelector(`[data-item="${itemId}"]`);
                     if (checkbox && progress.checklistItems[itemId]) {
@@ -759,8 +722,7 @@
                     }
                 });
                 
-                // Update step states
-                for (let i = 1; i <= 4; i++) {
+                for (let i = 1; i <= 3; i++) {
                     const step = document.querySelector(`[data-step="${i}"]`);
                     if (progress.completedStepNumbers && progress.completedStepNumbers.includes(i)) {
                         step.classList.add('completed');
@@ -768,7 +730,6 @@
                     }
                 }
                 
-                // Set active step
                 if (progress.activeStep) {
                     setActiveStep(progress.activeStep);
                 }
@@ -779,7 +740,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint4/progress/${encodeURIComponent(userEmail)}`);
+                const response = await fetch(`/api/sprint5/progress/${encodeURIComponent(userEmail)}`);
                 const data = await response.json();
                 
                 if (data.success && data.progress) {
@@ -788,7 +749,6 @@
                     completedSteps = progress.completedSteps.length;
                     timeSpent = (Date.now() - progress.startTime) / (1000 * 60 * 60);
                     
-                    // Restore step states
                     progress.completedSteps.forEach(stepNum => {
                         const step = document.querySelector(`[data-step="${stepNum}"]`);
                         if (step) {
@@ -797,12 +757,10 @@
                         }
                     });
                     
-                    // Set active step
-                    if (progress.currentStep <= 4) {
+                    if (progress.currentStep <= 3) {
                         setActiveStep(progress.currentStep);
                     }
                     
-                    // Restore checklist items
                     Object.keys(progress.stepProgress || {}).forEach(itemId => {
                         const checkbox = document.querySelector(`[data-item="${itemId}"]`);
                         if (checkbox && progress.stepProgress[itemId]) {
@@ -812,13 +770,11 @@
                 }
             } catch (error) {
                 console.error('Failed to load progress from server:', error);
-                // Fallback to local storage
                 loadProgress();
             }
         }
 
         function saveProgress() {
-            // Save to local storage
             const checklistItems = {};
             document.querySelectorAll('.checklist [data-item]').forEach(item => {
                 checklistItems[item.dataset.item] = item.classList.contains('completed');
@@ -840,9 +796,8 @@
                 lastUpdated: Date.now()
             };
             
-            localStorage.setItem('sprint4-progress', JSON.stringify(progress));
+            localStorage.setItem('sprint5-progress', JSON.stringify(progress));
             
-            // Save to server if user email available
             if (userEmail) {
                 saveProgressToServer(progress);
             }
@@ -852,7 +807,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint4/progress/${encodeURIComponent(userEmail)}`, {
+                const response = await fetch(`/api/sprint5/progress/${encodeURIComponent(userEmail)}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -875,19 +830,19 @@
         }
 
         function updateProgress() {
-            const totalSteps = 4;
+            const totalSteps = 3;
             const progressPercent = (completedSteps / totalSteps) * 100;
             
             document.getElementById('completedSteps').textContent = `${completedSteps}/${totalSteps}`;
             document.getElementById('timeSpent').textContent = `${Math.round(timeSpent).toString().padStart(2, '0')}h`;
-            document.getElementById('timeRemaining').textContent = `${Math.max(0, 46 - timeSpent).toString().padStart(2, '0')}h`;
+            document.getElementById('timeRemaining').textContent = `${Math.max(0, 26 - timeSpent).toString().padStart(2, '0')}h`;
             document.getElementById('progressFill').style.width = `${progressPercent}%`;
             
             let progressText = '';
             if (completedSteps === 0) {
-                progressText = 'Ready to start Sprint 4: 7-Day Content Creation';
+                progressText = 'Ready to start Sprint 5: Community & Support';
             } else if (completedSteps === totalSteps) {
-                progressText = '🎉 Sprint 4 Complete! 7-day content is ready';
+                progressText = '🎉 Sprint 5 Complete! Community and support systems are ready';
             } else {
                 progressText = `Step ${completedSteps + 1} in progress - ${Math.round(progressPercent)}% complete`;
             }
@@ -896,14 +851,12 @@
         }
 
         function toggleStep(stepNumber) {
-            // Close all other steps
             document.querySelectorAll('.step').forEach(step => {
                 if (step.dataset.step != stepNumber) {
                     step.classList.remove('active');
                 }
             });
             
-            // Toggle current step
             const currentStep = document.querySelector(`[data-step="${stepNumber}"]`);
             currentStep.classList.toggle('active');
             
@@ -928,17 +881,15 @@
             
             completedSteps = Math.max(completedSteps, stepNumber);
             
-            // Activate next step
-            if (stepNumber < 4) {
+            if (stepNumber < 3) {
                 setActiveStep(stepNumber + 1);
             }
             
             updateProgress();
             saveProgress();
             
-            // Track completion in analytics
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint4_step_complete', {
+                gtag('event', 'sprint5_step_complete', {
                     event_category: 'Sprint Progress',
                     event_label: `Step ${stepNumber}`,
                     value: stepNumber
@@ -950,7 +901,6 @@
             element.classList.toggle('completed');
             saveProgress();
             
-            // Check if all items in this step are completed
             const stepElement = element.closest('.step');
             const stepNumber = parseInt(stepElement.dataset.step);
             const allItems = stepElement.querySelectorAll('.checklist [data-item]');
@@ -961,7 +911,6 @@
             }
         }
 
-        // Add click handlers to checklist items
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.checklist [data-item]').forEach(item => {
                 item.addEventListener('click', function() {
@@ -971,70 +920,39 @@
             });
         });
 
-        // Step action functions
-        function startDay12Content() {
-            alert('Opening Day 1-2 content creation guide...');
-            // This would open a detailed guide or start wizard
-        }
-
-        function startDay34Content() {
-            alert('Starting Day 3-4 solution design content...');
-            // This would guide through solution design content
-        }
-
-        function startDay56Content() {
-            alert('Opening Day 5-6 market testing content...');
-            // This would start the market testing content creation
-        }
-
-        function startDay7Content() {
-            alert('Creating Day 7 validation analysis content...');
-            // This would start the final day content creation
-        }
-
-        function reviewSprint4() {
-            alert('Opening Sprint 4 review and next steps...');
-            // This would show summary and transition to Sprint 5
-        }
-
         function requestSupport() {
-            // This would open a support chat or contact form
-            if (confirm('Would you like to schedule a Sprint 4 content strategy call?')) {
+            if (confirm('Would you like to schedule a Sprint 5 support call?')) {
                 window.open('https://calendly.com/toshioj/30min', '_blank');
             }
         }
 
         function trackUser(email) {
-            // Track user engagement
-            console.log(`Tracking Sprint 4 for: ${email}`);
+            console.log(`Tracking Sprint 5 for: ${email}`);
             
-            // Send analytics event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint4_onboarding_start', {
+                gtag('event', 'sprint5_onboarding_start', {
                     event_category: 'Sprint Progress',
-                    event_label: 'Sprint 4 Guide Access',
+                    event_label: 'Sprint 5 Guide Access',
                     custom_parameter: email
                 });
             }
         }
 
-        // Time tracking
         setInterval(function() {
-            timeSpent = (Date.now() - startTime) / (1000 * 60 * 60); // Convert to hours
+            timeSpent = (Date.now() - startTime) / (1000 * 60 * 60);
             updateProgress();
             saveProgress();
-        }, 60000); // Update every minute
+        }, 60000);
 
-        // Completion celebration
         function celebrateCompletion() {
-            if (completedSteps === 4) {
+            if (completedSteps === 3) {
                 const celebration = document.createElement('div');
                 celebration.innerHTML = `
                     <div class="success-message">
-                        <h3>🎉 Sprint 4 Complete!</h3>
-                        <p>You've successfully created your complete 7-day validation content! Your curriculum is ready for customers. Ready to move to Sprint 5.</p>
-                        <button class="btn btn-primary" onclick="proceedToSprint5()">
-                            🚀 Continue to Sprint 5
+                        <h3>🎉 Sprint 5 Complete!</h3>
+                        <p>You've successfully built your community and support systems! Ready to move to Sprint 6.</p>
+                        <button class="btn btn-primary" onclick="proceedToSprint6()">
+                            🚀 Continue to Sprint 6
                         </button>
                     </div>
                 `;
@@ -1042,11 +960,10 @@
             }
         }
 
-        function proceedToSprint5() {
-            window.location.href = './sprint5-onboarding.html';
+        function proceedToSprint6() {
+            window.location.href = './sprint6-onboarding.html';
         }
 
-        // Check for completion on load
         window.addEventListener('load', function() {
             setTimeout(celebrateCompletion, 1000);
         });

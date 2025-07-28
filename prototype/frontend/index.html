@@ -21,6 +21,25 @@
         gtag('config', 'G-L99CMW68TS');
     </script>
     
+    <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:6476354,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="./assets/css/design-system.css">
+    <link rel="stylesheet" href="./assets/css/landing.css">
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <style>
         /* OvernightMVP Design System - Adapted for 7-Day MVP Validation */
         :root {
@@ -472,6 +491,8 @@
     </style>
 </head>
 <body>
+    <!-- Main content for accessibility -->
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -618,8 +639,10 @@
                 
                 <!-- Hidden Email Form -->
                 <div id="emailRevealForm" style="display: none; margin-top: 20px;">
-                    <form class="email-signup" onsubmit="handleEmailReveal(event)">
-                        <input type="email" class="email-input" placeholder="Enter your email to get started" required style="margin-bottom: 10px; width: 100%; padding: 15px; border: 2px solid var(--mvp-primary); border-radius: 8px;">
+                    <form name="email-signup" method="POST" data-netlify="true" class="email-signup" onsubmit="handleEmailReveal(event)">
+                        <input type="email" name="email" class="email-input" placeholder="Enter your email to get started" required style="margin-bottom: 10px; width: 100%; padding: 15px; border: 2px solid var(--mvp-primary); border-radius: 8px;">
+                        <input type="hidden" name="form-name" value="email-signup">
+                        <input type="hidden" name="source" value="main_landing">
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Get My Validation System</button>
                     </form>
                 </div>
@@ -696,7 +719,8 @@
         async function handleEmailReveal(event) {
             event.preventDefault();
             
-            const email = event.target.querySelector('input[type="email"]').value;
+            const formData = new FormData(event.target);
+            const email = formData.get('email');
             
             // Track email signup
             gtag('event', 'email_signup', {
@@ -704,8 +728,21 @@
                 'event_label': 'Email Reveal Form'
             });
             
-            // Redirect to success page with email parameter
-            window.location.href = `./pages/success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+            // Submit to Netlify Forms
+            try {
+                await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                });
+                
+                // Redirect to success page with email parameter
+                window.location.href = `./success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                // Still redirect on error to avoid blocking user
+                window.location.href = `./success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+            }
         }
         
         // FAQ toggle functionality
@@ -762,5 +799,6 @@
             });
         });
     </script>
+    </main>
 </body>
 </html>

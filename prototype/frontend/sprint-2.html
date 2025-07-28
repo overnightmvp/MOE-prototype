@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 5: Community & Support | 7-Day MVP Validation</title>
-    <meta name="description" content="Build community features, support systems, and progress tracking for Sprint 5. Interactive guide.">
-
+    <title>Sprint 2: Customer Portal & Auth | 7-Day MVP Validation</title>
+    <meta name="description" content="Build your customer portal, authentication system, and content management for Sprint 2. Interactive step-by-step guide.">
+    
     <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
     <script>
         (function(h,o,t,j,a,r){
@@ -19,8 +19,8 @@
     </script>
     
     <!-- Design System CSS -->
-    <link rel="stylesheet" href="../assets/css/design-system.css">
-    <link rel="stylesheet" href="../assets/css/onboarding.css">
+    <link rel="stylesheet" href="./assets/css/design-system.css">
+    <link rel="stylesheet" href="./assets/css/onboarding.css">
     
     <!-- Skip Navigation for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -402,15 +402,6 @@
             margin-bottom: 10px;
         }
         
-        /* Sprint Navigation - moved to bottom */
-        .sprint-navigation {
-            margin-top: 30px;
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .main-grid {
@@ -461,8 +452,8 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>👥 Sprint 5: Community & Support</h1>
-            <p>Build community features, support systems, and progress tracking for user engagement</p>
+            <h1>🏗️ Sprint 2: Customer Portal & Auth</h1>
+            <p>Build secure authentication, dashboard interface, and content management system</p>
         </div>
 
         <!-- Progress Section -->
@@ -475,11 +466,11 @@
                         <span class="stat-label">Steps Complete</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeSpent">00h</span>
+                        <span class="stat-number" id="timeSpent">0h</span>
                         <span class="stat-label">Time Spent</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeRemaining">26h</span>
+                        <span class="stat-number" id="timeRemaining">30h</span>
                         <span class="stat-label">Time Remaining</span>
                     </div>
                 </div>
@@ -487,116 +478,120 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text" id="progressText">Ready to start Sprint 5: Community & Support</div>
+            <div class="progress-text" id="progressText">Ready to start Sprint 2: Customer Portal & Auth</div>
         </div>
 
         <div class="main-grid">
             <!-- Main Steps Section -->
             <div class="steps-section">
-                <h2 class="section-title">Sprint 5 Implementation Steps</h2>
+                <h2 class="section-title">Sprint 2 Implementation Steps</h2>
                 
-                <!-- Step 1: Discord Community Setup -->
+                <!-- Step 1: User Authentication System -->
                 <div class="step active" data-step="1">
                     <div class="step-header" onclick="toggleStep(1)">
                         <div class="step-number">1</div>
                         <div class="step-info">
-                            <div class="step-title">Discord Community Setup</div>
-                            <div class="step-subtitle">Create branded Discord server with auto-role assignment</div>
-                            <div class="step-time">⏱️ 08 hours</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-description">
-                            Set up a Discord community where customers can connect, share progress, 
-                            and support each other through their validation journey.
-                        </div>
-                        
-                        <ul class="checklist" id="step1-checklist">
-                            <li data-item="discord-server">Create Discord server with branded channels</li>
-                            <li data-item="auto-roles">Set up auto-role assignment for customers</li>
-                            <li data-item="progress-sharing">Build progress sharing templates and bots</li>
-                            <li data-item="moderation">Create moderation guidelines and tools</li>
-                            <li data-item="onboarding-flow">Test community onboarding flow</li>
-                        </ul>
-                        
-                        <!-- <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startDiscordSetup()">
-                                💬 Setup Discord Community
-                            </button>
-                            <a href="/prototype/docs/sprint5/discord-guide.md" class="btn btn-secondary">
-                                📋 View Discord Guide
-                            </a>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Step 2: Support System Implementation -->
-                <div class="step" data-step="2">
-                    <div class="step-header" onclick="toggleStep(2)">
-                        <div class="step-number">2</div>
-                        <div class="step-info">
-                            <div class="step-title">Support System Implementation</div>
-                            <div class="step-subtitle">Set up ticketing, chatbot, and knowledge base</div>
+                            <div class="step-title">User Authentication System</div>
+                            <div class="step-subtitle">Set up secure login, registration, and password management</div>
                             <div class="step-time">⏱️ 10 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Create a comprehensive support system with AI chatbot, ticketing system,
-                            and knowledge base to provide excellent customer service.
+                            Create a secure authentication system that allows customers to register, log in, 
+                            and access their purchased content safely.
                         </div>
                         
-                        <ul class="checklist" id="step2-checklist">
-                            <li data-item="ticketing-system">Set up customer support ticketing (Intercom/Zendesk)</li>
-                            <li data-item="ai-chatbot">Create AI chatbot for common questions</li>
-                            <li data-item="knowledge-base">Build knowledge base with FAQs</li>
-                            <li data-item="escalation">Set up escalation procedures to human support</li>
-                            <li data-item="response-times">Test support response times and quality</li>
+                        <ul class="checklist" id="step1-checklist">
+                            <li data-item="auth-setup">Set up Auth0 or custom authentication</li>
+                            <li data-item="registration">Implement user registration flow</li>
+                            <li data-item="login">Create secure login system</li>
+                            <li data-item="password-reset">Implement password reset functionality</li>
+                            <li data-item="profile-management">Create user profile management</li>
+                            <li data-item="role-access">Set up role-based access control</li>
+                            <li data-item="session-management">Test security and session management</li>
                         </ul>
                         
-                        <!-- <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startSupportSystem()">
-                                🎧 Setup Support System
+                        <div class="step-actions">
+                            <button class="btn btn-primary" onclick="startAuthSetup()">
+                                🔐 Setup Authentication
                             </button>
-                            <a href="/prototype/docs/sprint5/support-templates.md" class="btn btn-secondary">
-                                📞 View Support Templates
+                            <a href="/prototype/docs/sprint2/auth-guide.md" class="btn btn-secondary">
+                                📋 View Auth Guide
                             </a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
 
-                <!-- Step 3: Progress Tracking & Gamification -->
-                <div class="step" data-step="3">
-                    <div class="step-header" onclick="toggleStep(3)">
-                        <div class="step-number">3</div>
+                <!-- Step 2: Customer Dashboard -->
+                <div class="step" data-step="2">
+                    <div class="step-header" onclick="toggleStep(2)">
+                        <div class="step-number">2</div>
                         <div class="step-info">
-                            <div class="step-title">Progress Tracking & Gamification</div>
-                            <div class="step-subtitle">Implement badges, achievements, and milestone celebrations</div>
-                            <div class="step-time">⏱️ 08 hours</div>
+                            <div class="step-title">Customer Dashboard</div>
+                            <div class="step-subtitle">Build responsive dashboard with progress tracking</div>
+                            <div class="step-time">⏱️ 12 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Build engaging progress tracking with achievement badges, certificates,
-                            and milestone celebrations to increase user engagement and completion rates.
+                            Design and build a user-friendly dashboard where customers can track their progress
+                            through the 7-day validation program and access their content.
+                        </div>
+                        
+                        <ul class="checklist" id="step2-checklist">
+                            <li data-item="dashboard-wireframes">Design dashboard UI/UX wireframes</li>
+                            <li data-item="responsive-layout">Build responsive dashboard layout</li>
+                            <li data-item="progress-tracking">Create progress tracking visualization</li>
+                            <li data-item="day-navigation">Implement day-by-day content navigation</li>
+                            <li data-item="achievements">Add completion badges and achievements</li>
+                            <li data-item="user-settings">Create user settings and preferences</li>
+                        </ul>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-primary" onclick="startDashboardBuild()">
+                                📊 Build Dashboard
+                            </button>
+                            <a href="/prototype/docs/sprint2/dashboard-wireframes.md" class="btn btn-secondary">
+                                🎨 View Wireframes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Content Management System -->
+                <div class="step" data-step="3">
+                    <div class="step-header" onclick="toggleStep(3)">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <div class="step-title">Content Management System</div>
+                            <div class="step-subtitle">Set up content delivery and access controls</div>
+                            <div class="step-time">⏱️ 8 hours</div>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-description">
+                            Create a robust content management system that organizes the 7-day program materials
+                            and controls access based on user progression and payment status.
                         </div>
                         
                         <ul class="checklist" id="step3-checklist">
-                            <li data-item="completion-tracking">Implement completion tracking system</li>
-                            <li data-item="achievement-badges">Create achievement badges and certificates</li>
-                            <li data-item="progress-sharing">Build progress sharing features</li>
-                            <li data-item="milestone-emails">Set up milestone celebration emails</li>
-                            <li data-item="engagement-features">Test engagement and retention features</li>
+                            <li data-item="content-infrastructure">Set up content delivery infrastructure</li>
+                            <li data-item="day-organization">Create day-by-day content organization</li>
+                            <li data-item="content-gating">Implement content gating (unlock by day)</li>
+                            <li data-item="file-system">Build file upload and delivery system</li>
+                            <li data-item="access-restrictions">Test content access and restrictions</li>
+                            <li data-item="media-optimization">Optimize media loading and streaming</li>
                         </ul>
                         
-                        <!-- <div class="step-actions">
-                            <button class="btn btn-success" onclick="startGamification()">
-                                🏆 Build Gamification
+                        <div class="step-actions">
+                            <button class="btn btn-success" onclick="startCMSSetup()">
+                                📁 Setup Content Management
                             </button>
-                            <button class="btn btn-secondary" onclick="reviewSprint5()">
-                                📋 Review Sprint 5
+                            <button class="btn btn-secondary" onclick="reviewSprint2()">
+                                📋 Review Sprint 2
                             </button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -608,8 +603,8 @@
                     <h3 class="card-title">Quick Help</h3>
                     <div class="help-item">
                         <span class="help-icon">📚</span>
-                        <a href="/prototype/docs/sprint5/" style="text-decoration: none; color: inherit;">
-                            Sprint 5 Documentation
+                        <a href="/prototype/docs/sprint2/" style="text-decoration: none; color: inherit;">
+                            Sprint 2 Documentation
                         </a>
                     </div>
                     <div class="help-item">
@@ -630,24 +625,25 @@
                 <div class="sidebar-card">
                     <h3 class="card-title">Recommended Timeline</h3>
                     <div class="timeline-item">
-                        <span class="timeline-time">00-08h</span>
-                        <span>Discord Community Setup</span>
+                        <span class="timeline-time">0-10h</span>
+                        <span>Authentication System</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">08-18h</span>
-                        <span>Support System Implementation</span>
+                        <span class="timeline-time">10-22h</span>
+                        <span>Customer Dashboard</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">18-26h</span>
-                        <span>Progress Tracking & Gamification</span>
+                        <span class="timeline-time">22-30h</span>
+                        <span>Content Management</span>
                     </div>
                 </div>
+
 
                 <!-- Emergency Support -->
                 <div class="sidebar-card">
                     <div class="emergency-contact">
                         <h4>🆘 Need Help?</h4>
-                        <p>Stuck on community setup or support systems? Get immediate assistance.</p>
+                        <p>Stuck on authentication or dashboard design? Get immediate development support.</p>
                         <button class="btn btn-primary mt-20" onclick="requestSupport()">
                             Get Support
                         </button>
@@ -656,28 +652,28 @@
 
                 <!-- Success Preview -->
                 <div class="sidebar-card">
-                    <h3 class="card-title">🎯 Sprint 5 Deliverables</h3>
+                    <h3 class="card-title">🎯 Sprint 2 Deliverables</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">✅ Discord community server</li>
-                        <li style="padding: 5px 0;">✅ Customer support system</li>
-                        <li style="padding: 5px 0;">✅ AI chatbot integration</li>
+                        <li style="padding: 5px 0;">✅ Secure user authentication</li>
+                        <li style="padding: 5px 0;">✅ Customer dashboard interface</li>
                         <li style="padding: 5px 0;">✅ Progress tracking system</li>
-                        <li style="padding: 5px 0;">✅ Achievement badges</li>
+                        <li style="padding: 5px 0;">✅ Content access controls</li>
+                        <li style="padding: 5px 0;">✅ User profile management</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Sprint Navigation - moved to bottom -->
-        <div class="sprint-navigation">
+        <div style="margin-top: 30px; background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
             <h3 class="card-title">Sprint Navigation</h3>
             <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
                 <a href="./sprint0-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 0</a>
                 <a href="./sprint1-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 1</a>
-                <a href="./sprint2-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 2</a>
+                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 2</span>
                 <a href="./sprint3-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 3</a>
                 <a href="./sprint4-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 4</a>
-                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 5</span>
+                <a href="./sprint5-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 5</a>
                 <a href="./sprint6-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 6</a>
                 <a href="./sprint7-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 7</a>
             </div>
@@ -695,6 +691,7 @@
 
         // Load saved progress
         window.addEventListener('load', function() {
+            // Get email from URL params if redirected from email capture
             const urlParams = new URLSearchParams(window.location.search);
             userEmail = urlParams.get('email');
             
@@ -709,12 +706,13 @@
         });
 
         function loadProgress() {
-            const savedProgress = localStorage.getItem('sprint5-progress');
+            const savedProgress = localStorage.getItem('sprint2-progress');
             if (savedProgress) {
                 const progress = JSON.parse(savedProgress);
                 completedSteps = progress.completedSteps || 0;
                 timeSpent = progress.timeSpent || 0;
                 
+                // Restore checklist states
                 Object.keys(progress.checklistItems || {}).forEach(itemId => {
                     const checkbox = document.querySelector(`[data-item="${itemId}"]`);
                     if (checkbox && progress.checklistItems[itemId]) {
@@ -722,6 +720,7 @@
                     }
                 });
                 
+                // Update step states
                 for (let i = 1; i <= 3; i++) {
                     const step = document.querySelector(`[data-step="${i}"]`);
                     if (progress.completedStepNumbers && progress.completedStepNumbers.includes(i)) {
@@ -730,6 +729,7 @@
                     }
                 }
                 
+                // Set active step
                 if (progress.activeStep) {
                     setActiveStep(progress.activeStep);
                 }
@@ -740,7 +740,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint5/progress/${encodeURIComponent(userEmail)}`);
+                const response = await fetch(`/api/sprint2/progress/${encodeURIComponent(userEmail)}`);
                 const data = await response.json();
                 
                 if (data.success && data.progress) {
@@ -749,6 +749,7 @@
                     completedSteps = progress.completedSteps.length;
                     timeSpent = (Date.now() - progress.startTime) / (1000 * 60 * 60);
                     
+                    // Restore step states
                     progress.completedSteps.forEach(stepNum => {
                         const step = document.querySelector(`[data-step="${stepNum}"]`);
                         if (step) {
@@ -757,10 +758,12 @@
                         }
                     });
                     
+                    // Set active step
                     if (progress.currentStep <= 3) {
                         setActiveStep(progress.currentStep);
                     }
                     
+                    // Restore checklist items
                     Object.keys(progress.stepProgress || {}).forEach(itemId => {
                         const checkbox = document.querySelector(`[data-item="${itemId}"]`);
                         if (checkbox && progress.stepProgress[itemId]) {
@@ -770,11 +773,13 @@
                 }
             } catch (error) {
                 console.error('Failed to load progress from server:', error);
+                // Fallback to local storage
                 loadProgress();
             }
         }
 
         function saveProgress() {
+            // Save to local storage
             const checklistItems = {};
             document.querySelectorAll('.checklist [data-item]').forEach(item => {
                 checklistItems[item.dataset.item] = item.classList.contains('completed');
@@ -796,8 +801,9 @@
                 lastUpdated: Date.now()
             };
             
-            localStorage.setItem('sprint5-progress', JSON.stringify(progress));
+            localStorage.setItem('sprint2-progress', JSON.stringify(progress));
             
+            // Save to server if user email available
             if (userEmail) {
                 saveProgressToServer(progress);
             }
@@ -807,7 +813,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint5/progress/${encodeURIComponent(userEmail)}`, {
+                const response = await fetch(`/api/sprint2/progress/${encodeURIComponent(userEmail)}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -835,14 +841,14 @@
             
             document.getElementById('completedSteps').textContent = `${completedSteps}/${totalSteps}`;
             document.getElementById('timeSpent').textContent = `${Math.round(timeSpent).toString().padStart(2, '0')}h`;
-            document.getElementById('timeRemaining').textContent = `${Math.max(0, 26 - timeSpent).toString().padStart(2, '0')}h`;
+            document.getElementById('timeRemaining').textContent = `${Math.max(0, 30 - timeSpent).toString().padStart(2, '0')}h`;
             document.getElementById('progressFill').style.width = `${progressPercent}%`;
             
             let progressText = '';
             if (completedSteps === 0) {
-                progressText = 'Ready to start Sprint 5: Community & Support';
+                progressText = 'Ready to start Sprint 2: Customer Portal & Auth';
             } else if (completedSteps === totalSteps) {
-                progressText = '🎉 Sprint 5 Complete! Community and support systems are ready';
+                progressText = '🎉 Sprint 2 Complete! Customer portal is ready';
             } else {
                 progressText = `Step ${completedSteps + 1} in progress - ${Math.round(progressPercent)}% complete`;
             }
@@ -851,12 +857,14 @@
         }
 
         function toggleStep(stepNumber) {
+            // Close all other steps
             document.querySelectorAll('.step').forEach(step => {
                 if (step.dataset.step != stepNumber) {
                     step.classList.remove('active');
                 }
             });
             
+            // Toggle current step
             const currentStep = document.querySelector(`[data-step="${stepNumber}"]`);
             currentStep.classList.toggle('active');
             
@@ -881,6 +889,7 @@
             
             completedSteps = Math.max(completedSteps, stepNumber);
             
+            // Activate next step
             if (stepNumber < 3) {
                 setActiveStep(stepNumber + 1);
             }
@@ -888,8 +897,9 @@
             updateProgress();
             saveProgress();
             
+            // Track completion in analytics
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint5_step_complete', {
+                gtag('event', 'sprint2_step_complete', {
                     event_category: 'Sprint Progress',
                     event_label: `Step ${stepNumber}`,
                     value: stepNumber
@@ -901,6 +911,7 @@
             element.classList.toggle('completed');
             saveProgress();
             
+            // Check if all items in this step are completed
             const stepElement = element.closest('.step');
             const stepNumber = parseInt(stepElement.dataset.step);
             const allItems = stepElement.querySelectorAll('.checklist [data-item]');
@@ -911,6 +922,7 @@
             }
         }
 
+        // Add click handlers to checklist items
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.checklist [data-item]').forEach(item => {
                 item.addEventListener('click', function() {
@@ -920,39 +932,65 @@
             });
         });
 
+        // Step action functions
+        function startAuthSetup() {
+            alert('Opening authentication setup guide...');
+            // This would open a detailed guide or start wizard
+        }
+
+        function startDashboardBuild() {
+            alert('Starting dashboard development...');
+            // This would guide through dashboard creation
+        }
+
+        function startCMSSetup() {
+            alert('Opening content management setup...');
+            // This would start the CMS configuration process
+        }
+
+        function reviewSprint2() {
+            alert('Opening Sprint 2 review and next steps...');
+            // This would show summary and transition to Sprint 3
+        }
+
         function requestSupport() {
-            if (confirm('Would you like to schedule a Sprint 5 support call?')) {
+            // This would open a support chat or contact form
+            if (confirm('Would you like to schedule a Sprint 2 support call?')) {
                 window.open('https://calendly.com/toshioj/30min', '_blank');
             }
         }
 
         function trackUser(email) {
-            console.log(`Tracking Sprint 5 for: ${email}`);
+            // Track user engagement
+            console.log(`Tracking Sprint 2 for: ${email}`);
             
+            // Send analytics event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint5_onboarding_start', {
+                gtag('event', 'sprint2_onboarding_start', {
                     event_category: 'Sprint Progress',
-                    event_label: 'Sprint 5 Guide Access',
+                    event_label: 'Sprint 2 Guide Access',
                     custom_parameter: email
                 });
             }
         }
 
+        // Time tracking
         setInterval(function() {
-            timeSpent = (Date.now() - startTime) / (1000 * 60 * 60);
+            timeSpent = (Date.now() - startTime) / (1000 * 60 * 60); // Convert to hours
             updateProgress();
             saveProgress();
-        }, 60000);
+        }, 60000); // Update every minute
 
+        // Completion celebration
         function celebrateCompletion() {
             if (completedSteps === 3) {
                 const celebration = document.createElement('div');
                 celebration.innerHTML = `
                     <div class="success-message">
-                        <h3>🎉 Sprint 5 Complete!</h3>
-                        <p>You've successfully built your community and support systems! Ready to move to Sprint 6.</p>
-                        <button class="btn btn-primary" onclick="proceedToSprint6()">
-                            🚀 Continue to Sprint 6
+                        <h3>🎉 Sprint 2 Complete!</h3>
+                        <p>You've successfully built your customer portal and authentication system! Ready to move to Sprint 3.</p>
+                        <button class="btn btn-primary" onclick="proceedToSprint3()">
+                            🚀 Continue to Sprint 3
                         </button>
                     </div>
                 `;
@@ -960,10 +998,11 @@
             }
         }
 
-        function proceedToSprint6() {
-            window.location.href = './sprint6-onboarding.html';
+        function proceedToSprint3() {
+            window.location.href = './sprint3-onboarding.html';
         }
 
+        // Check for completion on load
         window.addEventListener('load', function() {
             setTimeout(celebrateCompletion, 1000);
         });

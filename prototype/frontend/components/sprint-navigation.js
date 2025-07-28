@@ -5,18 +5,18 @@ class SprintNavigation {
     constructor(currentSprint = 0) {
         this.currentSprint = parseInt(currentSprint);
         this.totalSprints = 8; // Sprint 0-7
-        this.baseUrl = './onboarding/';
+        this.baseUrl = './';
         
         // Sprint metadata - Updated to match actual file structure
         this.sprintData = {
-            0: { name: 'Setup Guide', file: 'sprint0-onboarding.html', progress: 0 },
-            1: { name: 'MVP Foundation', file: 'sprint1-onboarding.html', progress: 12.5 },
-            2: { name: 'Customer Portal', file: 'sprint2-onboarding.html', progress: 25 },
-            3: { name: 'Claude AI', file: 'sprint3-onboarding.html', progress: 37.5 },
-            4: { name: '7-Day Content', file: 'sprint4-onboarding.html', progress: 50 },
-            5: { name: 'Community', file: 'sprint5-onboarding.html', progress: 62.5 },
-            6: { name: 'Analytics', file: 'sprint6-onboarding.html', progress: 75 },
-            7: { name: 'Beta & Launch', file: 'sprint7-onboarding.html', progress: 87.5 }
+            0: { name: 'Setup Guide', file: 'sprint-0.html', progress: 0 },
+            1: { name: 'MVP Foundation', file: 'sprint-1.html', progress: 12.5 },
+            2: { name: 'Customer Portal', file: 'sprint-2.html', progress: 25 },
+            3: { name: 'Claude AI', file: 'sprint-3.html', progress: 37.5 },
+            4: { name: '7-Day Content', file: 'sprint-4.html', progress: 50 },
+            5: { name: 'Community', file: 'sprint-5.html', progress: 62.5 },
+            6: { name: 'Analytics', file: 'sprint-6.html', progress: 75 },
+            7: { name: 'Beta & Launch', file: 'sprint-7.html', progress: 87.5 }
         };
     }
 

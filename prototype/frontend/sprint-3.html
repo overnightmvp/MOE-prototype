@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 1: MVP Foundation | 7-Day MVP Validation</title>
-    <meta name="description" content="Build your MVP foundation with landing page, payment system, and analytics. Interactive step-by-step guide for Sprint 1.">
+    <title>Sprint 3: Claude AI Integration | 7-Day MVP Validation</title>
+    <meta name="description" content="Integrate Claude AI for personalized market research, copy generation, and automated analysis in Sprint 3. Interactive guide.">
     
     <!-- Hotjar Tracking Code for https://overnightmvp.netlify.app/ -->
     <script>
@@ -19,8 +19,8 @@
     </script>
     
     <!-- Design System CSS -->
-    <link rel="stylesheet" href="../assets/css/design-system.css">
-    <link rel="stylesheet" href="../assets/css/onboarding.css">
+    <link rel="stylesheet" href="./assets/css/design-system.css">
+    <link rel="stylesheet" href="./assets/css/onboarding.css">
     
     <!-- Skip Navigation for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -452,8 +452,8 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🚀 Sprint 1: MVP Foundation</h1>
-            <p>Build your landing page, payment system, and analytics foundation for revenue generation</p>
+            <h1>🤖 Sprint 3: Claude AI Integration</h1>
+            <p>Integrate AI-powered market research, copy generation, and automated analysis</p>
         </div>
 
         <!-- Progress Section -->
@@ -470,7 +470,7 @@
                         <span class="stat-label">Time Spent</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="timeRemaining">34h</span>
+                        <span class="stat-number" id="timeRemaining">42h</span>
                         <span class="stat-label">Time Remaining</span>
                     </div>
                 </div>
@@ -478,182 +478,117 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text" id="progressText">Ready to start Sprint 1: MVP Foundation</div>
+            <div class="progress-text" id="progressText">Ready to start Sprint 3: Claude AI Integration</div>
         </div>
 
         <div class="main-grid">
             <!-- Main Steps Section -->
             <div class="steps-section">
-                <h2 class="section-title">Sprint 1 Implementation Steps</h2>
+                <h2 class="section-title">Sprint 3 Implementation Steps</h2>
                 
-                <!-- Step 1: Landing Page Development -->
+                <!-- Step 1: Claude API Setup & Integration -->
                 <div class="step active" data-step="1">
                     <div class="step-header" onclick="toggleStep(1)">
                         <div class="step-number">1</div>
                         <div class="step-info">
-                            <div class="step-title">Landing Page Development</div>
-                            <div class="step-subtitle">Set up hosting, design layout, write compelling copy</div>
+                            <div class="step-title">Claude API Setup & Integration</div>
+                            <div class="step-subtitle">Configure Claude API with error handling and rate limiting</div>
                             <div class="step-time">⏱️ 12 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Create your main landing page that converts visitors into customers. 
-                            This is the foundation of your revenue generation system.
+                            Set up the Claude API integration with proper authentication, error handling, 
+                            and fallback systems to power your AI-driven validation features.
                         </div>
                         
                         <ul class="checklist" id="step1-checklist">
-                            <li data-item="hosting">Set up Webflow/WordPress hosting</li>
-                            <li data-item="layout">Design responsive landing page layout</li>
-                            <li data-item="copy">Write compelling copy using LinkedIn messaging</li>
-                            <li data-item="testimonials">Add testimonial placeholders and FAQ section</li>
-                            <li data-item="abtesting">Implement A/B testing capability</li>
+                            <li data-item="api-account">Set up Claude API account and authentication</li>
+                            <li data-item="api-wrapper">Build API wrapper with error handling</li>
+                            <li data-item="rate-limiting">Implement rate limiting and usage tracking</li>
+                            <li data-item="fallback-systems">Create fallback systems for API downtime</li>
+                            <li data-item="reliability-test">Test API reliability and response times</li>
+                            <li data-item="monitoring">Set up API monitoring and alerting</li>
                         </ul>
                         
                         <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startLandingPageDev()">
-                                🏠 Start Landing Page
+                            <button class="btn btn-primary" onclick="startClaudeSetup()">
+                                🤖 Setup Claude API
                             </button>
-                            <a href="/prototype/docs/sprint1/landing-page-guide.md" class="btn btn-secondary">
-                                📋 View Guide
+                            <a href="/prototype/docs/sprint3/claude-api-guide.md" class="btn btn-secondary">
+                                📋 View API Guide
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 2: Payment & Checkout System -->
+                <!-- Step 2: Prompt Library Development -->
                 <div class="step" data-step="2">
                     <div class="step-header" onclick="toggleStep(2)">
                         <div class="step-number">2</div>
                         <div class="step-info">
-                            <div class="step-title">Payment & Checkout System</div>
-                            <div class="step-subtitle">Set up Polar.sh payment processing and checkout flow</div>
-                            <div class="step-time">⏱️ 8 hours</div>
+                            <div class="step-title">Prompt Library Development</div>
+                            <div class="step-subtitle">Create optimized prompts for market research and analysis</div>
+                            <div class="step-time">⏱️ 16 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Configure your payment processing system to accept customer payments securely.
-                            This enables immediate revenue generation from your MVP.
+                            Develop a comprehensive library of specialized prompts that generate high-quality 
+                            market research, competitor analysis, and business insights.
                         </div>
                         
                         <ul class="checklist" id="step2-checklist">
-                            <li data-item="polar">Set up Polar.sh payment processing</li>
-                            <li data-item="checkout">Create secure checkout flow</li>
-                            <li data-item="confirmation">Implement purchase confirmation system</li>
-                            <li data-item="invoices">Set up invoice and receipt generation</li>
-                            <li data-item="testing">Test payment error handling</li>
+                            <li data-item="market-research">Research and test market research prompts</li>
+                            <li data-item="competitor-analysis">Create competitor analysis prompt templates</li>
+                            <li data-item="copy-generation">Build copy generation prompt variations</li>
+                            <li data-item="data-analysis">Develop data analysis and insight prompts</li>
+                            <li data-item="prompt-quality">Test prompt quality and consistency</li>
+                            <li data-item="prompt-versioning">Implement prompt versioning and A/B testing</li>
                         </ul>
                         
                         <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startPaymentSetup()">
-                                💳 Setup Payments
+                            <button class="btn btn-primary" onclick="startPromptDevelopment()">
+                                📝 Develop Prompts
                             </button>
-                            <a href="https://polar.sh/overnightmvp" class="btn btn-secondary" target="_blank">
-                                🔗 Polar.sh Dashboard
+                            <a href="/prototype/docs/sprint3/prompt-templates.md" class="btn btn-secondary">
+                                🎯 View Templates
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 3: Basic Analytics Setup -->
+                <!-- Step 3: AI Interface & User Experience -->
                 <div class="step" data-step="3">
                     <div class="step-header" onclick="toggleStep(3)">
                         <div class="step-number">3</div>
                         <div class="step-info">
-                            <div class="step-title">Analytics Setup</div>
-                            <div class="step-subtitle">Configure GA4, conversion tracking, and monitoring</div>
-                            <div class="step-time">⏱️ 4 hours</div>
+                            <div class="step-title">AI Interface & User Experience</div>
+                            <div class="step-subtitle">Build chat interface and response management system</div>
+                            <div class="step-time">⏱️ 14 hours</div>
                         </div>
                     </div>
                     <div class="step-content">
                         <div class="step-description">
-                            Set up comprehensive analytics to track user behavior, conversions, and system performance.
-                            Data-driven decisions start here.
+                            Create an intuitive chat-like interface where users can interact with Claude AI,
+                            customize prompts, and manage their AI-generated insights and content.
                         </div>
                         
                         <ul class="checklist" id="step3-checklist">
-                            <li data-item="ga4">Install Google Analytics 4</li>
-                            <li data-item="conversions">Set up conversion tracking</li>
-                            <li data-item="heatmaps">Implement landing page heatmaps (Hotjar)</li>
-                            <li data-item="dashboard">Create basic dashboard for monitoring</li>
+                            <li data-item="chat-interface">Design chat-like interface for AI interactions</li>
+                            <li data-item="prompt-selection">Implement prompt selection and customization</li>
+                            <li data-item="response-formatting">Build response formatting and display</li>
+                            <li data-item="response-saving">Add response saving and export features</li>
+                            <li data-item="user-flow">Test user flow and experience</li>
+                            <li data-item="conversation-history">Implement conversation history and context</li>
                         </ul>
                         
                         <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startAnalyticsSetup()">
-                                📊 Setup Analytics
+                            <button class="btn btn-success" onclick="startAIInterface()">
+                                💬 Build AI Interface
                             </button>
-                            <a href="https://analytics.google.com" class="btn btn-secondary" target="_blank">
-                                📈 GA4 Dashboard
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4: Email Automation Setup -->
-                <div class="step" data-step="4">
-                    <div class="step-header" onclick="toggleStep(4)">
-                        <div class="step-number">4</div>
-                        <div class="step-info">
-                            <div class="step-title">Email Automation</div>
-                            <div class="step-subtitle">Setup Plunk, create sequences, test deliverability</div>
-                            <div class="step-time">⏱️ 6 hours</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-description">
-                            Build your email automation system to nurture leads and convert prospects into customers.
-                            Automated revenue generation starts here.
-                        </div>
-                        
-                        <ul class="checklist" id="step4-checklist">
-                            <li data-item="plunk">Set up Plunk account and domain authentication</li>
-                            <li data-item="leadmagnet">Create lead magnet landing page</li>
-                            <li data-item="sequence">Build 3-part email nurture sequence</li>
-                            <li data-item="triggers">Set up behavioral triggers for purchase flow</li>
-                            <li data-item="deliverability">Test email deliverability</li>
-                        </ul>
-                        
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="startEmailSetup()">
-                                📧 Setup Email Automation
-                            </button>
-                            <a href="https://useplunk.com" class="btn btn-secondary" target="_blank">
-                                📬 Plunk Dashboard
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 5: Lead Magnet Creation -->
-                <div class="step" data-step="5">
-                    <div class="step-header" onclick="toggleStep(5)">
-                        <div class="step-number">5</div>
-                        <div class="step-info">
-                            <div class="step-title">Lead Magnet Creation</div>
-                            <div class="step-subtitle">Create worksheet, design PDF, setup delivery</div>
-                            <div class="step-time">⏱️ 4 hours</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-description">
-                            Create valuable free content that captures leads and demonstrates your expertise.
-                            This builds trust and fills your sales funnel.
-                        </div>
-                        
-                        <ul class="checklist" id="step5-checklist">
-                            <li data-item="worksheet">Create "5-Minute Market Validation" worksheet</li>
-                            <li data-item="design">Design PDF with professional branding</li>
-                            <li data-item="delivery">Set up automatic delivery system</li>
-                            <li data-item="thankyou">Create thank you page with next steps</li>
-                        </ul>
-                        
-                        <div class="step-actions">
-                            <button class="btn btn-success" onclick="startLeadMagnetCreation()">
-                                🎁 Create Lead Magnet
-                            </button>
-                            <button class="btn btn-secondary" onclick="reviewSprint1()">
-                                📋 Review Sprint 1
+                            <button class="btn btn-secondary" onclick="reviewSprint3()">
+                                📋 Review Sprint 3
                             </button>
                         </div>
                     </div>
@@ -667,8 +602,8 @@
                     <h3 class="card-title">Quick Help</h3>
                     <div class="help-item">
                         <span class="help-icon">📚</span>
-                        <a href="/prototype/docs/sprint1/" style="text-decoration: none; color: inherit;">
-                            Sprint 1 Documentation
+                        <a href="/prototype/docs/sprint3/" style="text-decoration: none; color: inherit;">
+                            Sprint 3 Documentation
                         </a>
                     </div>
                     <div class="help-item">
@@ -690,23 +625,15 @@
                     <h3 class="card-title">Recommended Timeline</h3>
                     <div class="timeline-item">
                         <span class="timeline-time">0-12h</span>
-                        <span>Landing Page Development</span>
+                        <span>Claude API Setup</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">12-20h</span>
-                        <span>Payment System Setup</span>
+                        <span class="timeline-time">12-28h</span>
+                        <span>Prompt Library Development</span>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-time">20-24h</span>
-                        <span>Analytics Configuration</span>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">24-30h</span>
-                        <span>Email Automation</span>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-time">30-34h</span>
-                        <span>Lead Magnet Creation</span>
+                        <span class="timeline-time">28-42h</span>
+                        <span>AI Interface & UX</span>
                     </div>
                 </div>
 
@@ -715,7 +642,7 @@
                 <div class="sidebar-card">
                     <div class="emergency-contact">
                         <h4>🆘 Need Help?</h4>
-                        <p>Stuck on a step? Get immediate support to keep your Sprint 1 on track.</p>
+                        <p>Stuck on Claude API integration? Get immediate technical support for AI implementation.</p>
                         <button class="btn btn-primary mt-20" onclick="requestSupport()">
                             Get Support
                         </button>
@@ -724,13 +651,13 @@
 
                 <!-- Success Preview -->
                 <div class="sidebar-card">
-                    <h3 class="card-title">🎯 Sprint 1 Deliverables</h3>
+                    <h3 class="card-title">🎯 Sprint 3 Deliverables</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">✅ Converting landing page</li>
-                        <li style="padding: 5px 0;">✅ Payment processing system</li>
-                        <li style="padding: 5px 0;">✅ Analytics & tracking</li>
-                        <li style="padding: 5px 0;">✅ Email automation</li>
-                        <li style="padding: 5px 0;">✅ Lead generation system</li>
+                        <li style="padding: 5px 0;">✅ Claude API integration</li>
+                        <li style="padding: 5px 0;">✅ Specialized prompt library</li>
+                        <li style="padding: 5px 0;">✅ AI chat interface</li>
+                        <li style="padding: 5px 0;">✅ Response management system</li>
+                        <li style="padding: 5px 0;">✅ Error handling & fallbacks</li>
                     </ul>
                 </div>
             </div>
@@ -741,9 +668,9 @@
             <h3 class="card-title">Sprint Navigation</h3>
             <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
                 <a href="./sprint0-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 0</a>
-                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 1</span>
+                <a href="./sprint1-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 1</a>
                 <a href="./sprint2-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 2</a>
-                <a href="./sprint3-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 3</a>
+                <span class="btn btn-primary" style="font-size: 0.8rem;">Sprint 3</span>
                 <a href="./sprint4-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 4</a>
                 <a href="./sprint5-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 5</a>
                 <a href="./sprint6-onboarding.html" class="btn btn-secondary" style="font-size: 0.8rem;">Sprint 6</a>
@@ -778,7 +705,7 @@
         });
 
         function loadProgress() {
-            const savedProgress = localStorage.getItem('sprint1-progress');
+            const savedProgress = localStorage.getItem('sprint3-progress');
             if (savedProgress) {
                 const progress = JSON.parse(savedProgress);
                 completedSteps = progress.completedSteps || 0;
@@ -793,7 +720,7 @@
                 });
                 
                 // Update step states
-                for (let i = 1; i <= 5; i++) {
+                for (let i = 1; i <= 3; i++) {
                     const step = document.querySelector(`[data-step="${i}"]`);
                     if (progress.completedStepNumbers && progress.completedStepNumbers.includes(i)) {
                         step.classList.add('completed');
@@ -812,7 +739,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint1/progress/${encodeURIComponent(userEmail)}`);
+                const response = await fetch(`/api/sprint3/progress/${encodeURIComponent(userEmail)}`);
                 const data = await response.json();
                 
                 if (data.success && data.progress) {
@@ -831,7 +758,7 @@
                     });
                     
                     // Set active step
-                    if (progress.currentStep <= 5) {
+                    if (progress.currentStep <= 3) {
                         setActiveStep(progress.currentStep);
                     }
                     
@@ -873,7 +800,7 @@
                 lastUpdated: Date.now()
             };
             
-            localStorage.setItem('sprint1-progress', JSON.stringify(progress));
+            localStorage.setItem('sprint3-progress', JSON.stringify(progress));
             
             // Save to server if user email available
             if (userEmail) {
@@ -885,7 +812,7 @@
             if (!userEmail) return;
             
             try {
-                const response = await fetch(`/api/sprint1/progress/${encodeURIComponent(userEmail)}`, {
+                const response = await fetch(`/api/sprint3/progress/${encodeURIComponent(userEmail)}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -908,19 +835,19 @@
         }
 
         function updateProgress() {
-            const totalSteps = 5;
+            const totalSteps = 3;
             const progressPercent = (completedSteps / totalSteps) * 100;
             
             document.getElementById('completedSteps').textContent = `${completedSteps}/${totalSteps}`;
             document.getElementById('timeSpent').textContent = `${Math.round(timeSpent).toString().padStart(2, '0')}h`;
-            document.getElementById('timeRemaining').textContent = `${Math.max(0, 34 - timeSpent).toString().padStart(2, '0')}h`;
+            document.getElementById('timeRemaining').textContent = `${Math.max(0, 42 - timeSpent).toString().padStart(2, '0')}h`;
             document.getElementById('progressFill').style.width = `${progressPercent}%`;
             
             let progressText = '';
             if (completedSteps === 0) {
-                progressText = 'Ready to start Sprint 1: MVP Foundation';
+                progressText = 'Ready to start Sprint 3: Claude AI Integration';
             } else if (completedSteps === totalSteps) {
-                progressText = '🎉 Sprint 1 Complete! MVP Foundation is ready';
+                progressText = '🎉 Sprint 3 Complete! AI integration is ready';
             } else {
                 progressText = `Step ${completedSteps + 1} in progress - ${Math.round(progressPercent)}% complete`;
             }
@@ -962,7 +889,7 @@
             completedSteps = Math.max(completedSteps, stepNumber);
             
             // Activate next step
-            if (stepNumber < 5) {
+            if (stepNumber < 3) {
                 setActiveStep(stepNumber + 1);
             }
             
@@ -971,7 +898,7 @@
             
             // Track completion in analytics
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint1_step_complete', {
+                gtag('event', 'sprint3_step_complete', {
                     event_category: 'Sprint Progress',
                     event_label: `Step ${stepNumber}`,
                     value: stepNumber
@@ -1005,52 +932,42 @@
         });
 
         // Step action functions
-        function startLandingPageDev() {
-            alert('Opening landing page development guide...');
+        function startClaudeSetup() {
+            alert('Opening Claude API setup guide...');
             // This would open a detailed guide or start wizard
         }
 
-        function startPaymentSetup() {
-            alert('Starting payment system setup...');
-            // This would guide through Polar.sh setup
+        function startPromptDevelopment() {
+            alert('Starting prompt library development...');
+            // This would guide through prompt creation
         }
 
-        function startAnalyticsSetup() {
-            alert('Beginning analytics configuration...');
-            // This would open analytics setup wizard
+        function startAIInterface() {
+            alert('Opening AI interface builder...');
+            // This would start the interface development process
         }
 
-        function startEmailSetup() {
-            alert('Starting email automation setup...');
-            // This would guide through Plunk configuration
-        }
-
-        function startLeadMagnetCreation() {
-            alert('Opening lead magnet creation wizard...');
-            // This would start the lead magnet creation process
-        }
-
-        function reviewSprint1() {
-            alert('Opening Sprint 1 review and next steps...');
-            // This would show summary and transition to Sprint 2
+        function reviewSprint3() {
+            alert('Opening Sprint 3 review and next steps...');
+            // This would show summary and transition to Sprint 4
         }
 
         function requestSupport() {
             // This would open a support chat or contact form
-            if (confirm('Would you like to schedule a Sprint 1 support call?')) {
+            if (confirm('Would you like to schedule a Sprint 3 support call?')) {
                 window.open('https://calendly.com/toshioj/30min', '_blank');
             }
         }
 
         function trackUser(email) {
             // Track user engagement
-            console.log(`Tracking Sprint 1 for: ${email}`);
+            console.log(`Tracking Sprint 3 for: ${email}`);
             
             // Send analytics event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'sprint1_onboarding_start', {
+                gtag('event', 'sprint3_onboarding_start', {
                     event_category: 'Sprint Progress',
-                    event_label: 'Sprint 1 Guide Access',
+                    event_label: 'Sprint 3 Guide Access',
                     custom_parameter: email
                 });
             }
@@ -1065,14 +982,14 @@
 
         // Completion celebration
         function celebrateCompletion() {
-            if (completedSteps === 5) {
+            if (completedSteps === 3) {
                 const celebration = document.createElement('div');
                 celebration.innerHTML = `
                     <div class="success-message">
-                        <h3>🎉 Sprint 1 Complete!</h3>
-                        <p>You've successfully built your MVP foundation! Ready to move to Sprint 2.</p>
-                        <button class="btn btn-primary" onclick="proceedToSprint2()">
-                            🚀 Continue to Sprint 2
+                        <h3>🎉 Sprint 3 Complete!</h3>
+                        <p>You've successfully integrated Claude AI! Your validation system now has powerful AI capabilities. Ready to move to Sprint 4.</p>
+                        <button class="btn btn-primary" onclick="proceedToSprint4()">
+                            🚀 Continue to Sprint 4
                         </button>
                     </div>
                 `;
@@ -1080,8 +997,8 @@
             }
         }
 
-        function proceedToSprint2() {
-            window.location.href = './sprint2-onboarding.html';
+        function proceedToSprint4() {
+            window.location.href = './sprint4-onboarding.html';
         }
 
         // Check for completion on load
