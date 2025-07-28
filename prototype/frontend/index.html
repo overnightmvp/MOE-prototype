@@ -639,12 +639,14 @@
                 
                 <!-- Hidden Email Form -->
                 <div id="emailRevealForm" style="display: none; margin-top: 20px;">
-                    <form name="email-signup" method="POST" data-netlify="true" class="email-signup" onsubmit="handleEmailReveal(event)">
+                    <form class="email-signup" onsubmit="handleEmailReveal(event)">
                         <input type="email" name="email" class="email-input" placeholder="Enter your email to get started" required style="margin-bottom: 10px; width: 100%; padding: 15px; border: 2px solid var(--mvp-primary); border-radius: 8px;">
-                        <input type="hidden" name="form-name" value="email-signup">
                         <input type="hidden" name="source" value="main_landing">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Get My Validation System</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; transition: all 0.3s ease;">Get My Validation System</button>
                     </form>
+                    <p style="margin-top: 15px; font-size: 0.85rem; color: var(--mvp-gray); text-align: center;">
+                        🚀 You'll receive your first validation exercise within 24 hours
+                    </p>
                 </div>
                 
                 <p style="margin-top: 20px; color: var(--mvp-gray); font-size: 0.9rem;">
@@ -715,33 +717,82 @@
             });
         }
 
-        // Handle email form submission
+        // Handle email form submission with Plunk integration
         async function handleEmailReveal(event) {
             event.preventDefault();
             
             const formData = new FormData(event.target);
             const email = formData.get('email');
+            const source = formData.get('source');
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Starting Your Journey...';
+            submitButton.style.opacity = '0.7';
             
             // Track email signup
             gtag('event', 'email_signup', {
                 'event_category': 'Lead Generation',
-                'event_label': 'Email Reveal Form'
+                'event_label': 'Email Reveal Form',
+                'email_source': source
             });
             
-            // Submit to Netlify Forms
             try {
-                await fetch("/", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
+                // Submit to Plunk API via Netlify Function
+                const response = await fetch('/.netlify/functions/plunk-integration', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        source: source || 'main_landing',
+                        sequence_type: 'validation-series'
+                    })
                 });
                 
-                // Redirect to success page with email parameter
-                window.location.href = `./success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                
+                // Track successful enrollment
+                gtag('event', 'email_sequence_enrolled', {
+                    'event_category': 'Email Marketing',
+                    'event_label': 'Validation Series',
+                    'email_source': source
+                });
+                
+                // Show success state briefly
+                submitButton.textContent = '✅ Welcome to Your Journey!';
+                submitButton.style.backgroundColor = 'var(--mvp-success)';
+                
+                setTimeout(() => {
+                    // Redirect to success page with email parameter
+                    window.location.href = `./success.html?email=${encodeURIComponent(email)}&source=${encodeURIComponent(source || 'main_landing')}&enrolled=true`;
+                }, 1000);
+                
             } catch (error) {
-                console.error('Error submitting form:', error);
-                // Still redirect on error to avoid blocking user
-                window.location.href = `./success.html?email=${encodeURIComponent(email)}&source=main_landing`;
+                console.error('Error submitting to Plunk:', error);
+                
+                // Track error for debugging
+                gtag('event', 'email_signup_error', {
+                    'event_category': 'Error',
+                    'event_label': 'Plunk Integration Failure',
+                    'error_message': error.message
+                });
+                
+                // Restore button state
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                submitButton.style.opacity = '1';
+                submitButton.style.backgroundColor = '';
+                
+                // Show user-friendly error
+                alert('Oops! There was an issue starting your validation journey. Please try again or refresh the page.');
             }
         }
         

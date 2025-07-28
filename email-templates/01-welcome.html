@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your 7-Day MVP Validation Journey!</title>
+    <style>
+        /* Neo-brutalist Email Design System */
+        :root {
+            --brand-primary: #FF6B6B;
+            --brand-secondary: #4ECDC4;
+            --brand-accent: #FFD93D;
+            --brand-success: #6BCF7F;
+            --color-black: #2C2C2C;
+            --color-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--color-black);
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border: 4px solid var(--color-black);
+            box-shadow: 8px 8px 0px var(--color-black);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid var(--color-black);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: var(--color-white);
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .welcome-message {
+            background: var(--brand-accent);
+            padding: 25px;
+            border: 3px solid var(--color-black);
+            margin-bottom: 30px;
+            box-shadow: 4px 4px 0px var(--color-black);
+        }
+        
+        .welcome-message h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-black);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 3px solid var(--color-black);
+            box-shadow: 6px 6px 0px var(--color-black);
+            transition: all 0.2s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background-color: var(--brand-primary);
+            color: var(--color-white);
+        }
+        
+        .btn-secondary {
+            background-color: var(--brand-success);
+            color: var(--color-black);
+        }
+        
+        .next-steps {
+            border: 3px solid var(--color-black);
+            padding: 25px;
+            margin: 25px 0;
+            background: #f9f9f9;
+        }
+        
+        .next-steps h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-black);
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        
+        .step-number {
+            background: var(--brand-primary);
+            color: var(--color-white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+            border: 2px solid var(--color-black);
+        }
+        
+        .footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: var(--brand-accent);
+            text-decoration: none;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border: 2px solid var(--color-black);
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎉 Welcome to Your Validation Journey!</h1>
+            <p>Get ready to validate your MVP idea in 7 days</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <div class="welcome-message">
+                <h2>🚀 You're In! Here's What Happens Next...</h2>
+                <p>You've just taken the smartest step any founder can take: <strong>validating before building</strong>. Most founders waste months building products nobody wants. You're different.</p>
+            </div>
+            
+            <div class="cta-section">
+                <a href="{{dashboard_url}}" class="btn btn-primary">
+                    Start Your Validation Journey 🎯
+                </a>
+            </div>
+            
+            <div class="next-steps">
+                <h3>📋 Your Next 24 Hours:</h3>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <strong>Access Your Dashboard</strong><br>
+                        Click the button above to access your Sprint 0 setup guide. This will walk you through the foundation of your validation journey.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <strong>Complete Your Setup</strong><br>
+                        Spend 30 minutes setting up your validation tools and framework. This preparation will save you hours later.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <strong>Check Your Email Tomorrow</strong><br>
+                        I'll send you Day 1 materials tomorrow morning with your first validation exercises.
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: var(--brand-secondary); padding: 20px; border: 3px solid var(--color-black); margin: 25px 0;">
+                <h3 style="margin-bottom: 10px;">💡 Quick Win Tip:</h3>
+                <p><strong>Start thinking about 3 people you could interview about your idea.</strong> You'll need them for Day 2. They should be potential customers who have the problem you're solving.</p>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="font-size: 1.1rem; font-weight: 600;">Questions? Hit reply - I read every email.</p>
+                <p style="color: #666; margin-top: 10px;">Or email me directly: <a href="mailto:{{support_email}}" style="color: var(--brand-primary);">{{support_email}}</a></p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>🎯 7-Day MVP Validation System</strong></p>
+            <p>Helping founders validate smart, not hard</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.8;">
+                You received this because you signed up for the 7-Day MVP Validation System.<br>
+                <a href="#">Unsubscribe</a> | <a href="#">Update Preferences</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

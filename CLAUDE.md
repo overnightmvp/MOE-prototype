@@ -89,38 +89,64 @@ git push origin main
 - **fix/**: Bug fixes (`fix/routing-issues`)
 - **hotfix/**: Critical production fixes
 
-## 🔧 Project Structure (Navigation Guide)
+## 🔧 Project Structure (Simplified Architecture)
 
 ```
 prototype/
-├── frontend/           # Static files (Netlify deployment)
-│   ├── pages/         # Landing, success pages
-│   │   ├── index.html     # Main landing page
-│   │   └── success.html   # Post-signup success
-│   ├── onboarding/    # Sprint flow pages
-│   │   ├── sprint0-onboarding.html
-│   │   └── sprint[1-7]-onboarding.html
-│   ├── components/    # Reusable JS components
-│   └── assets/        # Static assets
-├── backend/           # API server (separate deployment)
-└── config/           # Environment configs
+├── frontend/           # Static files (Netlify deployment) - SIMPLIFIED
+│   ├── assets/css/         # Modular CSS system
+│   │   ├── design-system.css   # Core design tokens
+│   │   ├── landing.css         # Landing page styles  
+│   │   └── sprint.css          # Sprint pages styles
+│   ├── components/         # Reusable JS components
+│   │   ├── sprint-navigation.js
+│   │   └── StripeCheckout.js
+│   ├── index.html          # Main landing page
+│   ├── success.html        # Post-signup success
+│   ├── sprint-[0-7].html   # Sprint flow pages (flat structure)
+│   └── _redirects          # Netlify routing
+└── docs/               # Documentation only
 ```
 
-## 📊 Quality Gates
+### **🎯 PM Agent Structure Assessment:**
+- ✅ **GOOD**: Flat file structure = faster development  
+- ✅ **GOOD**: Eliminated complex backend = reduced maintenance
+- ✅ **GOOD**: Modular CSS = better performance
+- ⚠️ **WATCH**: Don't add complexity back without business justification
 
-### Required Before Every Push
-1. **Functionality Test**: All critical paths work
-2. **Mobile Test**: Responsive on phone/tablet
-3. **Performance**: Page loads < 3 seconds
-4. **Analytics**: GA4 events fire correctly
-5. **Forms**: Email capture works end-to-end
+## 📊 PM-Driven Quality Gates
 
-### Code Quality Standards
-- **Clean Code**: Self-documenting, no commented code
-- **Security**: No hardcoded secrets or API keys
-- **Performance**: Optimized images, minified assets
-- **SEO**: Meta tags, Open Graph, structured data
-- **Accessibility**: ARIA labels, keyboard navigation
+### **PM Agent Pre-Deployment Checklist** 
+*Every push must pass the PM Agent reality check*
+
+```bash
+/pm-pre-deploy-check
+# Validates business impact before technical deployment
+```
+
+**Business Validation (PM Agent Enforced):**
+1. **Revenue Impact**: Does this change increase conversions?
+2. **User Value**: Does this solve a real user problem?
+3. **Opportunity Cost**: Is this the highest ROI task right now?
+4. **Scope Validation**: Are we shipping the minimum viable improvement?
+
+**Technical Quality (PM Agent Supervised):**
+1. **Functionality Test**: Critical user paths work (PM: "Which paths make money?")
+2. **Mobile Test**: Mobile experience optimized (PM: "60% of traffic is mobile")
+3. **Performance**: Page loads < 2 seconds (PM: "Every second costs conversions")
+4. **Forms**: Email capture flawless (PM: "This is our #1 revenue driver")
+
+### **PM Agent Code Quality Framework**
+- **Clean Code**: PM asks "Will this slow down future features?"
+- **Security**: PM asks "Will this create support tickets?"
+- **Performance**: PM asks "Will users bounce because of this?"
+- **Accessibility**: PM asks "Are we excluding paying customers?"
+
+### **PM Agent Deployment Veto Power**
+```bash
+/pm-veto-deployment [reason]
+# PM Agent can halt any deployment that doesn't serve business goals
+```
 
 ## 🎯 UX Audit Findings & Action Items
 
@@ -215,21 +241,184 @@ git checkout main && git merge hotfix/critical-fix && git push
 - [ ] Backup critical data
 - [ ] Review and update docs
 
+## 🎯 Product Manager Agent - Command Center
+
+### **THE REALITY CHECK AGENT** 
+*Brutally honest product management that kills feature creep and maximizes revenue*
+
+```bash
+# Morning Routine - Set Daily Focus
+/pm-daily-priorities          # Cuts through noise, sets revenue-focused priorities
+/pm-validate-backlog         # Kills vanity features, keeps user value
+
+# Pre-Development Reality Check  
+/pm-approve-task [task]      # "Does this make money or help users? No? Kill it."
+/pm-user-impact [feature]    # Forces articulation of user value
+/pm-roi-analysis [work]      # Time investment vs business return
+
+# Strategic Decision Making
+/pm-pivot-or-persist [data]  # Data-driven continue/kill decisions
+/pm-scope-creep-check        # "You're building a spaceship, ship the bicycle"
+/pm-competitive-analysis     # Market position vs feature priorities
+
+# Emergency Intervention
+/pm-emergency-focus          # Strips everything to core revenue drivers
+/pm-ship-vs-perfect         # Forces "good enough to ship" decisions
+```
+
+### **Agent Coordination Hierarchy**
+```
+🎯 PM Agent (Master Coordinator)
+├── 🔧 Code Quality Agent → "Is this optimization worth the time?"
+├── 📝 Content Agent → "Does this content drive conversions?"  
+├── 🧪 Testing Agent → "What's the minimum viable test?"
+├── 📊 Analytics Agent → "Which metrics actually matter?"
+└── 📧 Email Agent → "How does this increase email conversions?"
+```
+
+### **Brutal Honesty Framework**
+- **Zero Sugar-Coating**: "This feature is pointless engineering masturbation"
+- **Revenue Obsessed**: "How does this increase MRR? If not, why are we doing it?"
+- **User-Centric**: "Users don't care about your clever code architecture"
+- **Scope Guardian**: "You're optimizing the wrong thing"
+- **Data-Driven**: "Show me conversion metrics, not opinions"
+
 ## 🎯 Taskmaster Commands (Power User)
 
 ```bash
-# One-liner full deploy
-git add . && git commit -m "feat: $(date +%Y%m%d) improvements" && git push && echo "🚀 Deployed!"
+# PM-Approved One-liner Deploy (Business Justified)
+/pm-approve-deploy && git add . && git commit -m "feat: $(date +%Y%m%d) revenue-focused improvements" && git push && echo "🚀 Business value deployed!"
 
-# Quick status check
-git status && netlify status && echo "📊 All systems check"
+# Quick status check with PM oversight
+/pm-daily-standup && git status && netlify status && echo "📊 Business metrics check"
 
-# Emergency rollback
-git log --oneline -5 && netlify rollback && echo "⚠️ Rolled back"
+# Emergency rollback with PM decision
+/pm-emergency-decision && git log --oneline -5 && netlify rollback && echo "⚠️ PM-approved rollback"
 
-# Performance check
-curl -w "@curl-format.txt" -o /dev/null -s "https://overnightmvp.netlify.app"
+# Performance check with business impact
+curl -w "@curl-format.txt" -o /dev/null -s "https://overnightmvp.netlify.app" && /pm-performance-impact
 ```
+
+## 🚀 **AUTOMATIC GIT OPERATIONS (CRITICAL)**
+
+### **Main Agent Auto-Commit Protocol**
+*MANDATORY: After every major implementation, the main agent MUST commit and push changes*
+
+```bash
+# After Major Feature Implementation (REQUIRED)
+git add . && git commit -m "feat: major feature implementation - [DESCRIPTION]
+
+🔧 Changes:
+- [List key changes]
+- [Business impact]
+- [Testing status]
+
+🎯 Ready for user testing and feedback" && git push origin main
+
+# After Integration Work (REQUIRED)  
+git add . && git commit -m "feat: system integration - [SERVICE/API NAME]
+
+⚡ Integration Details:
+- [Service integrated]
+- [Functionality added]
+- [Configuration required]
+
+✅ Ready for environment setup and testing" && git push origin main
+
+# After UI/UX Updates (REQUIRED)
+git add . && git commit -m "feat: user experience improvements
+
+🎨 UX Changes:
+- [Interface updates]
+- [User flow improvements]
+- [Accessibility enhancements]
+
+📱 Ready for user testing" && git push origin main
+```
+
+### **When Auto-Commit is MANDATORY**
+The main agent MUST automatically commit and push after:
+
+1. **✅ Major Feature Implementation** (like Plunk integration)
+2. **✅ System Architecture Changes** (like sub-agent frameworks)
+3. **✅ Integration Completions** (API integrations, service connections)
+4. **✅ UI/UX Overhauls** (design system changes, flow improvements)
+5. **✅ Configuration Updates** (environment setups, deployment changes)
+6. **✅ Documentation Major Updates** (framework additions, process changes)
+
+### **Auto-Commit Message Templates**
+
+**For Feature Implementations:**
+```bash
+git commit -m "feat: [FEATURE_NAME] implementation complete
+
+🚀 Implementation Summary:
+- [Core functionality delivered]
+- [Integration points completed]
+- [User experience enhanced]
+
+📋 Business Value:
+- [Revenue impact]
+- [User engagement improvement]
+- [Operational efficiency gain]
+
+🧪 Testing Status:
+- [Testing completed]
+- [Deployment readiness]
+- [User acceptance criteria met]
+
+🎯 Next Steps:
+- Environment setup required: [STEPS]
+- User testing recommended: [SCENARIOS]
+- Performance monitoring: [METRICS]
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+**For Integration Work:**
+```bash
+git commit -m "feat: [SERVICE_NAME] integration system complete
+
+⚡ Integration Delivered:
+- API connection established
+- Frontend integration active
+- Error handling implemented
+- User flow updated
+
+🔧 Configuration Required:
+- Environment variables: [LIST]
+- Service setup: [STEPS]
+- Testing procedures: [METHODS]
+
+📊 Success Metrics:
+- [KPI 1]: [Target]
+- [KPI 2]: [Target]
+- [KPI 3]: [Target]
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+### **Auto-Push Verification**
+After every auto-commit, the agent MUST verify:
+```bash
+# Verify push succeeded
+git status && echo "✅ Changes committed and pushed successfully"
+
+# Confirm deployment trigger
+echo "🚀 Auto-deployment should trigger on Netlify"
+echo "🧪 Ready for user testing at: https://overnightmvp.netlify.app"
+```
+
+### **Emergency Override**
+If auto-commit fails, agent MUST:
+1. **Report the error** immediately to user
+2. **Provide manual commands** for user to execute
+3. **Explain what changes** were made but not committed
+4. **Prioritize getting changes saved** over troubleshooting git issues
 
 ## 🏆 Success Metrics
 
@@ -392,6 +581,244 @@ netlify logs
 - **Analytics**: Google Analytics (G-L99CMW68TS)
 - **Repository**: GitHub main branch (auto-deploy enabled)
 - **Design System**: `/prototype/frontend/assets/css/design-system.css`
+
+---
+
+## 🚀 RECOMMENDED SUB-AGENT INTEGRATIONS
+
+### **Specialized Agent Command Framework**
+*Leverage specialized agents for maximum efficiency and expertise*
+
+```bash
+# Sub-agent delegation commands for complex tasks
+/delegate-to [agent-type] [task-description]
+/agent-status                    # Check active agent tasks
+/agent-handoff [context]        # Transfer context between agents
+```
+
+### **🎯 Product Strategy Agent**
+```bash
+# Strategic Decision Making
+/product-roadmap-review         # Quarterly roadmap assessment
+/feature-prioritization [data]  # Data-driven feature ranking
+/competitive-landscape         # Market position analysis
+/user-persona-validation      # Customer segment validation
+/pricing-strategy-review      # Revenue optimization analysis
+
+# Validation & Testing
+/hypothesis-generation        # Create testable assumptions
+/experiment-design [feature]  # A/B testing framework
+/success-metrics-definition   # KPI establishment
+/pivot-analysis [results]     # Data-driven pivot decisions
+
+# Business Model Evolution
+/revenue-stream-analysis      # Business model optimization
+/market-expansion-planning    # Growth opportunity assessment
+/partnership-evaluation       # Strategic partnership analysis
+```
+
+### **🔧 Technical Architecture Agent**
+```bash
+# Performance & Scalability
+/performance-audit           # Comprehensive performance analysis
+/scalability-assessment     # Infrastructure readiness review
+/security-audit             # Security vulnerability assessment
+/dependency-optimization    # Package and library optimization
+
+# Code Quality & Maintenance
+/code-review-automation     # Automated code quality checks
+/refactoring-recommendations # Technical debt analysis
+/testing-strategy-review    # Test coverage optimization
+/documentation-audit        # Technical documentation review
+
+# Infrastructure Management
+/deployment-optimization    # CI/CD pipeline improvements
+/monitoring-setup          # Observability and alerting
+/backup-strategy-review    # Data protection assessment
+/disaster-recovery-planning # Business continuity planning
+```
+
+### **📊 Analytics & Data Agent**
+```bash
+# User Behavior Analysis
+/conversion-funnel-analysis  # User flow optimization
+/user-journey-mapping       # Customer experience analysis
+/cohort-analysis           # User retention patterns
+/feature-usage-analysis    # Product usage insights
+
+# Business Intelligence
+/revenue-analytics         # Financial performance tracking
+/growth-metrics-dashboard  # Growth KPI monitoring
+/market-research-synthesis # Competitive intelligence
+/customer-feedback-analysis # Qualitative data insights
+
+# Experimentation & Testing
+/ab-test-analysis [results] # Statistical significance testing
+/multivariate-testing      # Complex experiment design
+/personalization-insights  # User segmentation analysis
+/predictive-modeling       # Forecasting and projections
+```
+
+### **🎨 Design & UX Agent**
+```bash
+# User Experience Optimization
+/ux-audit-comprehensive     # Full UX assessment
+/accessibility-compliance   # WCAG compliance review
+/mobile-first-optimization  # Mobile experience enhancement
+/user-testing-coordination  # User research facilitation
+
+# Design System Management
+/design-system-audit        # Component library review
+/brand-consistency-check    # Visual identity alignment
+/typography-optimization    # Readability and hierarchy
+/color-accessibility-audit  # Contrast and visibility
+
+# Conversion Optimization
+/landing-page-optimization  # Conversion rate improvement
+/cta-effectiveness-analysis # Call-to-action optimization
+/form-optimization         # User input flow enhancement
+/micro-interaction-design  # Engagement detail refinement
+```
+
+### **📧 Marketing & Growth Agent**
+```bash
+# Content Strategy
+/content-calendar-planning  # Editorial calendar development
+/email-sequence-optimization # Drip campaign enhancement
+/copywriting-optimization   # Conversion-focused copy
+/seo-content-strategy      # Search optimization planning
+
+# Channel Optimization
+/social-media-strategy     # Platform-specific approaches
+/paid-acquisition-analysis # Ad performance optimization
+/referral-program-design   # Viral growth mechanics
+/partnership-marketing     # Collaboration opportunities
+
+# Customer Lifecycle
+/onboarding-flow-optimization # User activation improvement
+/retention-strategy-development # Churn reduction tactics
+/customer-success-automation # Proactive support systems
+/loyalty-program-design    # Long-term engagement
+```
+
+### **💰 Revenue & Monetization Agent**
+```bash
+# Pricing Strategy
+/pricing-model-optimization # Revenue model refinement
+/value-proposition-analysis # Pricing justification
+/competitor-pricing-analysis # Market positioning
+/pricing-psychology-review  # Behavioral pricing tactics
+
+# Sales & Conversion
+/sales-funnel-optimization  # Revenue pipeline improvement
+/upsell-crosssell-strategy # Revenue per customer
+/payment-flow-optimization  # Checkout experience
+/subscription-model-design  # Recurring revenue optimization
+
+# Financial Planning
+/unit-economics-analysis    # Customer acquisition costs
+/revenue-forecasting       # Financial projections
+/churn-analysis           # Revenue retention factors
+/lifetime-value-optimization # Customer value maximization
+```
+
+### **⚡ AI & Automation Agent**
+```bash
+# Workflow Automation
+/process-automation-identification # Manual task elimination
+/api-integration-opportunities    # System connectivity
+/chatbot-conversation-design     # Customer service automation
+/email-automation-sequences      # Marketing workflow automation
+
+# AI Enhancement
+/ai-feature-integration         # AI capability development
+/machine-learning-opportunities # Predictive feature development
+/natural-language-processing    # Content and communication AI
+/recommendation-engine-design   # Personalization algorithms
+
+# Data & Intelligence
+/data-pipeline-optimization     # Information flow automation
+/reporting-automation          # Dashboard and insights
+/anomaly-detection-setup       # Automated monitoring
+/predictive-analytics-implementation # Forecasting systems
+```
+
+### **🏗️ Agent Coordination Protocols**
+
+#### **Master Coordination Framework**
+```bash
+# Daily Operations
+/morning-agent-briefing        # Daily priority coordination
+/agent-task-delegation        # Specialized task assignment
+/cross-agent-collaboration    # Multi-agent project coordination
+/evening-progress-synthesis   # Daily achievement consolidation
+
+# Strategic Coordination
+/quarterly-agent-alignment    # Long-term goal synchronization
+/agent-expertise-mapping      # Capability inventory
+/workflow-optimization-review # Process efficiency analysis
+/knowledge-transfer-sessions  # Cross-pollination opportunities
+```
+
+#### **Agent Communication Standards**
+```bash
+# Context Sharing
+/context-handoff-protocol     # Seamless agent transitions
+/shared-knowledge-base       # Centralized information repository
+/decision-audit-trail        # Transparent decision tracking
+/expertise-consultation      # Cross-agent advice seeking
+
+# Quality Assurance
+/agent-performance-review    # Specialized agent effectiveness
+/output-quality-validation   # Multi-agent quality control
+/consistency-enforcement     # Brand and standard alignment
+/continuous-improvement-loop # Agent capability enhancement
+```
+
+#### **Emergency & Escalation**
+```bash
+# Crisis Management
+/emergency-agent-assembly    # All-hands crisis response
+/critical-path-identification # Bottleneck resolution
+/rapid-deployment-protocol   # Fast implementation procedures
+/post-crisis-analysis       # Learning and improvement
+
+# Quality Control
+/agent-output-validation    # Multi-layer quality assurance
+/consistency-cross-check    # Standards alignment verification
+/performance-benchmarking   # Agent effectiveness measurement
+/feedback-loop-optimization # Continuous improvement cycles
+```
+
+### **🎯 Agent Selection Decision Tree**
+
+```
+Task Analysis:
+├── Strategic/Business Decision → Product Strategy Agent
+├── Technical Implementation → Technical Architecture Agent  
+├── Data/Analytics Question → Analytics & Data Agent
+├── User Experience Issue → Design & UX Agent
+├── Marketing/Growth Need → Marketing & Growth Agent
+├── Revenue/Monetization → Revenue & Monetization Agent
+├── Automation/AI Opportunity → AI & Automation Agent
+└── Multi-disciplinary → PM Agent Coordination
+```
+
+### **📈 Sub-Agent Success Metrics**
+
+**Agent Performance KPIs:**
+- **Task Completion Rate**: 95%+ specialized task success
+- **Context Accuracy**: Seamless handoffs between agents
+- **Response Quality**: Domain expertise demonstration
+- **Efficiency Gains**: 3x faster specialized task completion
+- **Cross-pollination**: Knowledge sharing between agents
+
+**Business Impact Measurement:**
+- **Revenue Growth**: Agent-driven optimization results
+- **User Satisfaction**: UX/Product agent improvements
+- **Technical Excellence**: Architecture agent contributions
+- **Market Position**: Strategy agent insights implementation
+- **Operational Efficiency**: Automation agent streamlining
 
 ---
 

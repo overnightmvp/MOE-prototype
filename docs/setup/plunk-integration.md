@@ -1,286 +1,222 @@
 # Plunk Email Integration Setup Guide
 
-## Overview
-This guide covers the complete setup of Plunk email automation for the 7-Day MVP Validation System, replacing ConvertKit with a more cost-effective and developer-friendly solution.
+## 🎯 Overview
+Complete setup guide for integrating Plunk email automation with the 7-Day MVP Validation System.
 
-## Plunk Account Setup
+## 📋 Required Environment Variables
 
-### 1. Account Configuration
-- **API Key:** `pk_1652d6b7abcca49fdb0486286e7613c061e34fc3b46c6a02`
-- **Secret Key:** `sk_722305b4dffd7f31f8f96ae27934aebc9e2f5f483a5fd4f0`
-- **Dashboard:** https://app.useplunk.com
+### Netlify Environment Variables
+Add these variables in your Netlify dashboard under **Site Settings → Environment Variables**:
 
-### 2. Required Events Setup
-Create these events in your Plunk dashboard:
-
-```
-lead-magnet-download - Triggered when someone downloads free checklist
-customer-onboarding - Triggered after successful purchase
-daily-progress - Triggered each day of 7-day journey
-validation-completed - Triggered when customer finishes Day 7
-community-welcome - Triggered when joining Discord community
-payment-failed - Triggered on failed subscription payments
-exit-survey - Triggered when subscription is cancelled
-```
-
-## Environment Variables
-
-Add these to your `.env` file:
 ```bash
-PLUNK_API_KEY=pk_1652d6b7abcca49fdb0486286e7613c061e34fc3b46c6a02
-PLUNK_SECRET_KEY=sk_722305b4dffd7f31f8f96ae27934aebc9e2f5f483a5fd4f0
-PLUNK_API_URL=https://api.useplunk.com/v1
+# Required - Plunk API Authentication
+PLUNK_API_KEY=your_plunk_api_key_here
 
-# Event IDs
-PLUNK_EVENT_LEAD_MAGNET=lead-magnet-download
-PLUNK_EVENT_CUSTOMER_ONBOARD=customer-onboarding
-PLUNK_EVENT_DAILY_PROGRESS=daily-progress
-PLUNK_EVENT_COMPLETION=validation-completed
-PLUNK_EVENT_COMMUNITY_WELCOME=community-welcome
+# Optional - Email Sequence IDs (if using custom sequences)
+PLUNK_VALIDATION_SERIES_ID=sequence_id_for_validation_series
+PLUNK_NEWSLETTER_ID=sequence_id_for_newsletter
 ```
 
-## Email Templates Required
+### How to Get Your Plunk API Key
+1. Log into your [Plunk dashboard](https://app.useplunk.com)
+2. Navigate to **Settings → API Keys**
+3. Create a new API key with the following permissions:
+   - **Contacts**: Create, Read, Update
+   - **Campaigns**: Send
+   - **Events**: Track
+4. Copy the API key and add it to Netlify environment variables
 
-### 1. Lead Magnet Sequence
-**Event:** `lead-magnet-download`
+## 📧 Email Sequence Configuration
 
-**Email 1 - Immediate Delivery:**
-- Subject: "Your MVP Validation Checklist (+ why 90% of startups fail)"
-- Content: Deliver checklist PDF + introduce Johnny's story
-- CTA: "Ready for the complete system?"
+### Default Sequence Types
+The integration supports these sequence types:
 
-**Email 2 - Day 2:**
-- Subject: "The $50k mistake I made (and how you can avoid it)"
-- Content: Personal failure story + validation importance
-- CTA: "Get the 7-Day Validation System"
+1. **validation-series** (Default)
+   - Welcome email with dashboard access
+   - 5-day validation framework
+   - Foundation, research, MVP definition, launch strategy
 
-**Email 3 - Day 4:**
-- Subject: "Last call: Stop building wrong things"
-- Content: Urgency + social proof + clear value prop
-- CTA: "Start validating today"
+2. **newsletter** 
+   - General newsletter subscription
+   - Weekly insights and case studies
 
-### 2. Customer Onboarding
-**Event:** `customer-onboarding`
+### Sequence ID Configuration
+If you want to use custom sequence IDs in Plunk:
 
-**Welcome Email:**
-- Subject: "Welcome to the 7-Day MVP Validation System! 🚀"
-- Content: Access instructions + what to expect + Discord invite
-- CTA: "Access Day 1 Materials"
-
-### 3. Daily Progress Emails
-**Event:** `daily-progress`
-
-**Template Variables:** `{{day}}`, `{{title}}`, `{{tasks}}`, `{{ai_prompt}}`
-
-**Daily Structure:**
-- Subject: "Day {{day}}: {{title}} - Your MVP Validation Journey"
-- Content: Daily agenda + AI prompts + community check-in
-- CTA: "Complete Day {{day}} Exercises"
-
-### 4. Completion Email
-**Event:** `validation-completed`
-
-**Email:**
-- Subject: "🎉 You did it! Your validation results are ready"
-- Content: Congratulations + next steps + upsell opportunity
-- CTA: "Book Implementation Coaching"
-
-## Integration Points
-
-### 1. Landing Page Email Capture
 ```javascript
-// Add to landing page
-async function handleEmailSignup(email) {
+// Update in netlify/functions/plunk-integration.js
+function getSequenceId(sequenceType) {
+  const sequences = {
+    'validation-series': process.env.PLUNK_VALIDATION_SERIES_ID || 'default-validation',
+    'newsletter': process.env.PLUNK_NEWSLETTER_ID || 'default-newsletter'
+  };
+  return sequences[sequenceType];
+}
+```
+
+## 🚀 Email Template Integration
+
+### Template Files Created
+- `email-templates/01-welcome.html` - Welcome email
+- `email-templates/02-foundation.html` - Day 2 validation mindset
+- `email-templates/03-customer-research.html` - Day 4 customer interviews
+- `email-templates/04-mvp-definition.html` - Day 6 MVP framework
+- `email-templates/05-launch-strategy.html` - Day 7 go/no-go decision
+
+### Template Variables
+Each template supports these variables:
+- `{{dashboard_url}}` - Link to user dashboard
+- `{{support_email}}` - Support contact email
+- `{{user_email}}` - User's email address
+- `{{user_name}}` - User's name (if collected)
+
+## 🔧 Frontend Integration
+
+### Form Submission Flow
+1. User enters email in landing page form
+2. Frontend calls `/.netlify/functions/plunk-integration`
+3. Netlify function adds contact to Plunk
+4. Contact is enrolled in validation email sequence
+5. User redirected to success page
+
+### Frontend Implementation
+```javascript
+// Current implementation in index.html
+async function handleEmailReveal(event) {
+  event.preventDefault();
+  
+  const formData = new FormData(event.target);
+  const email = formData.get('email');
+  const source = formData.get('source');
+  
   try {
-    const response = await fetch('/api/plunk/lead-magnet', {
+    const response = await fetch('/.netlify/functions/plunk-integration', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, source: 'landing_page' })
+      body: JSON.stringify({
+        email: email,
+        source: source || 'main_landing',
+        sequence_type: 'validation-series'
+      })
     });
     
     if (response.ok) {
-      showSuccess("Checklist sent! Check your email.");
+      // Success - redirect to success page
+      window.location.href = `./success.html?email=${encodeURIComponent(email)}&enrolled=true`;
     }
   } catch (error) {
-    showError("Something went wrong. Please try again.");
+    console.error('Error submitting to Plunk:', error);
+    // Handle error gracefully
   }
 }
 ```
 
-### 2. Purchase Flow Integration
-```javascript
-// In Stripe webhook handler
-async function handleCheckoutCompleted(session) {
-  const plunk = new PlunkService();
-  await plunk.sendWelcomeEmail(
-    session.customer_email, 
-    session.metadata.productType
-  );
+### Error Handling
+- API failures are tracked in Google Analytics
+- User-friendly error messages displayed
+- Graceful fallback to success page
+
+## 📊 Analytics Integration
+
+### Tracked Events
+- `email_signup` - User submits email
+- `email_sequence_enrolled` - Successfully enrolled in sequence
+- `email_signup_error` - Integration failure
+
+### Debug Information
+All events include:
+- Email source (main_landing, etc.)
+- Sequence type (validation-series, newsletter)
+- Error details (for failures)
+
+## 🧪 Testing the Integration
+
+### Local Testing
+1. Install Netlify CLI: `npm install -g netlify-cli`
+2. Set up local environment: `netlify dev`
+3. Test API endpoint: `curl -X POST http://localhost:8888/.netlify/functions/plunk-integration`
+
+### Production Testing
+1. Deploy to Netlify with environment variables set
+2. Test email signup on live site
+3. Verify contact appears in Plunk dashboard
+4. Check email sequence enrollment
+
+### Test Data
+```json
+{
+  "email": "test@example.com",
+  "source": "main_landing",
+  "sequence_type": "validation-series"
 }
 ```
 
-### 3. Daily Email Automation
-```javascript
-// Scheduled function (run daily at 9 AM customer timezone)
-async function sendDailyEmails() {
-  const customers = await getActiveCustomers();
-  
-  for (const customer of customers) {
-    const currentDay = calculateCurrentDay(customer.startDate);
-    if (currentDay <= 7) {
-      await plunk.sendDailyProgressEmail(
-        customer.email, 
-        currentDay, 
-        getDayContent(currentDay)
-      );
-    }
-  }
-}
-```
-
-## API Usage Examples
-
-### Add Contact
-```javascript
-const plunk = new PlunkService();
-await plunk.addContact('user@example.com', {
-  product_type: 'core',
-  signup_date: new Date().toISOString(),
-  customer_status: 'active'
-});
-```
-
-### Trigger Event
-```javascript
-await plunk.triggerEvent('user@example.com', 'daily-progress', {
-  day: 3,
-  completion_rate: 85
-});
-```
-
-### Update Contact Properties
-```javascript
-await plunk.updateContact('user@example.com', {
-  current_day: 5,
-  last_activity: new Date().toISOString(),
-  engagement_score: 92
-});
-```
-
-## Error Handling
-
-### Retry Logic
-```javascript
-async function sendWithRetry(emailFunction, maxRetries = 3) {
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      return await emailFunction();
-    } catch (error) {
-      if (i === maxRetries - 1) throw error;
-      await sleep(1000 * Math.pow(2, i)); // Exponential backoff
-    }
-  }
-}
-```
-
-### Fallback System
-```javascript
-async function sendEmailWithFallback(email, content) {
-  try {
-    await plunk.sendEmail(email, content);
-  } catch (error) {
-    console.error('Plunk failed, using SMTP fallback:', error);
-    await sendViaSMTP(email, content);
-  }
-}
-```
-
-## Monitoring and Analytics
-
-### Track Key Metrics
-- Email delivery rate (target: >98%)
-- Open rate (target: >25%)
-- Click-through rate (target: >5%)
-- Conversion rate (email to purchase: target: >2%)
-
-### Plunk Dashboard Monitoring
-- Daily email volume
-- Event trigger success rate
-- Contact growth trends
-- Template performance
-
-## Cost Optimization
-
-### Current Plan
-- **Starter:** $19/month (up to 2,000 emails)
-- **Growth:** $49/month (up to 10,000 emails)
-- **Scale:** $99/month (up to 50,000 emails)
-
-### Usage Estimates
-- **100 customers/month:** ~1,500 emails/month
-- **500 customers/month:** ~7,500 emails/month
-- **1,000 customers/month:** ~15,000 emails/month
-
-## Testing Checklist
-
-### Pre-Launch Testing
-- [ ] Lead magnet email delivery
-- [ ] Welcome email trigger on purchase
-- [ ] Daily email sequence (test with 7-day simulation)
-- [ ] Community welcome email
-- [ ] Payment failure notifications
-- [ ] Unsubscribe functionality
-
-### Performance Testing
-- [ ] API response times (<500ms)
-- [ ] Bulk contact upload (100+ contacts)
-- [ ] Event triggering under load
-- [ ] Error handling and retries
-
-## Migration from ConvertKit
-
-### Data Export
-1. Export all contacts from ConvertKit
-2. Export email performance data
-3. Export automation sequences
-
-### Data Import
-1. Bulk upload contacts to Plunk
-2. Recreate automation sequences as Plunk events
-3. Set up equivalent triggers and conditions
-
-### Testing Migration
-1. Run parallel systems for 1 week
-2. Compare delivery and engagement rates
-3. Monitor for any missing functionality
-4. Gradually shift traffic to Plunk
-
-## Security Considerations
-
-### API Key Management
-- Store keys in environment variables only
-- Rotate keys quarterly
-- Monitor API usage for anomalies
-- Implement rate limiting
-
-### Data Protection
-- Encrypt contact data at rest
-- Implement GDPR-compliant unsubscribe
-- Regular data cleanup (inactive contacts)
-- Audit trail for all email sends
-
-## Troubleshooting
+## 🚨 Troubleshooting
 
 ### Common Issues
-1. **Events not triggering:** Check event ID spelling and API credentials
-2. **Low delivery rates:** Verify domain authentication
-3. **Template errors:** Validate all variable substitutions
-4. **Rate limiting:** Implement exponential backoff
 
-### Debug Mode
-```javascript
-// Enable detailed logging
-const plunk = new PlunkService({ debug: true });
+**401 Unauthorized**
+- Check PLUNK_API_KEY is set correctly
+- Verify API key has required permissions
+
+**Contact Not Added**
+- Check email format is valid
+- Verify Plunk account has contact limits available
+
+**Sequence Not Triggered**
+- Check sequence ID exists in Plunk
+- Verify sequence is active and published
+
+### Debug Steps
+1. Check Netlify function logs: `netlify logs --function=plunk-integration`
+2. Verify environment variables: Netlify dashboard → Site Settings → Environment Variables
+3. Test API key: Use Plunk API documentation to test manually
+4. Check Google Analytics for error events
+
+## 📈 Success Metrics
+
+### Key Performance Indicators
+- **Email Capture Rate**: Landing page visits → email signups
+- **Sequence Enrollment Rate**: Email signups → successful Plunk enrollment (target: 95%+)
+- **Email Open Rate**: Sequence emails opened (target: 35%+)
+- **Click-through Rate**: Email links clicked (target: 15%+)
+
+### Monitoring Dashboard
+Track these metrics in:
+- Google Analytics 4 events
+- Plunk analytics dashboard
+- Netlify function logs
+
+## 🔄 Maintenance
+
+### Weekly Tasks
+- [ ] Check Plunk contact growth
+- [ ] Review email open rates
+- [ ] Monitor function error rates
+- [ ] Test integration end-to-end
+
+### Monthly Tasks
+- [ ] Analyze email performance
+- [ ] Update template content based on feedback
+- [ ] Review and optimize sequences
+- [ ] Check for Plunk API updates
+
+---
+
+## Quick Reference Commands
+
+```bash
+# Deploy with environment variables
+netlify env:set PLUNK_API_KEY your_api_key_here
+
+# Test function locally
+netlify functions:invoke plunk-integration --payload '{"email":"test@example.com","source":"test"}'
+
+# Check function logs
+netlify logs --function=plunk-integration
+
+# Deploy to production
+netlify deploy --prod
 ```
 
-This integration provides a robust, cost-effective email automation system that scales with the 7-Day MVP Validation System's growth.
+For support, check the [Plunk API documentation](https://docs.useplunk.com) or contact the development team.

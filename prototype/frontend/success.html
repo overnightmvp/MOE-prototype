@@ -269,8 +269,8 @@
         <!-- Success Header -->
         <div class="success-header">
             <div class="success-icon">🎉</div>
-            <h1>Payment Successful!</h1>
-            <p>Welcome to your 7-Day MVP Validation journey</p>
+            <h1 id="successTitle">You're In!</h1>
+            <p id="successSubtitle">Welcome to your 7-Day MVP Validation journey</p>
         </div>
         
         <!-- Success Content -->
@@ -279,26 +279,24 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Check Your Email</h3>
-                        <p>Your welcome email with access instructions is on its way. Check your inbox and spam folder.</p>
+                        <h3>Email Sequence Started</h3>
+                        <p id="emailStatus">Your welcome email is on its way! You'll receive your first validation exercise within 24 hours.</p>
                     </div>
                 </div>
                 
-                <!-- 
-                <div class="step">
+                <div class="step" id="emailSequenceStep">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Join the Community</h3>
-                        <p>Access our exclusive Discord community for peer support and real-time help from other founders.</p>
+                        <h3>7-Day Validation Framework</h3>
+                        <p>Over the next week, you'll receive daily emails with exercises, templates, and AI-powered insights to validate your MVP idea.</p>
                     </div>
                 </div>
-                -->
                 
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Start Day 1</h3>
-                        <p>Begin your validation journey with Day 1 materials. Your AI assistant is ready to help!</p>
+                        <h3>Start Immediately</h3>
+                        <p id="dashboardAccess">Access your validation dashboard right now to get a head start on Day 1!</p>
                     </div>
                 </div>
             </div>
@@ -358,6 +356,8 @@
         const sprintNumber = urlParams.get('sprint');
         const userEmail = urlParams.get('email');
         const isCompleted = urlParams.get('completed');
+        const isEnrolled = urlParams.get('enrolled');
+        const source = urlParams.get('source');
         
         // Track conversion
         if (typeof gtag !== 'undefined' && sessionId) {
@@ -368,9 +368,40 @@
             });
         }
         
+        // Handle email enrollment flow 
+        function handleEmailEnrollmentFlow() {
+            // Update page content for email enrollment
+            if (isEnrolled === 'true') {
+                document.getElementById('successTitle').textContent = '🎉 You\'re In!';
+                document.getElementById('successSubtitle').textContent = 'Your validation journey has begun';
+                document.getElementById('emailStatus').innerHTML = '✅ <strong>Email sequence activated!</strong> Check your inbox for your welcome email with immediate access.';
+                
+                // Track successful enrollment
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'email_sequence_success', {
+                        'event_category': 'Email Marketing',
+                        'event_label': 'Validation Series Enrolled',
+                        'email_source': source || 'main_landing'
+                    });
+                }
+            } else {
+                // Fallback messaging if enrollment parameter not present
+                document.getElementById('emailStatus').textContent = 'Your welcome email is on its way! Check your inbox and spam folder.';
+            }
+            
+            // Hide upsell section for email-only users
+            const upsellSection = document.getElementById('upsellSection');
+            if (upsellSection && !sessionId) {
+                upsellSection.style.display = 'none';
+            }
+        }
+
         // Handle sprint flow without payment (email capture flow)
         function handleSprintFlow() {
             const dashboardLink = document.getElementById('accessDashboard');
+            
+            // Handle email enrollment first
+            handleEmailEnrollmentFlow();
             
             if (sprintNumber) {
                 dashboardLink.href = `./sprint-${sprintNumber}.html?email=${encodeURIComponent(userEmail || '')}`;

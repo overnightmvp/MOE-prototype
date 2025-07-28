@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: Define Your MVP Like a Pro</title>
+    <style>
+        /* Neo-brutalist Email Design System */
+        :root {
+            --brand-primary: #FF6B6B;
+            --brand-secondary: #4ECDC4;
+            --brand-accent: #FFD93D;
+            --brand-success: #6BCF7F;
+            --color-black: #2C2C2C;
+            --color-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--color-black);
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border: 4px solid var(--color-black);
+            box-shadow: 8px 8px 0px var(--color-black);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--brand-success) 0%, var(--brand-secondary) 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid var(--color-black);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: var(--color-white);
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .day-badge {
+            background: var(--brand-accent);
+            color: var(--color-black);
+            padding: 8px 16px;
+            font-weight: 700;
+            border: 2px solid var(--color-black);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .mvp-framework {
+            background: var(--brand-primary);
+            padding: 25px;
+            border: 3px solid var(--color-black);
+            margin: 25px 0;
+            box-shadow: 4px 4px 0px var(--color-black);
+            color: var(--color-white);
+        }
+        
+        .mvp-framework h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .feature-matrix {
+            background: #f9f9f9;
+            border: 3px solid var(--color-black);
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .matrix-quadrant {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .quadrant {
+            padding: 15px;
+            border: 2px solid var(--color-black);
+            text-align: center;
+        }
+        
+        .high-impact-easy {
+            background: var(--brand-success);
+            color: var(--color-white);
+        }
+        
+        .high-impact-hard {
+            background: var(--brand-accent);
+            color: var(--color-black);
+        }
+        
+        .low-impact-easy {
+            background: var(--brand-secondary);
+            color: var(--color-white);
+        }
+        
+        .low-impact-hard {
+            background: #f0f0f0;
+            color: var(--color-black);
+        }
+        
+        .examples-box {
+            background: var(--brand-secondary);
+            padding: 25px;
+            border: 3px solid var(--color-black);
+            margin: 25px 0;
+            color: var(--color-white);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 3px solid var(--color-black);
+            box-shadow: 6px 6px 0px var(--color-black);
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--brand-primary);
+            color: var(--color-white);
+        }
+        
+        .warning-box {
+            background: #FFF5F5;
+            border: 3px solid var(--brand-primary);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box h4 {
+            color: var(--brand-primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: var(--brand-accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border: 2px solid var(--color-black);
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .matrix-quadrant {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 Day 6: MVP Definition Framework</h1>
+            <p>From feature chaos to laser-focused product</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <div class="day-badge">📅 DAY 6 OF 7</div>
+            
+            <h2 style="margin-bottom: 20px;">The Feature Prioritization Framework That Built Billion-Dollar Companies</h2>
+            
+            <p style="margin-bottom: 20px;">Your customer interviews revealed dozens of problems and feature ideas. Now comes the hard part: deciding what to build first. Most founders try to build everything. Smart founders build the minimum that proves maximum value.</p>
+            
+            <div class="mvp-framework">
+                <h3>🚀 The MVP Definition Framework</h3>
+                <p style="margin-bottom: 15px;"><strong>MVP = Minimum features needed to Validate your core Promise</strong></p>
+                <p>Your MVP should do ONE thing incredibly well, not 10 things poorly. It should validate your riskiest assumption with the least amount of work.</p>
+            </div>
+            
+            <div class="feature-matrix">
+                <h3 style="margin-bottom: 20px; text-align: center;">📊 Feature Prioritization Matrix</h3>
+                <p style="text-align: center; margin-bottom: 20px;">Plot every feature idea on this matrix:</p>
+                
+                <div class="matrix-quadrant">
+                    <div class="quadrant high-impact-easy">
+                        <strong>HIGH IMPACT<br>EASY TO BUILD</strong>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">✅ BUILD FIRST</p>
+                    </div>
+                    <div class="quadrant high-impact-hard">
+                        <strong>HIGH IMPACT<br>HARD TO BUILD</strong>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">🤔 VALIDATE FIRST</p>
+                    </div>
+                    <div class="quadrant low-impact-easy">
+                        <strong>LOW IMPACT<br>EASY TO BUILD</strong>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">⏰ BUILD LATER</p>
+                    </div>
+                    <div class="quadrant low-impact-hard">
+                        <strong>LOW IMPACT<br>HARD TO BUILD</strong>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">❌ NEVER BUILD</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="examples-box">
+                <h3 style="margin-bottom: 15px;">📋 Real MVP Examples</h3>
+                
+                <div style="background: var(--color-white); color: var(--color-black); padding: 15px; margin: 15px 0; border: 2px solid var(--color-black);">
+                    <strong>Airbnb's MVP:</strong> Simple website where people could list and book air mattresses in their apartments. No payment processing, no reviews, no fancy search. Just the core transaction.
+                </div>
+                
+                <div style="background: var(--color-white); color: var(--color-black); padding: 15px; margin: 15px 0; border: 2px solid var(--color-black);">
+                    <strong>Dropbox's MVP:</strong> A 3-minute demo video showing the core concept. No actual product built. Validated demand before writing code.
+                </div>
+                
+                <div style="background: var(--color-white); color: var(--color-black); padding: 15px; margin: 15px 0; border: 2px solid var(--color-black);">
+                    <strong>Buffer's MVP:</strong> Landing page that collected emails and scheduled social media posts manually. No automation, no dashboard, no analytics.
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ The Feature Creep Trap</h4>
+                <p><strong>You'll be tempted to add "just one more feature" to make it "complete."</strong> Resist! Every additional feature:</p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Delays your launch by weeks</li>
+                    <li>Adds complexity and bugs</li>
+                    <li>Dilutes your core value proposition</li>
+                    <li>Makes it harder to get user feedback</li>
+                </ul>
+            </div>
+            
+            <h3 style="margin: 30px 0 15px 0;">📝 Your Day 6 Assignment:</h3>
+            
+            <div style="background: var(--brand-accent); padding: 20px; border: 3px solid var(--color-black); margin: 20px 0;">
+                <ol style="padding-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>List all feature ideas</strong> from your customer interviews</li>
+                    <li style="margin-bottom: 10px;"><strong>Plot them on the impact/effort matrix</strong></li>
+                    <li style="margin-bottom: 10px;"><strong>Identify your "Green Quadrant" features</strong> (high impact, easy to build)</li>
+                    <li style="margin-bottom: 10px;"><strong>Write your MVP definition</strong> in one sentence</li>
+                    <li><strong>Create a feature roadmap</strong> for your first 3 releases</li>
+                </ol>
+                <p style="margin-top: 15px; font-weight: 600;">⏱️ Time required: 90 minutes</p>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{dashboard_url}}" class="btn btn-primary">
+                    Access MVP Planning Templates 📋
+                </a>
+            </div>
+            
+            <div style="border: 2px solid var(--brand-success); padding: 20px; margin: 25px 0; background: #F0FFF4;">
+                <h4 style="color: var(--brand-success); margin-bottom: 10px;">💡 The One-Feature Rule:</h4>
+                <p><em><strong>If your MVP solves one problem perfectly, users will forgive missing features. If it solves 10 problems poorly, users will abandon it completely.</strong></em></p>
+                <p style="margin-top: 10px;"><em>Focus on being remarkable at one thing, not mediocre at everything.</em></p>
+            </div>
+            
+            <div style="background: var(--brand-secondary); color: var(--color-white); padding: 20px; border: 3px solid var(--color-black); margin: 25px 0; text-align: center;">
+                <h3 style="margin-bottom: 15px;">🎉 You're Almost There!</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 10px;"><strong>Tomorrow is Day 7 - your final validation decision and launch strategy.</strong></p>
+                <p>You've done the hard work. Now we put it all together into your go/no-go recommendation.</p>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0; padding: 20px; background: #f9f9f9; border: 2px solid var(--color-black);">
+                <p>Struggling to narrow down features? Hit reply - I'll help you prioritize.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>🎯 7-Day MVP Validation System - Day 6</strong></p>
+            <p>Building the right thing, not everything</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.8;">
+                <a href="#">Unsubscribe</a> | <a href="#">Update Preferences</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
