@@ -5,18 +5,18 @@ class SprintNavigation {
     constructor(currentSprint = 0) {
         this.currentSprint = parseInt(currentSprint);
         this.totalSprints = 8; // Sprint 0-7
-        this.baseUrl = '/pages/checklists/';
+        this.baseUrl = './onboarding/';
         
-        // Sprint metadata
+        // Sprint metadata - Updated to match actual file structure
         this.sprintData = {
-            0: { name: 'Lead Magnet', file: 'sprint0-magnet-checklist.html', progress: 0 },
-            1: { name: 'MVP Foundation', file: 'sprint1-checklist.html', progress: 12.5 },
-            2: { name: 'Customer Portal', file: 'sprint2-checklist.html', progress: 25 },
-            3: { name: 'Claude AI', file: 'sprint3-checklist.html', progress: 37.5 },
-            4: { name: '7-Day Content', file: 'sprint4-checklist.html', progress: 50 },
-            5: { name: 'Community', file: 'sprint5-checklist.html', progress: 62.5 },
-            6: { name: 'Analytics', file: 'sprint6-checklist.html', progress: 75 },
-            7: { name: 'Beta & Launch', file: 'sprint7-checklist.html', progress: 87.5 }
+            0: { name: 'Setup Guide', file: 'sprint0-onboarding.html', progress: 0 },
+            1: { name: 'MVP Foundation', file: 'sprint1-onboarding.html', progress: 12.5 },
+            2: { name: 'Customer Portal', file: 'sprint2-onboarding.html', progress: 25 },
+            3: { name: 'Claude AI', file: 'sprint3-onboarding.html', progress: 37.5 },
+            4: { name: '7-Day Content', file: 'sprint4-onboarding.html', progress: 50 },
+            5: { name: 'Community', file: 'sprint5-onboarding.html', progress: 62.5 },
+            6: { name: 'Analytics', file: 'sprint6-onboarding.html', progress: 75 },
+            7: { name: 'Beta & Launch', file: 'sprint7-onboarding.html', progress: 87.5 }
         };
     }
 
@@ -111,7 +111,7 @@ class SprintNavigation {
         } else if (this.currentSprint === 7) {
             // Complete journey button for last sprint
             navButtons += `
-                <a href="./pages/success.html?completed=true" class="nav-btn nav-btn-secondary">
+                <a href="../pages/success.html?completed=true" class="nav-btn nav-btn-secondary">
                     Complete Journey 🎉
                 </a>
             `;
@@ -131,10 +131,10 @@ class SprintNavigation {
     // Get CSS styles for navigation
     getNavigationCSS() {
         return `
-            /* Sprint Navigation */
+            /* Sprint Navigation - Updated to use design system */
             .sprint-nav {
-                background: var(--sprint-white);
-                border-bottom: 2px solid var(--sprint-light-gray);
+                background: var(--color-white);
+                border-bottom: 3px solid var(--color-black);
                 padding: 15px 0;
                 position: sticky;
                 top: 0;

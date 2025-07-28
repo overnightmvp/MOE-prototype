@@ -18,6 +18,13 @@
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
     
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="../assets/css/design-system.css">
+    <link rel="stylesheet" href="../assets/css/onboarding.css">
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <style>
         :root {
             --primary: #6366f1;
@@ -450,6 +457,7 @@
     </style>
 </head>
 <body>
+<main id="main-content" class="onboarding-container">
     <div class="container">
         <!-- Header -->
         <div class="header">
@@ -960,5 +968,6 @@
             setTimeout(celebrateCompletion, 1000);
         });
     </script>
+</main>
 </body>
 </html>
