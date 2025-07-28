@@ -2,7 +2,7 @@
 // Handles email capture, sequence enrollment, and newsletter signup
 
 const PLUNK_API_URL = 'https://api.useplunk.com/v1';
-const PLUNK_API_KEY = process.env.PLUNK_API_KEY;
+const PLUNK_API_KEY = process.env.PLUNK_API_KEY; // Should be secret key (sk_...)
 
 exports.handler = async (event, context) => {
   // Only allow POST requests
