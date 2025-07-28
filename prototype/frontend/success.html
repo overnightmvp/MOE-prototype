@@ -373,14 +373,14 @@
             const dashboardLink = document.getElementById('accessDashboard');
             
             if (sprintNumber) {
-                dashboardLink.href = `../onboarding/sprint${sprintNumber}-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.href = `./sprint-${sprintNumber}.html?email=${encodeURIComponent(userEmail || '')}`;
                 dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
             } else if (isCompleted) {
                 dashboardLink.textContent = 'Journey Complete! 🎉';
-                dashboardLink.href = `../onboarding/sprint0-onboarding.html`;
+                dashboardLink.href = `./sprint-0.html`;
             } else {
                 // Default to sprint 0 for email captures
-                dashboardLink.href = `../onboarding/sprint0-onboarding.html?email=${encodeURIComponent(userEmail || '')}`;
+                dashboardLink.href = `./sprint-0.html?email=${encodeURIComponent(userEmail || '')}`;
                 dashboardLink.textContent = 'Start Your Validation Journey 🚀';
             }
         }
@@ -409,11 +409,11 @@
                     
                     // Handle sprint-specific flow
                     if (sprintNumber) {
-                        dashboardLink.href = `../onboarding/sprint${sprintNumber}-onboarding.html?customer=${data.customer}`;
+                        dashboardLink.href = `./sprint-${sprintNumber}.html?customer=${data.customer}`;
                         dashboardLink.textContent = `Start Sprint ${sprintNumber} 🚀`;
                     } else if (isCompleted) {
                         dashboardLink.textContent = 'Journey Complete! 🎉';
-                        dashboardLink.href = `../onboarding/sprint0-onboarding.html?customer=${data.customer}&completed=true`;
+                        dashboardLink.href = `./sprint-0.html?customer=${data.customer}&completed=true`;
                     }
                     
                     // Show appropriate upsell based on purchase
