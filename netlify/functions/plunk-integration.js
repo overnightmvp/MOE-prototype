@@ -42,20 +42,37 @@ exports.handler = async (event, context) => {
     });
 
     if (!contactResponse.ok) {
-      throw new Error(`Plunk API error: ${contactResponse.status}`);
+      // Handle 409 (contact already exists) as success
+      if (contactResponse.status === 409) {
+        console.log(`Contact ${email} already exists in Plunk - continuing with sequence enrollment`);
+      } else {
+        throw new Error(`Plunk API error: ${contactResponse.status}`);
+      }
     }
 
-    // Enroll in email sequence based on type
+    // Enroll in email sequence based on type (non-blocking)
     const sequenceId = getSequenceId(sequence_type);
     if (sequenceId) {
-      await enrollInSequence(email, sequenceId);
+      try {
+        await enrollInSequence(email, sequenceId);
+      } catch (error) {
+        console.log('Sequence enrollment failed:', error.message);
+      }
     }
 
-    // Add to newsletter list
-    await addToNewsletter(email);
+    // Add to newsletter list (non-blocking)
+    try {
+      await addToNewsletter(email);
+    } catch (error) {
+      console.log('Newsletter enrollment failed:', error.message);
+    }
 
-    // Send welcome email immediately
-    await sendWelcomeEmail(email, source);
+    // Send welcome email immediately (non-blocking)
+    try {
+      await sendWelcomeEmail(email, source);
+    } catch (error) {
+      console.log('Welcome email failed:', error.message);
+    }
 
     return {
       statusCode: 200,
