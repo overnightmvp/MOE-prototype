@@ -4,6 +4,7 @@
   "description": "7-Day MVP validation content platform",
   "scripts": {
     "dev": "live-server frontend --port=3000",
+    "build": "echo 'Build complete - static site ready for deployment'",
     "deploy": "netlify deploy --prod --dir=frontend",
     "format": "prettier --write ."
   },
